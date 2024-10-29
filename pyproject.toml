@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "app"
+version = "0.1.0"
+description = ""
+authors = ["hokei"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+agentjo = "^0.0.1"
+pydantic-settings = "^2.6.0"
+weaviate-client = "^4.9.0"
+langchain-community = "^0.3.3"
+wikipedia = "^1.4.0"
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

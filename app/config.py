@@ -8,6 +8,6 @@ class Settings(BaseSettings):
     openai_api_key: str
     weaviate_url: str
     weaviate_api_key: str
-
-
+    anthropic_api_key: str
+    
 env = Settings()

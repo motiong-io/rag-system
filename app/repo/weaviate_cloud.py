@@ -1,6 +1,7 @@
+from typing import List
 import weaviate
 from weaviate.classes.init import Auth
-from app.config import env
+
 
 class WeaviateClient:
     def __init__(self, url, api_key):
@@ -23,11 +24,23 @@ class WeaviateClient:
         if self.client:
             self.client.close()
 
-if __name__ == "__main__":
-    weaviate_url = env.weaviate_url
-    weaviate_api_key = env.weaviate_api_key
 
-    client = WeaviateClient(weaviate_url, weaviate_api_key)
+    def create_object(self, collection_name:str, properties:dict,vector:List[float]):
+        if self.client:
+            collection = self.client.collections.get(collection_name)
+            uuid = collection.data.insert(
+            properties=properties,
+            vector=vector
+            )
+            return uuid
+        else:
+            raise Exception("Client not connected")
+        
+            
+
+if __name__ == "__main__":
+    from app.config import env
+    client = WeaviateClient()
     client.connect()
     print(client.is_ready())
     client.close()

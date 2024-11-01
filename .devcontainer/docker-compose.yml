@@ -15,6 +15,17 @@ services:
       - ../.devcontainer/.zshrc:/opt/hokei/.zshrc
     command: ["tail -f /dev/null"]
 
+  elasticsearch:
+    image: elasticsearch:8.8.0
+    container_name: elasticsearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
 
-
-
+volumes:
+  esdata:

@@ -9,5 +9,6 @@ class Settings(BaseSettings):
     weaviate_url: str
     weaviate_api_key: str
     anthropic_api_key: str
-    
+    voyage_api_key: str
+    cohere_api_key: str
 env = Settings()

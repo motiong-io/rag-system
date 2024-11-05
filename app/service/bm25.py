@@ -4,10 +4,11 @@ from typing import List, Dict, Any
 from tqdm import tqdm
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
+from app.repo.contextual_vector_db import ContextualVectorDB
 
 class ElasticsearchBM25:
     def __init__(self, index_name: str = "contextual_bm25_index"):
-        self.es_client = Elasticsearch("http://localhost:9200")
+        self.es_client = Elasticsearch("http://elasticsearch:9200")
         self.index_name = index_name
         self.create_index()
 
@@ -89,6 +90,8 @@ def retrieve_advanced(query: str, db: ContextualVectorDB, es_bm25: Elasticsearch
     bm25_results = es_bm25.search(query, k=num_chunks_to_recall)
     ranked_bm25_chunk_ids = [(result['doc_id'], result['original_index']) for result in bm25_results]
 
+    raw_conbined_results = ranked_chunk_ids + ranked_bm25_chunk_ids
+
     # Combine results
     chunk_ids = list(set(ranked_chunk_ids + ranked_bm25_chunk_ids))
     chunk_id_to_score = {}
@@ -136,7 +139,7 @@ def retrieve_advanced(query: str, db: ContextualVectorDB, es_bm25: Elasticsearch
             semantic_count += 0.5
             bm25_count += 0.5
 
-    return final_results, semantic_count, bm25_count
+    return final_results, semantic_count, bm25_count,raw_conbined_results
 
 def load_jsonl(file_path: str) -> List[Dict[str, Any]]:
     with open(file_path, 'r') as file:
@@ -216,3 +219,20 @@ def evaluate_db_advanced(db: ContextualVectorDB, original_jsonl_path: str, k: in
         if es_bm25.es_client.indices.exists(index=es_bm25.index_name):
             es_bm25.es_client.indices.delete(index=es_bm25.index_name)
             print(f"Deleted Elasticsearch index: {es_bm25.index_name}")
+
+
+if __name__ == "__main__":
+    from app.repo.contextual_vector_db import ContextualVectorDB
+    db = ContextualVectorDB("q19_contextual_db")
+    db.load_db()
+    es_bm25=create_elasticsearch_bm25_index(db)
+    query="As of August 4, 2024, in what state was the first secretary of the latest United States federal executive department born?"
+    final_results, semantic_count, bm25_count,raw_conbined=retrieve_advanced(query, db, es_bm25, k=30)
+
+    print(final_results)
+    print(semantic_count)
+    print(bm25_count)
+
+    from app.service.rerank import *
+    final_results_rerank=only_rerank(query,final_results, k=10)
+    print(final_results_rerank)

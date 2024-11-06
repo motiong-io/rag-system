@@ -4,24 +4,8 @@ from app.config import env
 from app.repo.contextual_vector_db import ContextualVectorDB
 from app.service.bm25 import create_elasticsearch_bm25_index,retrieve_advanced
 from app.service.rerank import only_rerank
-
-
-# def llm(system_prompt: str, user_prompt: str) -> str:
-    # "openai gpt-4o-mini model"
-#     # ensure your LLM imports are all within this function
-#     from openai import OpenAI
-    
-#     # define your own LLM here
-#     client = OpenAI()
-#     response = client.chat.completions.create(
-#         model='gpt-4o-mini',
-#         temperature = 0,
-#         messages=[
-#             {"role": "system", "content": system_prompt},
-#             {"role": "user", "content": user_prompt}
-#         ]
-#     )
-#     return response.choices[0].message.content
+from functools import partial
+from typing import Callable
 
 def llm(system_prompt: str, user_prompt: str) -> str:
     "Local llama3.1 70B model"
@@ -69,31 +53,6 @@ def refine_query(subquery_list:list,observation):
     return refined_query['Sub-queries'], refined_query['End']
 
 
-def hybrid_search(query: str):
-    '''Search Context based on query using a hybrid of BM25 and Semantic Search'''
-    db = ContextualVectorDB("q19_contextual_db")
-    db.load_db()
-    es_bm25=create_elasticsearch_bm25_index(db)
-    final_results, semantic_count, bm25_count,raw_conbined=retrieve_advanced(query, db, es_bm25, k=30)
-    final_results_rerank=only_rerank(query,final_results, k=2)
-
-    return final_results_rerank
-
-def rag(query):
-    context=hybrid_search(query)
-
-    prompt=f"""
-        Question: {query},
-        Context: {context}
-    """
-
-    rag=strict_json(
-        system_prompt='You are an intelligent assistant specialized in solving multi-hop questions. Use the context to answer the query.',
-        user_prompt=prompt,
-        output_format={'Answer': 'String'},
-        llm=llm
-    )
-    return rag['Answer']
 
 def summarize_answer(query,observed_answers):
     '''Summarize the answers of sub-questions'''
@@ -110,46 +69,85 @@ def summarize_answer(query,observed_answers):
     )
     return summary['Answer']
 
+
+def hybrid_search(query: str,db_name:str):
+    '''Search Context based on query using a hybrid of BM25 and Semantic Search'''
+    db = ContextualVectorDB(db_name)
+    db.load_db()
+    es_bm25=create_elasticsearch_bm25_index(db)
+    final_results, semantic_count, bm25_count,raw_conbined=retrieve_advanced(query, db, es_bm25, k=30)
+    final_results_rerank=only_rerank(query,final_results, k=2)
+
+    return final_results_rerank
+
+def rag(query,db_name):
+    """Search context and answer query using RAG"""
+    context=hybrid_search(query,db_name)
+    prompt=f"""
+        Question: {query},
+        Context: {context}
+    """
+
+    rag=strict_json(
+        system_prompt='You are an intelligent assistant specialized in solving multi-hop questions. Use the context to answer the query.',
+        user_prompt=prompt,
+        output_format={'Answer': 'String'},
+        llm=llm
+    )
+    return rag['Answer']
+
+
+def partial_init_rag(db_name:str):
+    return partial(rag,db_name=db_name)
+
+class HybridRagService:
+    def __init__(self,rag_function:Callable) -> None:
+        self.rag_function = rag_function
+
+    def run(self,query:str):
+        #init agent
+        my_agent = Agent('Helpful assistant', "Agent to search context", llm = llm)
+        my_agent.assign_functions(function_list = [self.rag_function])
+        my_agent.status()
+        my_agent.reset()
+
+        #split query
+        sub_query = split_query(query)
+        print(sub_query)
+
+        end_flag = False
+        output = []
+        while not end_flag:
+            print(sub_query[0])
+            answer = my_agent.run(sub_query[0])
+            print(answer)
+            output.append({sub_query[0]:answer[-1]})
+            #refine query
+            refined_query,end_flag = refine_query(sub_query,output)
+            print(refined_query)
+            print(end_flag)
+            sub_query = refined_query
+        
+        print(output)
+        final_answer = summarize_answer(query,output)
+        print("Final Answer:",final_answer)
+        return final_answer
+
+
 def main():
-    #define query
     query="As of August 4, 2024, in what state was the first secretary of the latest United States federal executive department born?"
 
-    #init agent
-    my_agent = Agent('Helpful assistant', "Agent to search context", llm = llm)
-    my_agent.assign_functions(function_list = [rag])
-    my_agent.status()
-    my_agent.reset()
-
-    #split query
-    sub_query = split_query(query)
-    print(sub_query)
-
-    end_flag = False
-    output = []
-    while not end_flag:
-        print(sub_query[0])
-        answer = my_agent.run(sub_query[0])
-        print(answer)
-        output.append({sub_query[0]:answer[-1]})
-        #refine query
-        refined_query,end_flag = refine_query(sub_query,output)
-        print(refined_query)
-        print(end_flag)
-        sub_query = refined_query
+    def rag_function(query:str):
+        db_name="q19_contextual_db"
+        result = rag(query,db_name)
+        return result
     
-    print(output)
-    final_answer = summarize_answer(query,output)
-    print("Final Answer:",final_answer)
+    hybrid_rag = HybridRagService(rag_function)
+    hybrid_rag.run(query)
 
-def test_no_rag():
-    query="As of August 4, 2024, in what state was the first secretary of the latest United States federal executive department born?"
-    print("Query:",query)
-    system_prompt="You are an intelligent assistant to answer questions"  #, use your knowledge to answer the question.
-    answer=llm(system_prompt,query)
-    print("Answer:",answer)
 if __name__ == "__main__":
     main()
-    # test_no_rag()
+
 
 
 

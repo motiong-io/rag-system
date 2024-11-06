@@ -32,18 +32,21 @@ def split_query(query)->list:
     print(split_query['Sub-queries'][0])
     return split_query['Sub-queries']
 
-def refine_query(subquery_list:list,observation):
+def refine_query(query,subquery_list:list,observation):
     refined_query = strict_json(
         system_prompt=f"""
             You are an intelligent assistant specialized in solving multi-hop questions.
             Your task is to refine the subquery list with the observed answer of sub questions.
             Your observations are:
             {str(observation)}
+            The final question is:
+            {query}
             Follow these steps to refine the subqueries:
             1. Use the answer you got from one subqustion to replace the key words in the other subquestion.
             2. Remove the subquestion that already answered.
             3. If the last subquestion is answered, set the end flag to True in the output.
-            4. If you have the knowledge to some part of the question, you can replace the key concept with your knowledge.
+            4. If you have the knowledge to some part of the subquestion, you can replace the key concept with your knowledge.
+            5. Your final target is to make sure all subquestions are answered, and your observation can solve the final question.
         """,
         user_prompt=subquery_list,
         output_format={'Sub-queries': 'Array of refined sub-queries',
@@ -75,8 +78,8 @@ def hybrid_search(query: str,db_name:str):
     db = ContextualVectorDB(db_name)
     db.load_db()
     es_bm25=create_elasticsearch_bm25_index(db)
-    final_results, semantic_count, bm25_count,raw_conbined=retrieve_advanced(query, db, es_bm25, k=30)
-    final_results_rerank=only_rerank(query,final_results, k=2)
+    final_results, semantic_count, bm25_count,raw_conbined=retrieve_advanced(query, db, es_bm25, k=50)
+    final_results_rerank=only_rerank(query,final_results, k=3)
 
     return final_results_rerank
 
@@ -106,7 +109,7 @@ class HybridRagService:
 
     def run(self,query:str):
         #init agent
-        my_agent = Agent('Helpful assistant', "Agent to search context", llm = llm)
+        my_agent = Agent('Helpful assistant', "Agent to search context",summarise_subtasks_count=100,llm = llm, )
         my_agent.assign_functions(function_list = [self.rag_function])
         my_agent.status()
         my_agent.reset()
@@ -117,21 +120,26 @@ class HybridRagService:
 
         end_flag = False
         output = []
-        while not end_flag:
+        max_loop = 100
+        while not end_flag and max_loop > 0:
             print(sub_query[0])
             answer = my_agent.run(sub_query[0])
             print(answer)
             output.append({sub_query[0]:answer[-1]})
             #refine query
-            refined_query,end_flag = refine_query(sub_query,output)
+            refined_query,end_flag = refine_query(query,sub_query,output)
             print(refined_query)
             print(end_flag)
             sub_query = refined_query
+            max_loop -= 1
         
         print(output)
         final_answer = summarize_answer(query,output)
+        refined_answer = summarize_answer(sub_query,output)
         print("Final Answer:",final_answer)
-        return final_answer
+        print("Refined Question:",str(sub_query))
+        print("Refined Answer:",refined_answer)
+        return final_answer+"."+refined_answer
 
 
 def main():

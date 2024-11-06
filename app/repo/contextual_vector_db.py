@@ -113,9 +113,10 @@ class ContextualVectorDB:
 
         texts_to_embed = []
         metadata = []
-        total_chunks = sum(len(doc['chunks']) for doc in dataset)
+        # total_chunks = sum(len(doc['chunks']) for doc in dataset)
 
         def process_chunk(doc, chunk):
+            
             print(f"Processing{chunk['chunk_id']}")
             #for each chunk, produce the context
             contextualized_text, usage = self.situate_context(doc['content'], chunk['content'])
@@ -151,6 +152,7 @@ class ContextualVectorDB:
         #         texts_to_embed.append(result['text_to_embed'])
         #         metadata.append(result['metadata'])
         for doc in dataset:
+            total_chunks = len(doc['chunks'])
             for chunk in tqdm(doc['chunks'],total=total_chunks,desc=f"Processing document {doc['doc_id']}"):
                 result = process_chunk(doc, chunk)
                 texts_to_embed.append(result['text_to_embed'])
@@ -262,6 +264,14 @@ class ContextualVectorDB:
         # Step 3: Save the updated data
         self.save_db()
 
+def fast_create_by_json(db_name:str,raw_database_path:str):
+    with open(raw_database_path, 'r') as f:
+        transformed_dataset = json.load(f)
+    contextual_db = ContextualVectorDB(db_name)
+    contextual_db.load_data(transformed_dataset, parallel_threads=1)
+    return contextual_db
+
+
 
 def create():
     with open('scripts/chunked/codebase_chunks_1.json', 'r') as f:
@@ -272,6 +282,9 @@ def create():
     # q="As of August 4, 2024, in what state was the first secretary of the latest United States federal executive department born?"
     # results = contextual_db.search(q)
     # print(results)
+
+
+
 
 def test():
     with open('scripts/chunked/test.json', 'r') as f:

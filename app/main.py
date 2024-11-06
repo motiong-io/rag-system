@@ -1,156 +1,70 @@
-# Set up API key and do the necessary imports
-from agentjo import *
-from app.config import env
-from app.repo.contextual_vector_db import ContextualVectorDB
-from app.service.bm25 import create_elasticsearch_bm25_index,retrieve_advanced
-from app.service.rerank import only_rerank
+import json
+from datasets import load_dataset
+import ast
+from typing import List
+import os
+from app.service.doc_factory.wikipedia_factory import wikilink_to_docs_json,tranverse_folder_to_chunks_json,combine_chunks_file
+from app.repo.contextual_vector_db import ContextualVectorDB,fast_create_by_json
+from app.service.hybrid_rag import HybridRagService,rag,llm
+
+def get_doc_list(row_num:int):
+    ds = load_dataset("google/frames-benchmark")
+    question=ds['test'][row_num]['Prompt']
+    answer=ds['test'][row_num]['Answer']
+    references_docs=ast.literal_eval(ds['test'][row_num]['wiki_links'])
+    return question,answer,references_docs
+
+def load_documents(docs_link_list:List[str],db_name:str) -> None:
+    db_path=f"./data/{db_name}"
+    docs_dir=os.path.join(db_path,"docs")
+    if not os.path.exists(docs_dir):
+        os.makedirs(docs_dir)
+    else:
+        user_input = input("Directory already exists. Do you want to continue? (y/n): ")
+        if user_input.lower() != 'y':
+            return
+    chunks_dir=os.path.join(db_path,"chunks")
+    if not os.path.exists(chunks_dir):
+        os.makedirs(chunks_dir)
+    # save the documents to a json file
+    for i,docs_link in enumerate(docs_link_list):
+        print(f"Downloading document {i+1}/{len(docs_link_list)}")
+        wikilink_to_docs_json(docs_link,docs_dir)
+
+    # split the documents into chunks
+    tranverse_folder_to_chunks_json(docs_dir,chunks_dir)
 
 
-# def llm(system_prompt: str, user_prompt: str) -> str:
-    # "openai gpt-4o-mini model"
-#     # ensure your LLM imports are all within this function
-#     from openai import OpenAI
+def index_documents(db_name:str) -> None:
+    raw_json_base=combine_chunks_file(db_name)
+    db = fast_create_by_json(db_name,raw_json_base)
+    print(db.db_path)
+
+def hybrid_rag_run(query:str,db_name:str):
+    def rag_function(query:str):
+        result = rag(query,db_name)
+        return result
     
-#     # define your own LLM here
-#     client = OpenAI()
-#     response = client.chat.completions.create(
-#         model='gpt-4o-mini',
-#         temperature = 0,
-#         messages=[
-#             {"role": "system", "content": system_prompt},
-#             {"role": "user", "content": user_prompt}
-#         ]
-#     )
-#     return response.choices[0].message.content
+    hybrid_rag = HybridRagService(rag_function)
+    gen_answer=hybrid_rag.run(query)
+    return gen_answer
 
-def llm(system_prompt: str, user_prompt: str) -> str:
-    "Local llama3.1 70B model"
-    from openai import OpenAI
-    client = OpenAI(base_url='http://10.1.3.6:8001/v1', api_key='api_key')
-    response = client.chat.completions.create(
-        model='/data/xinference_llm/.cache/modelscope/hub/LLM-Research/Meta-Llama-3___1-70B-Instruct-AWQ-INT4',
-        temperature = 0,
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt}
-        ]
-    )
-    return response.choices[0].message.content
+# def record_results(ground_truth:str,generated_result:str):
+#     print(f"Ground Truth: {ground_truth}")
+#     print(f"Result: {generated_result}")
 
 
-def split_query(query)->list:
-    split_query = strict_json(
-        system_prompt='You are an intelligent assistant specialized in solving multi-hop questions. Split the query into smaller sub-queries, ensuring each sub-question is specific and answerable with only one enetity.',
-        user_prompt=query,
-        output_format={'Sub-queries': 'Array of sub-queries'},
-        llm=llm
-    )
-    print(split_query['Sub-queries'][0])
-    return split_query['Sub-queries']
-
-def refine_query(subquery_list:list,observation):
-    refined_query = strict_json(
-        system_prompt=f"""
-            You are an intelligent assistant specialized in solving multi-hop questions.
-            Your task is to refine the subquery list with the observed answer of sub questions.
-            Your observations are:
-            {str(observation)}
-            Follow these steps to refine the subqueries:
-            1. Use the answer you got from one subqustion to replace the key words in the other subquestion.
-            2. Remove the subquestion that already answered.
-            3. If the last subquestion is answered, set the end flag to True in the output.
-            4. If you have the knowledge to some part of the question, you can replace the key concept with your knowledge.
-        """,
-        user_prompt=subquery_list,
-        output_format={'Sub-queries': 'Array of refined sub-queries',
-                       'End': 'Boolean flag to indicate if all sub-questions are answered'},
-        llm=llm
-    )
-    return refined_query['Sub-queries'], refined_query['End']
-
-
-def hybrid_search(query: str):
-    '''Search Context based on query using a hybrid of BM25 and Semantic Search'''
-    db = ContextualVectorDB("q19_contextual_db")
-    db.load_db()
-    es_bm25=create_elasticsearch_bm25_index(db)
-    final_results, semantic_count, bm25_count,raw_conbined=retrieve_advanced(query, db, es_bm25, k=30)
-    final_results_rerank=only_rerank(query,final_results, k=2)
-
-    return final_results_rerank
-
-def rag(query):
-    context=hybrid_search(query)
-
-    prompt=f"""
-        Question: {query},
-        Context: {context}
-    """
-
-    rag=strict_json(
-        system_prompt='You are an intelligent assistant specialized in solving multi-hop questions. Use the context to answer the query.',
-        user_prompt=prompt,
-        output_format={'Answer': 'String'},
-        llm=llm
-    )
-    return rag['Answer']
-
-def summarize_answer(query,observed_answers):
-    '''Summarize the answers of sub-questions'''
-    prompt=f"""
-        Question: {query},
-        Observed Sub-question Answers: {observed_answers}
-    """
-
-    summary=strict_json(
-        system_prompt='You are an intelligent assistant specialized in solving multi-hop questions. Summarize the sub-question answers and give your final answer to the original question.',
-        user_prompt=prompt,
-        output_format={'Answer': 'String'},
-        llm=llm
-    )
-    return summary['Answer']
 
 def main():
-    #define query
-    query="As of August 4, 2024, in what state was the first secretary of the latest United States federal executive department born?"
+    i=1
+    q,a,docs=get_doc_list(i)
+    db_name=f"q{i}_contextual_db"
+    load_documents(docs,db_name)
+    # index_documents(db_name)
+    # gen_answer=hybrid_rag_run(q,db_name)
+    # print(f"Question: {q}")
+    # print(f"Answer: {a}")
+    # print(f"Generated Answer: {gen_answer}")
 
-    #init agent
-    my_agent = Agent('Helpful assistant', "Agent to search context", llm = llm)
-    my_agent.assign_functions(function_list = [rag])
-    my_agent.status()
-    my_agent.reset()
-
-    #split query
-    sub_query = split_query(query)
-    print(sub_query)
-
-    end_flag = False
-    output = []
-    while not end_flag:
-        print(sub_query[0])
-        answer = my_agent.run(sub_query[0])
-        print(answer)
-        output.append({sub_query[0]:answer[-1]})
-        #refine query
-        refined_query,end_flag = refine_query(sub_query,output)
-        print(refined_query)
-        print(end_flag)
-        sub_query = refined_query
-    
-    print(output)
-    final_answer = summarize_answer(query,output)
-    print("Final Answer:",final_answer)
-
-def test_no_rag():
-    query="As of August 4, 2024, in what state was the first secretary of the latest United States federal executive department born?"
-    print("Query:",query)
-    system_prompt="You are an intelligent assistant to answer questions"  #, use your knowledge to answer the question.
-    answer=llm(system_prompt,query)
-    print("Answer:",answer)
 if __name__ == "__main__":
     main()
-    # test_no_rag()
-
-
-
-

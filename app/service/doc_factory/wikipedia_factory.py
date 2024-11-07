@@ -26,6 +26,99 @@ class WikipediaFactory:
                 "file_name": file_name
             }
 
+import requests
+
+def download_wikipedia_pdf(page_title, output_filename):
+    formatted_title = page_title.replace(" ", "_")
+    url = f"https://en.wikipedia.org/api/rest_v1/page/pdf/{formatted_title}"
+    
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open(output_filename, 'wb') as file:
+            file.write(response.content)
+        print(f"PDF successfully saved as {output_filename}")
+    else:
+        print(f"Failed to download PDF. Status code: {response.status_code}")
+    return output_filename 
+
+
+def parse_pdf(file_path, output_md_path, endpoint="10.1.17.3:6789"):
+    """
+    解析PDF文档并将结果保存到Markdown文件中。
+
+    参数:
+    - file_path: 本地PDF文件的路径。
+    - output_md_path: 输出Markdown文件的路径。
+    - endpoint_url: 用于解析PDF的API端点URL。默认为 'http://10.1.17.3:6789/parse_document/pdf'。
+
+    返回:
+    - 如果成功，返回True。如果失败，返回False。
+    """
+    endpoint_url = f"http://{endpoint}/parse_document/pdf"
+    try:
+        with open(file_path, 'rb') as file:
+            files = {'file': file}
+            response = requests.post(endpoint_url, files=files)
+            
+            if response.status_code == 200:
+                parsed_data = response.content
+                
+                with open(output_md_path, 'wb') as md_file:
+                    md_file.write(parsed_data)
+                
+                print(f"PDF parsed successfully and saved to {output_md_path}")
+                return True
+            else:
+                print(f"Failed to parse PDF. Status code: {response.status_code}")
+                return False
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return False
+
+
+from markdownify import markdownify
+
+def parse_website_to_markdown(website_url, output_md_path,endpoint="10.1.17.3:6789"):
+    """
+    使用API解析网站并将结果保存到Markdown文件。
+
+    参数:
+    - api_endpoint: 用于解析网站的API端点URL。
+    - website_url: 要解析的网站的URL。
+    - output_md_path: 输出Markdown文件的路径。
+
+    返回:
+    - 如果成功，返回True。如果失败，返回False。
+    """
+    api_endpoint = f"http://{endpoint}/parse_website/parse"
+    try:
+        # 准备请求数据
+        data = {"url": website_url}
+        
+        # 发送POST请求
+        response = requests.post(api_endpoint, json=data)
+        
+        if response.status_code == 200:
+            # 假设API返回的内容为JSON结构的网页HTML
+            parsed_html = response.json().get('html', '')
+
+            # 转换解析后的HTML为Markdown格式
+            markdown_content = markdownify(parsed_html, heading_style="ATX")
+
+            # 将Markdown内容写入文件
+            with open(output_md_path, 'w', encoding='utf-8') as md_file:
+                md_file.write(markdown_content)
+            
+            print(f"Webpage parsed and saved as Markdown in {output_md_path}")
+            return True
+        else:
+            print(f"Failed to parse the website. Status code: {response.status_code}")
+            return False
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return False
+
+
 from urllib.parse import unquote
 
 
@@ -37,6 +130,7 @@ def get_wikipedia_title(url):
     # Replace underscores with spaces if needed
     title = title.replace('_', ' ')
     return title
+
 
 
 def link_to_json_file(wiki_link: str, language: str):
@@ -160,21 +254,25 @@ def combine_chunks_file(db_name:str):
     with open(save_path, 'w') as f:
         json.dump(combined_chunks, f,indent=4, ensure_ascii=False)
 
-    print(f"Combined {len(combined_chunks)} chunks")
+    print(f"Combined {len(combined_chunks)} chunks files")
     return save_path
 
 
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
-    factory = WikipediaFactory()
-    query = "Python programming language"
-    language = "en"
-    file_name, result = factory.get_documents(query, language)
-    if isinstance(result, dict) and result.get("job_status") == "Failed":
-        print(f"Error: {result['message']}")
-        print(f"Details: {result['error']}")
-    else:
-        print(f"Successfully retrieved {len(result)} pages for query '{query}'")
-        print(result[0].page_content)
+    # logging.basicConfig(level=logging.INFO)
+    # factory = WikipediaFactory()
+    # query = "Python programming language"
+    # language = "en"
+    # file_name, result = factory.get_documents(query, language)
+    # if isinstance(result, dict) and result.get("job_status") == "Failed":
+    #     print(f"Error: {result['message']}")
+    #     print(f"Details: {result['error']}")
+    # else:
+    #     print(f"Successfully retrieved {len(result)} pages for query '{query}'")
+    #     print(result[0].page_content)
+    url="https://en.wikipedia.org/wiki/President_of_the_United_States"
+    title=get_wikipedia_title(url)
+    pdf_path=download_wikipedia_pdf(title,"./data/president_of_the_united_states.pdf")
+    parse_pdf(pdf_path,"./data/president_of_the_united_states.md")

@@ -98,11 +98,11 @@ class ContextualVectorDB:
     
         # 执行 API 调用
         response = self.openai_client.invoke(prompt)
-        print(response.content)
+        # print(response.content)
         return response.content, response.response_metadata
 
 
-    def load_data(self, dataset: List[Dict[str, Any]], parallel_threads: int = 1):
+    def load_data(self, dataset: List[Dict[str, Any]], parallel_threads: int = 5):
         if self.embeddings and self.metadata:
             print("Vector database is already loaded. Skipping data loading.")
             return
@@ -117,7 +117,7 @@ class ContextualVectorDB:
 
         def process_chunk(doc, chunk):
             
-            print(f"Processing{chunk['chunk_id']}")
+            # print(f"Processing{chunk['chunk_id']}")
             #for each chunk, produce the context
             contextualized_text, usage = self.situate_context(doc['content'], chunk['content'])
             with self.token_lock:
@@ -143,14 +143,17 @@ class ContextualVectorDB:
         # with ThreadPoolExecutor(max_workers=parallel_threads) as executor:
         #     futures = []
         #     for doc in dataset:
+        #         total_chunks = len(doc['chunks'])
+
         #         for chunk in doc['chunks']:
-        #             time.sleep(1) #to avoid hitting the API rate limit
+        #             # time.sleep(0.1) #to avoid hitting the API rate limit
         #             futures.append(executor.submit(process_chunk, doc, chunk))
-            
+                
         #     for future in tqdm(as_completed(futures), total=total_chunks, desc="Processing chunks"):
         #         result = future.result()
         #         texts_to_embed.append(result['text_to_embed'])
         #         metadata.append(result['metadata'])
+
         for doc in dataset:
             total_chunks = len(doc['chunks'])
             for chunk in tqdm(doc['chunks'],total=total_chunks,desc=f"Processing document {doc['doc_id']}"):
@@ -178,11 +181,11 @@ class ContextualVectorDB:
     def _embed_and_store(self, texts: List[str], data: List[Dict[str, Any]]):
         batch_size = 1
         result = []
-        for i in range(0, len(texts), batch_size):
-            print(f"Processing batch {i // batch_size + 1} of {len(texts) // batch_size + 1}")
+        for i in tqdm(range(0, len(texts), batch_size), desc="Embedding batches"):
+            # print(f"Processing batch {i // batch_size + 1} of {len(texts) // batch_size + 1}")
             batch_embeddings = self.voyage_client.embed(
-                texts[i : i + batch_size],
-                model="voyage-3"
+            texts[i : i + batch_size],
+            model="voyage-3"
             ).embeddings
             result.extend(batch_embeddings)
         self.embeddings = result

@@ -20,7 +20,7 @@ def load_documents(docs_link_list:List[str],db_name:str) -> None:
     if not os.path.exists(docs_dir):
         os.makedirs(docs_dir)
     else:
-        user_input = input("Directory already exists. Do you want to continue? (y/n): ")
+        user_input = input(f"Directory '{db_name}' already exists. Do you want to continue? (y/n): ")
         if user_input.lower() != 'y':
             return
     chunks_dir=os.path.join(db_path,"chunks")
@@ -56,11 +56,23 @@ def hybrid_rag_run(query:str,db_name:str):
 
 
 def main():
-    i=1
-    q,a,docs=get_doc_list(i)
-    db_name=f"q{i}_contextual_db"
-    load_documents(docs,db_name)
-    # index_documents(db_name)
+    for i in range (18,19):
+    # i=1
+        q,a,docs=get_doc_list(i)
+        db_name=f"q{i}_contextual_db"
+        load_documents(docs,db_name)
+        index_documents(db_name)
+    # gen_answer=hybrid_rag_run(q,db_name)
+    # print(f"Question: {q}")
+    # print(f"Answer: {a}")
+    # print(f"Generated Answer: {gen_answer}")
+
+    # for i in range (2,10):
+    # i=19
+    # q,a,docs=get_doc_list(i)
+    # db_name=f"q{i}_contextual_db"
+    # # load_documents(docs,db_name)
+    # # index_documents(db_name)
     # gen_answer=hybrid_rag_run(q,db_name)
     # print(f"Question: {q}")
     # print(f"Answer: {a}")

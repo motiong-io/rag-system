@@ -19,6 +19,7 @@ matplotlib = "^3.9.2"
 cohere = "^5.11.2"
 datasets = "^3.1.0"
 langchain-openai = "^0.2.5"
+markdownify = "^0.13.1"
 
 
 

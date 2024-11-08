@@ -54,13 +54,23 @@ def hybrid_rag_run(query:str,db_name:str):
 #     print(f"Result: {generated_result}")
 
 
+def test_rag(i):
+    q,a,docs=get_doc_list(i)
+    db_name=f"q{i}_contextual_db"
+    # load_documents(docs,db_name)
+    # index_documents(db_name)
+    gen_answer=hybrid_rag_run(q,db_name)
+    print(f"Question: {q}")
+    print(f"True Answer: {a}")
+    print(f"Generated Answer: {gen_answer}")
+
 
 def main():
     for i in range (18,19):
     # i=1
         q,a,docs=get_doc_list(i)
         db_name=f"q{i}_contextual_db"
-        load_documents(docs,db_name)
+        # load_documents(docs,db_name)
         index_documents(db_name)
     # gen_answer=hybrid_rag_run(q,db_name)
     # print(f"Question: {q}")
@@ -68,15 +78,8 @@ def main():
     # print(f"Generated Answer: {gen_answer}")
 
     # for i in range (2,10):
-    # i=19
-    # q,a,docs=get_doc_list(i)
-    # db_name=f"q{i}_contextual_db"
-    # # load_documents(docs,db_name)
-    # # index_documents(db_name)
-    # gen_answer=hybrid_rag_run(q,db_name)
-    # print(f"Question: {q}")
-    # print(f"Answer: {a}")
-    # print(f"Generated Answer: {gen_answer}")
+    
 
 if __name__ == "__main__":
-    main()
+    # main()
+    test_rag(3)

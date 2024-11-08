@@ -7,6 +7,7 @@ from app.service.rerank import only_rerank
 from functools import partial
 from typing import Callable
 
+
 def llm(system_prompt: str, user_prompt: str) -> str:
     "Local llama3.1 70B model"
     from openai import OpenAI
@@ -29,7 +30,7 @@ def split_query(query)->list:
         output_format={'Sub-queries': 'Array of sub-queries'},
         llm=llm
     )
-    print(split_query['Sub-queries'][0])
+    # print(split_query['Sub-queries'][0])
     return split_query['Sub-queries']
 
 def refine_query(query,subquery_list:list,observation):
@@ -65,7 +66,13 @@ def summarize_answer(query,observed_answers):
     """
 
     summary=strict_json(
-        system_prompt='You are an intelligent assistant specialized in solving multi-hop questions. Summarize the sub-question answers and give your final answer to the original question.',
+        system_prompt="""You are an intelligent assistant specialized in solving multi-hop questions.
+        Summarize the sub-question answers and give your final answer to the original question with the follow steps:
+            1.Take a deep breath, understand the original question fully.
+            2. All the sub-questions are from your analysis to solve the complex problem, you should read them patiently.
+            3. Analyze the relationships between orginal question and the sub-question Q&A.
+            4. Give the final answer to the original qustion. 
+        """,
         user_prompt=prompt,
         output_format={'Answer': 'String'},
         llm=llm
@@ -103,6 +110,14 @@ def rag(query,db_name):
 def partial_init_rag(db_name:str):
     return partial(rag,db_name=db_name)
 
+import re
+def extract_content(s):
+    match = re.match(r"\{\s*'output_1'\s*:\s*'(.*)'\s*\}", s)
+    if match:
+        return match.group(1)
+    else:
+        return s 
+
 class HybridRagService:
     def __init__(self,rag_function:Callable) -> None:
         self.rag_function = rag_function
@@ -114,32 +129,41 @@ class HybridRagService:
         my_agent.status()
         my_agent.reset()
 
+        print("====== Start Task ======")
+        print("Question: ",query)
+
         #split query
         sub_query = split_query(query)
-        print(sub_query)
+        print("====== Split Query ======")
+        print("Sub-query list: ",sub_query)
 
         end_flag = False
         output = []
-        max_loop = 100
+        max_loop = 10
         while not end_flag and max_loop > 0:
-            print(sub_query[0])
+            print(f"====== Start Loop ({max_loop} left)======")
+            print("Sub-query:",sub_query[0])
             answer = my_agent.run(sub_query[0])
-            print(answer)
-            output.append({sub_query[0]:answer[-1]})
+            
+            output.append({sub_query[0]:extract_content(str(answer[-1]))})
             #refine query
             refined_query,end_flag = refine_query(query,sub_query,output)
-            print(refined_query)
-            print(end_flag)
+            print("====== Update Split Query ======")
+            print("Sub-query list",refined_query)
+            print("End or not:",end_flag)
             sub_query = refined_query
             max_loop -= 1
         
-        print(output)
+            if max_loop <=0:
+                print("Reach max loop limit: ",max_loop)
+
+        print("Observation:",output)
         final_answer = summarize_answer(query,output)
         refined_answer = summarize_answer(sub_query,output)
         print("Final Answer:",final_answer)
         print("Refined Question:",str(sub_query))
         print("Refined Answer:",refined_answer)
-        return final_answer+"."+refined_answer
+        return str(final_answer)
 
 
 def main():

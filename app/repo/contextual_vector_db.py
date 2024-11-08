@@ -29,8 +29,10 @@ class ContextualVectorDB:
         self.voyage_client = voyageai.Client(api_key=voyage_api_key)
         self.anthropic_client = anthropic.Anthropic(api_key=anthropic_api_key)
         # self.openai_client = ChatOpenAI(model="/data/xinference_llm/.cache/modelscope/hub/LLM-Research/Meta-Llama-3___1-70B-Instruct-AWQ-INT4",api_key="api_key", base_url="http://10.1.3.6:8001/v1",max_tokens=30000)
-        self.openai_client = ChatOpenAI(model="gpt-4o-mini",api_key=openai_api_key)
-        self.embedding_client = openai.Client(api_key=openai_api_key)
+        # self.openai_client = ChatOpenAI(model="gpt-4o-mini",api_key=openai_api_key)
+        self.openai_client = ChatOpenAI(model="gpt-4o-mini",api_key=openai_api_key,base_url="http://api-gw.motiong.net:5000/api/openai/ve/v1")
+        # self.embedding_client = openai.Client(api_key=openai_api_key)
+        self.embedding_client = openai.Client(api_key=openai_api_key,base_url="http://api-gw.motiong.net:5000/api/openai/ve/v1")
         self.name = name
         self.embeddings = []
         self.metadata = []

@@ -7,13 +7,28 @@ from app.service.rerank import only_rerank
 from functools import partial
 from typing import Callable
 
+from openai import OpenAI
 
+# client = OpenAI(base_url='http://10.1.3.6:8001/v1', api_key='api_key')
+# def llm(system_prompt: str, user_prompt: str) -> str:
+#     "Local llama3.1 70B model"
+#     response = client.chat.completions.create(
+#         model='/data/xinference_llm/.cache/modelscope/hub/LLM-Research/Meta-Llama-3___1-70B-Instruct-AWQ-INT4',
+#         temperature = 0,
+#         messages=[
+#             {"role": "system", "content": system_prompt},
+#             {"role": "user", "content": user_prompt}
+#         ]
+#     )
+#     return response.choices[0].message.content
+
+import os
+openai_api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(model="gpt-4o-mini",api_key=openai_api_key,base_url="http://api-gw.motiong.net:5000/api/openai/ve/v1")
 def llm(system_prompt: str, user_prompt: str) -> str:
-    "Local llama3.1 70B model"
-    from openai import OpenAI
-    client = OpenAI(base_url='http://10.1.3.6:8001/v1', api_key='api_key')
+    "Openai gpt-4o-mini model"
     response = client.chat.completions.create(
-        model='/data/xinference_llm/.cache/modelscope/hub/LLM-Research/Meta-Llama-3___1-70B-Instruct-AWQ-INT4',
+        model='gpt-4o-mini',
         temperature = 0,
         messages=[
             {"role": "system", "content": system_prompt},
@@ -21,6 +36,9 @@ def llm(system_prompt: str, user_prompt: str) -> str:
         ]
     )
     return response.choices[0].message.content
+
+def a_llm():
+    pass
 
 
 def split_query(query)->list:
@@ -112,11 +130,12 @@ def partial_init_rag(db_name:str):
 
 import re
 def extract_content(s):
-    match = re.match(r"\{\s*'output_1'\s*:\s*'(.*)'\s*\}", s)
+    match = re.match(r"\{\s*'output_1'\s*:\s*([^{}]+)\s*\}", s)
     if match:
-        return match.group(1)
+        content = match.group(1).strip().strip("'\"")
+        return content
     else:
-        return s 
+        return s
 
 class HybridRagService:
     def __init__(self,rag_function:Callable) -> None:
@@ -124,7 +143,7 @@ class HybridRagService:
 
     def run(self,query:str):
         #init agent
-        my_agent = Agent('Helpful assistant', "Agent to search context",summarise_subtasks_count=100,llm = llm, )
+        my_agent = Agent('Helpful assistant', "Agent to search context",summarise_subtasks_count=100,llm = llm)
         my_agent.assign_functions(function_list = [self.rag_function])
         my_agent.status()
         my_agent.reset()
@@ -164,6 +183,9 @@ class HybridRagService:
         print("Refined Question:",str(sub_query))
         print("Refined Answer:",refined_answer)
         return str(final_answer)
+
+    async def a_run():
+        pass
 
 
 def main():

@@ -52,10 +52,18 @@ class PickleManager:
 
 # 示例使用
 if __name__ == "__main__":
-    pkl_path="data/q0_contextual_db/contextual_vector_db.pkl"
+    pkl_path="data/q20_contextual_db/contextual_vector_db.pkl"
     manager = PickleManager(pkl_path)
     # manager.add_entry('key1', 'value1')
     # manager.update_entry('key1', 'new_value1')
     # print(manager.retrieve_entry('key1'))
     # manager.delete_entry('key1')
-    print(dict(manager.list_entries()).keys())
+    # print(dict(manager.list_entries())['metadata'][-1])
+    doc_ids = set()
+    data= dict(manager.list_entries())
+    for entry in data['metadata']:
+        doc_id = entry.get('doc_id')
+        if doc_id is not None:
+            doc_ids.add(doc_id)
+
+    print(doc_ids)

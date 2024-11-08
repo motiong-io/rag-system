@@ -80,7 +80,7 @@ def create_elasticsearch_bm25_index(db: ContextualVectorDB):
     return es_bm25
 
 def retrieve_advanced(query: str, db: ContextualVectorDB, es_bm25: ElasticsearchBM25, k: int, semantic_weight: float = 0.8, bm25_weight: float = 0.2):
-    num_chunks_to_recall = 150
+    num_chunks_to_recall = 50
 
     # Semantic search
     semantic_results = db.search(query, k=num_chunks_to_recall)
@@ -89,7 +89,7 @@ def retrieve_advanced(query: str, db: ContextualVectorDB, es_bm25: Elasticsearch
     # BM25 search using Elasticsearch
     bm25_results = es_bm25.search(query, k=num_chunks_to_recall)
     ranked_bm25_chunk_ids = [(result['doc_id'], result['original_index']) for result in bm25_results]
-
+    # print(ranked_bm25_chunk_ids)
     raw_conbined_results = ranked_chunk_ids + ranked_bm25_chunk_ids
 
     # Combine results
@@ -121,7 +121,9 @@ def retrieve_advanced(query: str, db: ContextualVectorDB, es_bm25: Elasticsearch
     semantic_count = 0
     bm25_count = 0
     for chunk_id in sorted_chunk_ids[:k]:
+        # print(chunk_id)   #ERROR
         chunk_metadata = next(chunk for chunk in db.metadata if chunk['doc_id'] == chunk_id[0] and chunk['original_index'] == chunk_id[1])
+        # print(chunk_metadata)
         is_from_semantic = chunk_id in ranked_chunk_ids
         is_from_bm25 = chunk_id in ranked_bm25_chunk_ids
         final_results.append({

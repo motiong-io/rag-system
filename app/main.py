@@ -66,20 +66,27 @@ def test_rag(i):
 
 
 def main():
-    for i in range (18,19):
+    for i in range (21,22):
     # i=1
         q,a,docs=get_doc_list(i)
         db_name=f"q{i}_contextual_db"
-        # load_documents(docs,db_name)
+        load_documents(docs,db_name)
         index_documents(db_name)
-    # gen_answer=hybrid_rag_run(q,db_name)
-    # print(f"Question: {q}")
-    # print(f"Answer: {a}")
-    # print(f"Generated Answer: {gen_answer}")
+        gen_answer=hybrid_rag_run(q,db_name)
+        print(f"Question: {q}")
+        print(f"Answer: {a}")
+        print(f"Generated Answer: {gen_answer}")
 
     # for i in range (2,10):
     
 
 if __name__ == "__main__":
-    # main()
-    test_rag(3)
+    main()
+    # test_rag(21)
+    # for i in range(17,18):
+    #     test_rag(i)
+    #     input_i=input("input 's' to stop,'r' to rerun, others to continue: ")
+    #     if input_i == 'r':
+    #         i=i-1
+    #     elif input_i =='s':
+    #         break

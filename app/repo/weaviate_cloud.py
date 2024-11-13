@@ -1,19 +1,17 @@
 from typing import List
 import weaviate
 from weaviate.classes.init import Auth
-
+from app.config import env
 
 class WeaviateClient:
-    def __init__(self, url, api_key):
-        self.url = url
-        self.api_key = api_key
-        self.client = None
-
-    def connect(self):
+    def __init__(self):
+        self.url = env.weaviate_url
+        self.api_key = env.weaviate_api_key
         self.client = weaviate.connect_to_weaviate_cloud(
             cluster_url=self.url,
             auth_credentials=Auth.api_key(self.api_key),
         )
+
 
     def is_ready(self):
         if self.client:
@@ -36,11 +34,11 @@ class WeaviateClient:
         else:
             raise Exception("Client not connected")
         
+
+        
             
 
 if __name__ == "__main__":
-    from app.config import env
     client = WeaviateClient()
-    client.connect()
     print(client.is_ready())
     client.close()

@@ -24,7 +24,7 @@ from openai import OpenAI
 
 import os
 openai_api_key = os.getenv("OPENAI_API_KEY")
-client = OpenAI(model="gpt-4o-mini",api_key=openai_api_key,base_url="http://api-gw.motiong.net:5000/api/openai/ve/v1")
+client = OpenAI(api_key=openai_api_key,base_url="http://api-gw.motiong.net:5000/api/openai/ve/v1")
 def llm(system_prompt: str, user_prompt: str) -> str:
     "Openai gpt-4o-mini model"
     response = client.chat.completions.create(

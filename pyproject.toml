@@ -20,6 +20,7 @@ cohere = "^5.11.2"
 datasets = "^3.1.0"
 langchain-openai = "^0.2.5"
 markdownify = "^0.13.1"
+mwparserfromhell = "^0.6.6"
 
 
 

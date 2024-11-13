@@ -14,6 +14,7 @@ from langchain_openai.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema import SystemMessage, HumanMessage
 import openai
+from app.repo.weaviate_cloud import WeaviateClient
 
 load_dotenv()
 
@@ -33,11 +34,13 @@ class ContextualVectorDB:
         self.openai_client = ChatOpenAI(model="gpt-4o-mini",api_key=openai_api_key,base_url="http://api-gw.motiong.net:5000/api/openai/ve/v1")
         # self.embedding_client = openai.Client(api_key=openai_api_key)
         self.embedding_client = openai.Client(api_key=openai_api_key,base_url="http://api-gw.motiong.net:5000/api/openai/ve/v1")
+        self.weaviate_client = WeaviateClient()
         self.name = name
         self.embeddings = []
         self.metadata = []
         self.query_cache = {}
         self.db_path = f"./data/{name}/contextual_vector_db.pkl"
+        self.weaviate_collection_name = "ContextualVectors"
 
         self.token_counts = {
             'input': 0,
@@ -239,6 +242,10 @@ class ContextualVectorDB:
         os.makedirs(os.path.dirname(self.db_path), exist_ok=True)
         with open(self.db_path, "wb") as file:
             pickle.dump(data, file)
+
+    def save_weaviate(self):
+        for i in range(len(self.embeddings)):
+            self.weaviate_client.create_object(self.weaviate_collection_name, self.metadata[i], self.embeddings[i])
 
     def load_db(self):
         if not os.path.exists(self.db_path):

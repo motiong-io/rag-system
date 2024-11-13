@@ -257,6 +257,49 @@ def combine_chunks_file(db_name:str):
     print(f"Combined {len(combined_chunks)} chunks files")
     return save_path
 
+import mwparserfromhell
+def get_wikipedia_page(title):
+    # Wikimedia API endpoint
+    url = "https://en.wikipedia.org/w/api.php"
+
+    # Define the parameters for the request
+    params = {
+        "action": "query",
+        "format": "json",
+        "titles": title,
+        "prop": "revisions",
+        "rvprop": "content",
+        "rvslots": "main"  # This specifies which content slot to retrieve, typically "main"
+    }
+
+    # Send the GET request to the API
+    response = requests.get(url, params=params)
+    
+    # Parse the JSON response
+    data = response.json()
+    
+    # Extract the page content
+    pages = data['query']['pages']
+    for page_id, page in pages.items():
+        if 'revisions' in page:
+            # Get the wikitext content
+            wikitext = page['revisions'][0]['slots']['main']['*']
+            
+            # Parse wikitext using mwparserfromhell
+            wikicode = mwparserfromhell.parse(wikitext)
+            
+            # Extract all the tables from the page
+            tables = wikicode.filter_tags(matches=lambda node: node.tag == 'table')
+            
+            # print("Full Article Content:")
+            # print(wikicode.strip_code())
+
+            print("\nExtracted Tables:")
+            # for table in tables:
+            #     print(table)
+            print(tables[1])
+        else:
+            print("No content available for this page.")
 
 
 
@@ -272,7 +315,12 @@ if __name__ == "__main__":
     # else:
     #     print(f"Successfully retrieved {len(result)} pages for query '{query}'")
     #     print(result[0].page_content)
-    url="https://en.wikipedia.org/wiki/President_of_the_United_States"
-    title=get_wikipedia_title(url)
-    pdf_path=download_wikipedia_pdf(title,"./data/president_of_the_united_states.pdf")
-    parse_pdf(pdf_path,"./data/president_of_the_united_states.md")
+
+
+    # url="https://en.wikipedia.org/wiki/President_of_the_United_States"
+    # title=get_wikipedia_title(url)
+    # pdf_path=download_wikipedia_pdf(title,"./data/president_of_the_united_states.pdf")
+    # parse_pdf(pdf_path,"./data/president_of_the_united_states.md")
+
+
+    get_wikipedia_page("List_of_tallest_buildings_in_New_York_City")

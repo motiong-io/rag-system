@@ -23,6 +23,7 @@ def load_documents(docs_link_list:List[str],db_name:str) -> None:
         user_input = input(f"Directory '{db_name}' already exists. Do you want to continue? (y/n): ")
         if user_input.lower() != 'y':
             return
+        
     chunks_dir=os.path.join(db_path,"chunks")
     if not os.path.exists(chunks_dir):
         os.makedirs(chunks_dir)

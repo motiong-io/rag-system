@@ -34,7 +34,7 @@ class ContextualVectorDB:
         self.openai_client = ChatOpenAI(model="gpt-4o-mini",api_key=openai_api_key,base_url="http://api-gw.motiong.net:5000/api/openai/ve/v1")
         # self.embedding_client = openai.Client(api_key=openai_api_key)
         self.embedding_client = openai.Client(api_key=openai_api_key,base_url="http://api-gw.motiong.net:5000/api/openai/ve/v1")
-        self.weaviate_client = WeaviateClient()
+        # self.weaviate_client = WeaviateClient()
         self.name = name
         self.embeddings = []
         self.metadata = []
@@ -243,9 +243,9 @@ class ContextualVectorDB:
         with open(self.db_path, "wb") as file:
             pickle.dump(data, file)
 
-    def save_weaviate(self):
-        for i in range(len(self.embeddings)):
-            self.weaviate_client.create_object(self.weaviate_collection_name, self.metadata[i], self.embeddings[i])
+    # def save_weaviate(self):
+    #     for i in range(len(self.embeddings)):
+    #         self.weaviate_client.create_object(self.weaviate_collection_name, self.metadata[i], self.embeddings[i])
 
     def load_db(self):
         if not os.path.exists(self.db_path):

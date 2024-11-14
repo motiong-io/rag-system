@@ -9,26 +9,11 @@ from typing import Callable
 
 from openai import OpenAI
 
-# client = OpenAI(base_url='http://10.1.3.6:8001/v1', api_key='api_key')
-# def llm(system_prompt: str, user_prompt: str) -> str:
-#     "Local llama3.1 70B model"
-#     response = client.chat.completions.create(
-#         model='/data/xinference_llm/.cache/modelscope/hub/LLM-Research/Meta-Llama-3___1-70B-Instruct-AWQ-INT4',
-#         temperature = 0,
-#         messages=[
-#             {"role": "system", "content": system_prompt},
-#             {"role": "user", "content": user_prompt}
-#         ]
-#     )
-#     return response.choices[0].message.content
-
-import os
-openai_api_key = os.getenv("OPENAI_API_KEY")
-client = OpenAI(api_key=openai_api_key,base_url="http://api-gw.motiong.net:5000/api/openai/ve/v1")
+client = OpenAI(base_url='http://10.1.3.6:8001/v1', api_key='api_key')
 def llm(system_prompt: str, user_prompt: str) -> str:
-    "Openai gpt-4o-mini model"
+    "Local llama3.1 70B model"
     response = client.chat.completions.create(
-        model='gpt-4o-mini',
+        model='/data/xinference_llm/.cache/modelscope/hub/LLM-Research/Meta-Llama-3___1-70B-Instruct-AWQ-INT4',
         temperature = 0,
         messages=[
             {"role": "system", "content": system_prompt},
@@ -37,8 +22,23 @@ def llm(system_prompt: str, user_prompt: str) -> str:
     )
     return response.choices[0].message.content
 
-def a_llm():
-    pass
+# import os
+# openai_api_key = os.getenv("OPENAI_API_KEY")
+# client = OpenAI(api_key=openai_api_key,base_url="http://api-gw.motiong.net:5000/api/openai/ve/v1")
+# def llm(system_prompt: str, user_prompt: str) -> str:
+#     "Openai gpt-4o-mini model"
+#     response = client.chat.completions.create(
+#         model='gpt-4o-mini',
+#         temperature = 0,
+#         messages=[
+#             {"role": "system", "content": system_prompt},
+#             {"role": "user", "content": user_prompt}
+#         ]
+#     )
+#     return response.choices[0].message.content
+
+# def a_llm():
+#     pass
 
 
 def split_query(query)->list:
@@ -184,8 +184,8 @@ class HybridRagService:
         print("Refined Answer:",refined_answer)
         return str(final_answer)
 
-    async def a_run():
-        pass
+    # async def a_run():
+    #     pass
 
 
 def main():

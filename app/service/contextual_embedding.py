@@ -25,6 +25,7 @@ class ContextualEmbeddingService:
             openai_api_key = env.openai_api_key
 
         self.voyage_client = voyageai.Client(api_key=voyage_api_key) # Embedding service 
+        self.embedding_model = "voyage-3"
         self.openai_client = ChatOpenAI(model="gpt-4o-mini",api_key=openai_api_key,base_url="http://api-gw.motiong.net:5000/api/openai/ve/v1") # Contextualization service
         self.weaviate_client = WeaviateClient()
         self.weaviate_collection_name = "ContextualVectors"
@@ -60,7 +61,6 @@ class ContextualEmbeddingService:
     
 
     def process_chunk(self, doc, chunk):
-        
         contextualized_text, usage = self.situate_context(doc['content'], chunk['content'])
 
         return {
@@ -81,7 +81,7 @@ class ContextualEmbeddingService:
         data = self.process_chunk(doc, chunk)
         vector = self.voyage_client.embed(
             data['text_to_embed'],
-            model="voyage-3"
+            model=self.embedding_model
             ).embeddings
         
         self.weaviate_client.create_object(self.weaviate_collection_name, data['metadata'], vector)
@@ -92,7 +92,6 @@ class ContextualEmbeddingService:
             for chunk in doc['chunks']:
                 self.embed_and_save_chunk(doc, chunk)
         return True
-
 
 
 

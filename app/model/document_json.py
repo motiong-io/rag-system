@@ -25,6 +25,7 @@ class DocumentJSON:
     def from_dict(cls, data):
         return cls(
             page_content=data.get("page_content"),
-            metadata=data.get("metadata"),
+            title=data.get("metadata")['title'],
+            url=data.get("metadata")['url']
         )
 

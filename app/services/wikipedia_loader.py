@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from markdownify import markdownify as md
 import re
 from app.model.document_json import DocumentJSON
-
+from app.utils.md5hash import md5hash
 
 class WikipediaLoader:
     """
@@ -13,6 +13,7 @@ class WikipediaLoader:
     """
     def __init__(self, url):
         self.url = url
+        self.uuid = md5hash(url)
         self.soup = self.get_soup()
         self.title = self.get_title()
         self.body_content = self.get_body_content()

@@ -1,3 +1,3 @@
 # rag-system
 
-![alt text](image.png)
+![alt text](asset/img/image.png)

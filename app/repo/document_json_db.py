@@ -1,4 +1,4 @@
-from app.model.document_json import DocumentJSON
+from app.model.document_model import DocumentJSON
 import os
 import json
 from app.utils.md5hash import md5hash

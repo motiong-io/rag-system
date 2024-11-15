@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from markdownify import markdownify as md
 import re
-from app.model.document_json import DocumentJSON
+from app.model.document_model import DocumentJSON,Document
 from app.utils.md5hash import md5hash
 
 class WikipediaLoader:
@@ -16,6 +16,7 @@ class WikipediaLoader:
         self.uuid = md5hash(url)
         self.soup = self.get_soup()
         self.title = self.get_title()
+        self.formated_title = self.title.replace(' ', '_')
         self.body_content = self.get_body_content()
         self.markdown_content = self.parse_content()
     
@@ -50,11 +51,11 @@ class WikipediaLoader:
             return consolidated_text
         
         def replace_steps(text: str) -> str:
-            # 使用 re.sub 去除引用标记 `\\[1]`, `\\[2]`, 等数字标记
+            # Use re.sub to remove citation markers `\\[1]`, `\\[2]`, etc.
             result = re.sub(r'\\\[\d+\]', '', text)
-            # 用正则表达式移除像 `\\[A]`, `\\[B]`, `\\[C]` 等字母标记
+            # Use re.sub to remove citation markers`\\[A]`, `\\[B]`, `\\[C]` , etc.
             result = re.sub(r'\\\[[A-Z]\]', '', result)
-            # 替换掉 \u00a0
+            # remove \u00a0
             result = result.replace('\u00a0', ' ')
             result = result.replace(r'\-', '-')
             return result
@@ -91,11 +92,28 @@ class WikipediaLoader:
             print(f"Markdown content saved to {filename}")
 
     def save_to_document_json(self, filename):
+        """Will be removed in the next version."""
         """Return a DocumentJSON object with the parsed content."""
         with open(filename, 'w', encoding='utf-8') as f:
-            doc = DocumentJSON(self.markdown_content, self.title, self.url)
-            doc.save_json(filename)
+            docjson = DocumentJSON(self.markdown_content, self.title, self.url)
+            docjson.save_json(filename)
             print(f"Document saved to {filename}")  
+
+    def to_markdown_content(self):
+        """Return the parsed content as markdown."""
+        return self.markdown_content
+
+    def to_document_json(self):
+        """Will be removed in the next version."""
+        """Return a DocumentJSON object with the parsed content."""
+        docjson = DocumentJSON(self.markdown_content, self.title, self.url)
+        return docjson
+    
+    def to_document(self)->Document:
+        """Return a Document object without chunks."""
+        doc = Document(self.formated_title, self.uuid, self.markdown_content)
+        return doc
+
 
 
 def main():

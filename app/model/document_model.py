@@ -51,6 +51,18 @@ class Document:
             json.dump(self.to_dict(), f)
         print(f"Document saved to {filename}")
 
+    @classmethod
+    def load_json(cls, filename: str):
+        with open(filename, "r", encoding='utf-8') as f:
+            data = json.load(f)
+        chunks = [Chunk(**chunk) for chunk in data.get('chunks', [])]
+        return cls(
+            doc_id=data['doc_id'],
+            original_uuid=data['original_uuid'],
+            content=data['content'],
+            chunks=chunks
+        )
+
 
 
 class DocumentJSON:

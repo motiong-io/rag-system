@@ -1986,6 +1986,22 @@ test = ["jaraco.test (>=5.4)", "pytest (>=6,!=8.1.*)", "zipp (>=3.17)"]
 type = ["pytest-mypy"]
 
 [[package]]
+name = "infinity-client"
+version = "0.0.70"
+description = "A client library for accessing ♾️ Infinity - Embedding Inference Server"
+optional = false
+python-versions = "<4.0,>=3.8"
+files = [
+    {file = "infinity_client-0.0.70-py3-none-any.whl", hash = "sha256:53409cf6a64bad18d044474178eb9d0c389142acae47a068ab7ba5a6821f4b2b"},
+    {file = "infinity_client-0.0.70.tar.gz", hash = "sha256:10ac54205c898817c1d051acb4fc7515013561da209b8f3909c22ec5bc7a7bc5"},
+]
+
+[package.dependencies]
+attrs = ">=21.3.0"
+httpx = ">=0.20.0,<0.28.0"
+python-dateutil = ">=2.8.0,<3.0.0"
+
+[[package]]
 name = "ipykernel"
 version = "6.29.5"
 description = "IPython Kernel for Jupyter"
@@ -6015,4 +6031,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "3df18e05602c4382c633e38dd988c4429df942342ef5a8932be590896ba8bc47"
+content-hash = "a2b90b1bb48486f1463b3b122ea8dcf1f07e21b5d02f47eabca438f475e38aa5"

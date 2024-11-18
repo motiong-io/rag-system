@@ -10,6 +10,7 @@ class EmbeddingObjProperties:
         self.original_index = original_index
         self.original_content = original_content
         self.contextualized_text = contextualized_text
+        self.text_to_embed = original_content + "\n\n" + contextualized_text
 
     def to_dict(self):
         return {
@@ -18,7 +19,8 @@ class EmbeddingObjProperties:
             "chunk_id": self.chunk_id,
             "original_index": self.original_index,
             "original_content": self.original_content,
-            "contextualized_text": self.contextualized_text
+            "contextualized_text": self.contextualized_text,
+            "text_to_embed": self.text_to_embed
         }
 
 
@@ -31,21 +33,21 @@ class EmbeddingObj:
     def to_dict(self):
         return {
             "vector": self.vector,
-            "properties": self.properties.to_dict()
+            "properties": self.properties.to_dict(),
         }
 
 
 class Embeddings:
     """A list of EmbeddingObj for batch import to the database"""
-    def __init__(self) -> None:
-        self.embeddings:List[EmbeddingObj] = []
+    def __init__(self, embeddings: List[EmbeddingObj] = None) -> None:
+        self.embeddings = embeddings if embeddings is not None else []
     
     def add_embedding(self, embedding:EmbeddingObj):
         self.embeddings.append(embedding)
     
     def to_dict(self)->dict:
         if len(self.embeddings) == 0:
-            return {}
+            return []
         else:
             return [embedding.to_dict() for embedding in self.embeddings]
     
@@ -53,5 +55,13 @@ class Embeddings:
         with open(filename,encoding='utf-8', mode="w") as f:
             json.dump(self.to_dict(), f)
             print(f"Embeddings saved to {filename}")
+
+    @classmethod
+    def load_json(cls, filename: str):
+        with open(filename, encoding='utf-8', mode="r") as f:
+            data = json.load(f)
+        embeddings = [EmbeddingObj(**embedding) for embedding in data]
+        return cls(embeddings=embeddings)
+
 
     

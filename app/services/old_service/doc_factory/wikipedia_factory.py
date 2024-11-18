@@ -178,7 +178,7 @@ def wikilink_to_docs_json(wiki_link:str,save_dir:str):
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from typing import List
 import hashlib
-from app.service.doc_factory.data_model import Document
+from app.services.old_service.doc_factory.data_model import Document
 import json
 import os
 

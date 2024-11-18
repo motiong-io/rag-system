@@ -22,6 +22,9 @@ class EmbeddingObjProperties:
             "contextualized_text": self.contextualized_text,
             "text_to_embed": self.text_to_embed
         }
+    
+    def get(self, key):
+        return getattr(self,key)
 
 
 class EmbeddingObj:

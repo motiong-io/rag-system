@@ -2,8 +2,8 @@
 from agentjo import *
 from app.config import env
 from app.repo.contextual_vector_db import ContextualVectorDB
-from app.service.bm25 import create_elasticsearch_bm25_index,retrieve_advanced
-from app.service.rerank import only_rerank
+from app.services.old_service.bm25 import create_elasticsearch_bm25_index,retrieve_advanced
+from app.services.old_service.rerank import only_rerank
 from functools import partial
 from typing import Callable
 

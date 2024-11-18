@@ -17,8 +17,6 @@ def load_docs():
     print(docs_db.list())
 
 
-
-
 def main():
     for i in range (1,2):
         q,a,docs=get_QAD(i)

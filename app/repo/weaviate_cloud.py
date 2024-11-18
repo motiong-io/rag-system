@@ -42,14 +42,14 @@ class WeaviateClient:
             with collection.batch.dynamic() as batch:
                 for i, data_row in enumerate(tqdm(embeddings.embeddings, desc="Batch Importing")):
                     batch.add_object(
-                        uuid=md5hash(data_row.properties['text_to_embed']),
+                        uuid=md5hash(data_row.properties.get('text_to_embed')),
                         properties=data_row.properties,
                         vector=data_row.vector,
                     )
         else:
             raise Exception("Client not connected")
         
-    def search_by_vector(self, collection_name:str, query_vector:List[float], k:int):
+    def vector_search(self, collection_name:str, query_vector:List[float], k:int):
         if self.client:
             collection = self.client.collections.get(collection_name)
             response = collection.query.near_vector(

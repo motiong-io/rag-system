@@ -45,7 +45,7 @@ class EmbeddingCreator:
 def test_embed_text():
     text_list = ["This is a test text A"]
     embed_creator = EmbeddingCreator()
-    vector_list = embed_creator.embed_text(text_list)
+    vector_list = embed_creator.embed_text_list(text_list)
     print(len(vector_list))
 
 def test_create_embeddings_for_document():

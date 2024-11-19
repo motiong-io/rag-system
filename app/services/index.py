@@ -9,6 +9,7 @@ class KnowledgeIndexService:
         self.document_dir="assets/dataset/document_json" if save_document else None
         self.embeddings_dir="assets/dataset/embeddings_list" if save_embeddings else None
 
+    
     def index_from_wikipedia_url(self, wikipedia_url:str) -> Document:
         # Load the wikipedia page to document
         wikipedia_loader = WikipediaLoader(wikipedia_url)
@@ -23,7 +24,6 @@ class KnowledgeIndexService:
         if self.document_dir:
             document.save_json(f"{self.document_dir}/{document.original_uuid}.json")
         
-        
         return document
     
 
@@ -33,7 +33,8 @@ class KnowledgeIndexService:
 
 
 def test_document_from_wikipedia_url():
-    url="https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_New_York_City"
+    # url="https://en.wikipedia.org/wiki/List_of_tallest_buildings_in_New_York_City"
+    url="https://en.wikipedia.org/wiki/Jane_Eyre"
     service = KnowledgeIndexService()
     service.index_from_wikipedia_url(url)
 

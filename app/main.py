@@ -2,7 +2,7 @@
 from datasets import load_dataset
 import ast
 
-from app.repo.document_json_db import DocumentJsonDB
+from app.services.old_service.document_json_db import DocumentJsonDB
 
 
 def get_QAD(row_num:int):

@@ -235,6 +235,6 @@ if __name__ == "__main__":
     print(semantic_count)
     print(bm25_count)
 
-    from app.service.rerank import *
+    from app.services.old_service.rerank import *
     final_results_rerank=only_rerank(query,final_results, k=10)
     print(final_results_rerank)

@@ -8,13 +8,14 @@ from app.utils.md5hash import md5hash
 from weaviate.classes.query import MetadataQuery
 
 class WeaviateClient:
-    def __init__(self):
+    def __init__(self,collection_name:str="ContextualVectors") -> None:
         self.url = env.weaviate_url
         self.api_key = env.weaviate_api_key
         self.client = weaviate.connect_to_weaviate_cloud(
             cluster_url=self.url,
             auth_credentials=Auth.api_key(self.api_key),
         )
+        self.collection_name = collection_name
 
     def is_ready(self):
         if self.client:
@@ -25,9 +26,9 @@ class WeaviateClient:
         if self.client:
             self.client.close()
 
-    def create_object(self, collection_name:str, properties:dict,vector:List[float]):
+    def create_object(self, properties:dict,vector:List[float]):
         if self.client:
-            collection = self.client.collections.get(collection_name)
+            collection = self.client.collections.get(self.collection_name)
             uuid = collection.data.insert(
             properties=properties,
             vector=vector
@@ -36,22 +37,22 @@ class WeaviateClient:
         else:
             raise Exception("Client not connected")
         
-    def batch_import(self, collection_name:str, embeddings:Embeddings):
+    def batch_import(self, embeddings:Embeddings):
         if self.client:
-            collection = self.client.collections.get(collection_name)
+            collection = self.client.collections.get(self.collection_name)
             with collection.batch.dynamic() as batch:
                 for i, data_row in enumerate(tqdm(embeddings.embeddings, desc="Batch Importing")):
                     batch.add_object(
                         uuid=md5hash(data_row.properties.get('text_to_embed')),
-                        properties=data_row.properties,
+                        properties=data_row.properties.to_dict(),
                         vector=data_row.vector,
                     )
         else:
             raise Exception("Client not connected")
         
-    def vector_search(self, collection_name:str, query_vector:List[float], k:int):
+    def vector_search(self, query_vector:List[float], k:int):
         if self.client:
-            collection = self.client.collections.get(collection_name)
+            collection = self.client.collections.get(self.collection_name)
             response = collection.query.near_vector(
                 near_vector=query_vector,
                 limit=k,
@@ -64,8 +65,8 @@ class WeaviateClient:
 
 def test_bach_import():
     embeddings = Embeddings.load_json("assets/dataset/embeddings_list/417e546b48ce6e74b37c0815920013dc.json")
-    client = WeaviateClient()
-    client.batch_import("ContextualVectors", embeddings)
+    client = WeaviateClient("ContextualVectors")
+    client.batch_import(embeddings)
     client.close()
 
 if __name__ == "__main__":

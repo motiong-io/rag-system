@@ -90,19 +90,31 @@ class AsyncChunkContextualizer:
  
         prompt = generate_prompt(doc, chunk)
         response = await self.client.chat.completions.create(messages=prompt,model=self.model)
-        print(response)
+        # print(response)
         return response.choices[0].message.content, response.choices[0].message
     
 
+    # async def contextualize_document(self, document: Document) -> Document:
+    #     new_chunks = []
+    #     for chunk in tqdm(document.chunks, desc="Contextualizing chunks"):
+    #         chunk.contextualized_text, _ = await self.situate_context(document.content, chunk.content)
+    #         new_chunks.append(chunk)
+    #     document.chunks = new_chunks
+    #     return document
+
     async def contextualize_document(self, document: Document) -> Document:
-        new_chunks = []
-        for chunk in tqdm(document.chunks, desc="Contextualizing chunks"):
-            chunk.contextualized_text, _ = await self.situate_context(document.content, chunk.content)
-            new_chunks.append(chunk)
-        document.chunks = new_chunks
+        tasks = []
+
+        for chunk in document.chunks:
+            task = self.situate_context(document.content, chunk.content)
+            tasks.append(task)
+
+        results = await tqdm.gather(*tasks, desc="Contextualizing chunks")
+
+        for chunk, (contextualized_text, _) in zip(document.chunks, results):
+            chunk.contextualized_text = contextualized_text
+
         return document
-
-
 
 
 def test_contextualize_document():

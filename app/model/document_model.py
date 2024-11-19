@@ -3,14 +3,16 @@ from app.utils.md5hash import md5hash
 from typing import List
 
 class Chunk:
-    def __init__(self,chunk_id,original_index,content,contextualized_text=None):
+    def __init__(self,chunk_id,original_index,content,contextualized_text=None,uuid=None):
         self.chunk_id = chunk_id
         self.original_index = original_index
         self.content = content
         self.contextualized_text=contextualized_text
+        self.uuid=uuid
 
     def to_dict(self):
         return {
+            "uuid": self.uuid,
             "chunk_id": self.chunk_id,
             "original_index": self.original_index,
             "content": self.content,
@@ -19,6 +21,7 @@ class Chunk:
     
     def update_contextualized_text(self,contextualized_text):
         self.contextualized_text=contextualized_text
+        self.uuid=md5hash()
 
 
 class Document:
@@ -62,7 +65,6 @@ class Document:
             content=data['content'],
             chunks=chunks
         )
-
 
 
 class DocumentJSON:

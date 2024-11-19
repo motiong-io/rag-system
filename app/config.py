@@ -11,4 +11,7 @@ class Settings(BaseSettings):
     anthropic_api_key: str
     voyage_api_key: str
     cohere_api_key: str
+
+    elastic_search_url: str
+    elastic_search_api_key: str
 env = Settings()

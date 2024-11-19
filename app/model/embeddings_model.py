@@ -29,7 +29,7 @@ class EmbeddingObjProperties:
 
 class EmbeddingObj:
     """A single embedding object with vector and properties"""
-    def __init__(self, vector:float, properties:EmbeddingObjProperties) -> None:
+    def __init__(self, vector:List[float], properties:EmbeddingObjProperties) -> None:
         self.vector = vector
         self.properties = properties
 

@@ -23,6 +23,7 @@ markdownify = "^0.13.1"
 mwparserfromhell = "^0.6.6"
 pypdf = "^5.1.0"
 infinity-client = "^0.0.70"
+streamlit = "^1.40.2"
 
 
 

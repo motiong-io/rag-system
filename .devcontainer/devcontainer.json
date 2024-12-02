@@ -6,7 +6,7 @@
 	"name": "rag-system",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
-	"workspaceFolder": "/opt/hokei/code",
+	"workspaceFolder": "/opt/motiong/code",
 	
 	// Set *default* container specific settings.json values on container create.
 	"customizations": {
@@ -48,5 +48,5 @@
 	"postCreateCommand": "poetry install",
 
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "hokei"
+	"remoteUser": "motiong"
 }

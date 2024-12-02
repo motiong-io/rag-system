@@ -6,26 +6,15 @@ services:
       context: ..
       dockerfile: .devcontainer/Dockerfile
     ports:
-      - "5731:5731"
+      - "5736:5736"
     volumes:
-      - ~/.ssh/id_rsa:/opt/hokei/.ssh/id_rsa
-      - ..:/opt/hokei/code
-      - ~/etc/localtime:/opt/hokei/etc/localtime
-      - ~/etc/timezone:/opt/hokei/etc/timezone
-      - ../.devcontainer/.zshrc:/opt/hokei/.zshrc
+      - ~/.ssh:/opt/motiong/.ssh
+      - ~/.ssh/id_rsa:/opt/motiong/.ssh/id_rsa
+      - ..:/opt/motiong/code
+      - ~/etc/localtime:/opt/motiong/etc/localtime
+      - ~/etc/timezone:/opt/motiong/etc/timezone
+      - ../.devcontainer/.zshrc:/opt/motiong/.zshrc
     command: ["tail -f /dev/null"]
-
-  elasticsearch:
-    image: elasticsearch:8.8.0
-    container_name: elasticsearch
-    ports:
-      - "9200:9200"
-      - "9300:9300"
-    environment:
-      - discovery.type=single-node
-      - xpack.security.enabled=false
-    volumes:
-      - esdata:/usr/share/elasticsearch/data
 
 volumes:
   esdata:

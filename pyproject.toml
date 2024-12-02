@@ -6,7 +6,7 @@ authors = ["hokei"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.12"
 agentjo = "^0.0.1"
 pydantic-settings = "^2.6.0"
 weaviate-client = "^4.9.0"
@@ -24,6 +24,7 @@ mwparserfromhell = "^0.6.6"
 pypdf = "^5.1.0"
 infinity-client = "^0.0.70"
 streamlit = "^1.40.2"
+motiongreactor = {git = "git@github.com:motiong-io/reactor.git"}
 
 
 

@@ -1,7 +1,7 @@
 # rag-system
 
 ## Requirement
-`poetry add git+ssh://git@github.com:motiong-io/python-file-manager.git`
+`poetry add git+ssh://git@github.com:motiong-io/reactor.git`
 
 ## structure
 ### flow chart
@@ -10,4 +10,4 @@
 ![structure overview](assets/img/structure.png)
 ...
 ------
-update at 2/12/2024 @HoKei2001
+update at 4/12/2024 @HoKei2001

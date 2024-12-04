@@ -16,4 +16,7 @@ class Settings(BaseSettings):
 
     elastic_search_url: str
     elastic_search_api_key: str
+
+    
+
 env = Settings()

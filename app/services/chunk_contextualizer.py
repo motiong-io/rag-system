@@ -14,7 +14,7 @@ class ChunkContextualizer:
         #                                 base_url="http://api-gw.motiong.net:5000/api/openai/ve/v1")
         self.openai_client = ChatOpenAI(model="nemotron-70b",
                                         api_key="abc",
-                                        base_url="http://10.4.32.2:8001/v1")
+                                        base_url="http://10.4.32.1:8001/v1")
 
     def situate_context(self, doc: str, chunk: str) -> tuple[str, Any]:
         DOCUMENT_CONTEXT_PROMPT = """
@@ -118,7 +118,7 @@ class AsyncChunkContextualizer:
 
 
 def test_contextualize_document():
-    document=Document.load_json('assets/dataset/document_json/test.json')
+    document=Document.load_json('assets/dataset/document_json/1ddadbaf23ada8730ff72097d7101243.json')
     contextualizer = ChunkContextualizer()
     contextualized_document = contextualizer.contextualize_document(document)
     contextualized_document.save_json('assets/dataset/document_json/test.json')
@@ -131,5 +131,5 @@ def test_async_contextualize_document():
 
 
 if __name__ == "__main__":
-    # test_contextualize_document()
-    test_async_contextualize_document()
+    test_contextualize_document()
+    # test_async_contextualize_document()

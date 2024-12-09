@@ -41,6 +41,13 @@ class EmbeddingCreator:
         ).embeddings
         return vector_list
     
+    def embed_text(self, text: str) -> List[float]:
+        vector = self.embed_client.embed(
+            texts=[text],
+            model=self.embed_model
+        ).embeddings[0]
+        return vector
+    
 
 def test_embed_text():
     text_list = ["This is a test text A"]

@@ -26,8 +26,18 @@ class EmbeddingCreator:
         ]
         
         texts_to_embed = [prop.text_to_embed for prop in properties_list]
-        vectors = self.embed_text_list(texts_to_embed)
-        
+
+
+        batch_size = 128
+        if len(texts_to_embed) >= batch_size:
+            vectors = []
+            for i in range(0, len(texts_to_embed), batch_size):
+                batch_texts = texts_to_embed[i:i + batch_size]
+                batch_vectors = self.embed_text_list(batch_texts)
+                vectors.extend(batch_vectors)
+        else:
+            vectors = self.embed_text_list(texts_to_embed)
+
         for properties, vector in zip(properties_list, vectors):
             embedding_obj = EmbeddingObj(vector=vector, properties=properties)
             embeddings.add_embedding(embedding_obj)

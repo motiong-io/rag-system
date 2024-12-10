@@ -54,9 +54,9 @@ class KnowledgeIndexService:
         # success=self.elastic_client.index_document(document)
         # return success
     
-    def batch_index_wikipedia_urls(self, wikipedia_urls:list):
+    def batch_index_wikipedia_urls(self, wikipedia_urls:list, model:Literal['gpt', 'nemotron']):
         for url in wikipedia_urls:
-            self.index_from_wikipedia_url(url)
+            self.index_from_wikipedia_url(url,model)
 
     def search(self, query:str):
         query_vector = EmbeddingCreator().embed_text(query)
@@ -67,10 +67,6 @@ class KnowledgeIndexService:
     def close(self):
         self.weaviate_client.close()
     
-
-
-
-
 
 
 def test_document_from_wikipedia_url():

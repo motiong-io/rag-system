@@ -2,6 +2,7 @@ from motiongreactor.context_providers.base_context_provider import BaseContextPr
 import asyncio
 import weaviate
 from weaviate.classes.init import Auth
+import weaviate.classes as wvc
 
 class WeaviateContextProvider(BaseContextProvider):
     def __init__(self,weaviate_url,weaviate_key,collection_name:str) -> None:
@@ -33,6 +34,28 @@ class WeaviateContextProvider(BaseContextProvider):
         print(results)
         return results
     
+    def check(self):
+        try:
+            collection = self.collection
+            response = collection.aggregate.over_all(
+                total_count=True,
+                return_metrics=wvc.query.Metrics("wordCount").integer(
+                    count=True,
+                    maximum=True,
+                    mean=True,
+                    median=True,
+                    minimum=True,
+                    mode=True,
+                    sum_=True,
+                ),
+            )
+
+            print(response.total_count)
+            print(response.properties)
+
+        finally:
+            self.weaviate_client.close()
+    
 
 
 def test_weaviate_context_provider():
@@ -40,4 +63,14 @@ def test_weaviate_context_provider():
     weaviate_url = os.getenv("WEAVIATE_URL")
     weaviate_key = os.getenv("WEAVIATE_KEY")
     query = "If my future wife has the same first name as the 15th first lady of the United States' mother and her surname is the same as the second assassinated president's mother's maiden name, what is my future wife's name?"
-    
+
+def check_weaviate():
+    from app.config import env
+    weaviate_url = env.weaviate_url
+    weaviate_key = env.weaviate_api_key
+    collection_name = "GPT4ominiContextualDB"
+    weaviate_context_provider = WeaviateContextProvider(weaviate_url,weaviate_key,collection_name)
+    weaviate_context_provider.check()
+
+if __name__ == "__main__":
+    check_weaviate()

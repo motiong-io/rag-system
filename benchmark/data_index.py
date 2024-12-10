@@ -3,10 +3,10 @@ import ast
 
 from app.services.index_services.index import KnowledgeIndexService
 
-
+# this script process the first 10 rows of the dataset and index the documents to the collection
 dataset=load_dataset("google/frames-benchmark")
-# collection_name="GPT4ominiContextualDB"
-collection_name = "NemotronContextualDB"
+collection_name="GPT4ominiContextualDB"
+
 
 def get_QAD(row_num:int,ds=dataset):
     question=ds['test'][row_num]['Prompt']
@@ -16,15 +16,13 @@ def get_QAD(row_num:int,ds=dataset):
 
 def index():
     kis = KnowledgeIndexService(collection_name=collection_name)
-    for i in range (1,10):
+    for i in range (10,20):
         q,a,docs=get_QAD(i)
+        print(f"==================== {i} ====================")
         print(f"Question: {q}")
         print(f"Answer: {a}")
         print(f"Docs: {docs}")
-        kis.batch_index_wikipedia_urls(docs)
+        kis.batch_index_wikipedia_urls(docs,model="gpt")
 
-
-
-    
 if __name__ == "__main__":
     index()

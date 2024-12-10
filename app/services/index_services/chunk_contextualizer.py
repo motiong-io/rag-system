@@ -58,11 +58,18 @@ class ChunkContextualizer:
 from openai import AsyncOpenAI
 import asyncio
 from tqdm.asyncio import tqdm
+from typing import Literal
 
 class AsyncChunkContextualizer:
-    def __init__(self) -> None:
-        self.client = AsyncOpenAI(api_key=env.openai_api_key,base_url="http://api-gw.motiong.net:5000/api/openai/ve/v1")
-        self.model = "gpt-4o-mini"
+    def __init__(self, model:Literal["gpt", "nemotron"]) -> None:
+        if model == "gpt":
+            self.client = AsyncOpenAI(base_url=env.openai_base_url, api_key=env.openai_api_key)
+            self.model = "gpt-4o-mini"
+        elif model == "nemotron":
+            self.client = AsyncOpenAI(base_url=env.nvidia_base_url, api_key=env.nvidia_api_key)
+            self.model = "nvidia/llama-3.1-nemotron-70b-instruct"
+        else:
+            raise ValueError("Invalid model")
 
     async def situate_context(self, doc: str, chunk: str) -> tuple[str, Any]:
         DOCUMENT_CONTEXT_PROMPT = """
@@ -131,5 +138,5 @@ def test_async_contextualize_document():
 
 
 if __name__ == "__main__":
-    test_contextualize_document()
-    # test_async_contextualize_document()
+    # test_contextualize_document()
+    test_async_contextualize_document()

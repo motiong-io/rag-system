@@ -24,7 +24,7 @@ mwparserfromhell = "^0.6.6"
 pypdf = "^5.1.0"
 infinity-client = "^0.0.70"
 streamlit = "^1.40.2"
-motiongreactor = {git = "git@github.com:motiong-io/reactor.git"}
+motiongreactor = {git = "git@github.com:motiong-io/reactor.git",branch = "feat-rag-benchmark"}
 
 
 

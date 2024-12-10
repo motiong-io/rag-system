@@ -1,13 +1,14 @@
 from app.model.document_model import Document
 from app.model.embeddings_model import Embeddings
-from app.services.wikipedia_loader import WikipediaLoader
-from app.services.document_splitter import DocumentSplitter
-from app.services.chunk_contextualizer import AsyncChunkContextualizer, ChunkContextualizer
-from app.services.embedding_creator import EmbeddingCreator
+from app.services.docs_loader.wikipedia_loader import WikipediaLoader
+from app.services.index_services.document_splitter import DocumentSplitter
+from app.services.index_services.chunk_contextualizer import AsyncChunkContextualizer, ChunkContextualizer
+from app.services.index_services.embedding_creator import EmbeddingCreator
 from app.repo.weaviate_cloud import WeaviateClient
 from app.repo.elastic_cloud import ElasticSearchClient
 import asyncio
 import os
+from typing import Literal
 
 class KnowledgeIndexService:
     def __init__(self,save_markdown:bool=True,save_document:bool=True,save_embeddings:bool=True,collection_name:str="ContextualVectors") -> None:
@@ -18,11 +19,7 @@ class KnowledgeIndexService:
         # self.elastic_client = ElasticSearchClient("contextual_chunks")
     
 
-
-
-
-
-    def index_from_wikipedia_url(self, wikipedia_url:str):
+    def index_from_wikipedia_url(self, wikipedia_url:str, model:Literal['gpt', 'nemotron']):
         # Load the wikipedia page to document
         wikipedia_loader = WikipediaLoader(wikipedia_url)
         if self.markdown_dir:
@@ -33,9 +30,9 @@ class KnowledgeIndexService:
 
         if not os.path.exists(f"{self.document_dir}/{wikipedia_loader.uuid}.json"):
             # Contextualize the chunks
-            # document = asyncio.run(AsyncChunkContextualizer().contextualize_document(document_with_chunks_no_contextualized_text))
+            document = asyncio.run(AsyncChunkContextualizer(model).contextualize_document(document_with_chunks_no_contextualized_text))
 
-            document = ChunkContextualizer().contextualize_document(document_with_chunks_no_contextualized_text)
+            # document = ChunkContextualizer().contextualize_document(document_with_chunks_no_contextualized_text)
             # Save the document to a file
             if self.document_dir:
                 document.save_json(f"{self.document_dir}/{document.original_uuid}.json")
@@ -76,30 +73,30 @@ class KnowledgeIndexService:
 
 
 
-# def test_document_from_wikipedia_url():
-#     url_list=[
-#         "https://en.wikipedia.org/wiki/President_of_the_United_States",
-#         # "https://en.wikipedia.org/wiki/James_Buchanan",
-#         # "https://en.wikipedia.org/wiki/Harriet_Lane",
-#         # "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States_who_died_in_office",
-#         # "https://en.wikipedia.org/wiki/James_A._Garfield"
-#     ]
-#     query="If my future wife has the same first name as the 15th first lady of the United States' mother and her surname is the same as the second assassinated president's mother's maiden name, what is my future wife's name?"
+def test_document_from_wikipedia_url():
+    url_list=[
+        "https://en.wikipedia.org/wiki/President_of_the_United_States",
+        # "https://en.wikipedia.org/wiki/James_Buchanan",
+        # "https://en.wikipedia.org/wiki/Harriet_Lane",
+        # "https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States_who_died_in_office",
+        # "https://en.wikipedia.org/wiki/James_A._Garfield"
+    ]
+    query="If my future wife has the same first name as the 15th first lady of the United States' mother and her surname is the same as the second assassinated president's mother's maiden name, what is my future wife's name?"
 
-#     service = KnowledgeIndexService()
-#     # for url in url_list:
-#     #     try:
-#     #         service.index_from_wikipedia_url(url)
-#     #     except Exception as e:
-#     #         print(e)
+    service = KnowledgeIndexService()
+    # for url in url_list:
+    #     try:
+    #         service.index_from_wikipedia_url(url,"gpt")
+    #     except Exception as e:
+    #         print(e)
 
-#     response = service.search(query)
-#     # print(response.objects)
-#     corpus = [o.properties["text_to_embed"] for o in response.objects]
-#     print(corpus)
+    response = service.search(query)
+    # print(response.objects)
+    corpus = [o.properties["text_to_embed"] for o in response.objects]
+    print(corpus)
 
-#     service.close()
-#     return corpus
+    service.close()
+    return corpus
 
-# if __name__ == "__main__":
-#     test_document_from_wikipedia_url()
+if __name__ == "__main__":
+    test_document_from_wikipedia_url()

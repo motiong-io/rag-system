@@ -1,7 +1,7 @@
 from datasets import load_dataset
 import ast
 
-from app.services.index import KnowledgeIndexService
+from app.services.index_services.index import KnowledgeIndexService
 
 
 dataset=load_dataset("google/frames-benchmark")

@@ -6,8 +6,11 @@
 ## structure
 ### flow chart
 ![hybrid rag agent sysyten](assets/img/hybrid_rag_agent.png)
+Note: Elastic BM25 was replaced by Weaviate BM25 Search
+
+
 ### data model
 ![structure overview](assets/img/structure.png)
 ...
 ------
-update at 4/12/2024 @HoKei2001
+update at 11/12/2024 @HoKei2001

@@ -6,6 +6,8 @@ class Settings(BaseSettings):
     model_config = ConfigDict(env_file=".env")
     
     openai_api_key: str
+    openai_base_url: str
+    
     weaviate_url: str
     weaviate_api_key: str
     anthropic_api_key: str
@@ -14,4 +16,8 @@ class Settings(BaseSettings):
 
     elastic_search_url: str
     elastic_search_api_key: str
+
+    nvidia_base_url: str
+    nvidia_api_key: str
+
 env = Settings()

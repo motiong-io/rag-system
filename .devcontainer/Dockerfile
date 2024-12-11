@@ -6,7 +6,7 @@ ARG DOCKER_HOME="/opt/motiong"
 ARG DOCKER_CODE="/opt/motiong/code"
 ARG DOCKER_GROUP="motiong"
 ARG DOCKER_USER="motiong"
-ARG DOCKER_UID=5732
+ARG DOCKER_UID=5000
 
 ENV ZSH="/opt/motiong/.oh-my-zsh"
 
@@ -43,7 +43,7 @@ RUN mkdir ${DOCKER_HOME}/.ssh && \
 
 
 ENV PATH "$PATH:/opt/motiong/.local/bin"
-
+ENV PYTHONPATH=.
 
 
 USER ${DOCKER_USER}

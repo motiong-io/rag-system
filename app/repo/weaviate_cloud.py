@@ -44,9 +44,10 @@ class WeaviateClient:
                 for i, data_row in enumerate(tqdm(embeddings.embeddings, desc="Batch Importing")):
                     batch.add_object(
                         uuid=md5hash(data_row.properties.get('text_to_embed')),
-                        properties=data_row.properties.to_dict(),
+                        properties=data_row.properties if isinstance(data_row.properties, dict) else data_row.properties.to_dict(),
                         vector=data_row.vector,
                     )
+                    # print(collection.batch.failed_objects)
         else:
             raise Exception("Client not connected")
         
@@ -62,9 +63,23 @@ class WeaviateClient:
         else:
             raise Exception("Client not connected")
         
+    def hybrid_search(self, query:str, query_vector:List[float], k:int):
+        if self.client:
+            collection = self.client.collections.get(self.collection_name)
+            response = collection.query.hybrid(
+                query=query,
+                vector=query_vector,
+                alpha=0.8,
+                limit=k,
+                # return_metadata=MetadataQuery(distance=True)
+            )
+            return response
+        else:
+            raise Exception("Client not connected")
+        
 
 def test_bach_import():
-    embeddings = Embeddings.load_json("assets/dataset/embeddings_list/417e546b48ce6e74b37c0815920013dc.json")
+    embeddings = Embeddings.load_json("assets/dataset/embeddings_list/1ddadbaf23ada8730ff72097d7101243.json")
     client = WeaviateClient("ContextualVectors")
     client.batch_import(embeddings)
     client.close()

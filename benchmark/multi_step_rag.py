@@ -75,7 +75,7 @@ try:
     sys.stdout = captured_output
 
     for index, row in df_first_30.iterrows():
-        if index <29:
+        if index <24:
             continue
         print(f"==================== {index} ====================")
         question = row['Prompt']
@@ -84,7 +84,7 @@ try:
         log = captured_output.getvalue()
 
         record_result(index,question,answer,result,log)
-        time.sleep(2)
+        time.sleep(1)
         captured_output.truncate(0)
         captured_output.seek(0)
 

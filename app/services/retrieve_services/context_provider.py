@@ -17,7 +17,7 @@ class WeaviateContextProvider(BaseContextProvider):
             query=query,
             vector=query_vector,
             alpha=0.8,
-            limit=30
+            limit=50
         )
         return [obj.properties['text_to_embed'] for obj in response.objects]
 

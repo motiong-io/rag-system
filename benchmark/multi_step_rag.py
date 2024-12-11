@@ -63,7 +63,7 @@ def record_result(index:int,question:str, answer:str, result:str,log:str):
 
     with open('benchmark/results.json', 'a', encoding='utf-8') as f:
         json.dump(record, f, ensure_ascii=False, indent=4)
-        f.write("\n")
+        f.write("\n\n")
     # print(record)
 
 df = pd.read_csv("hf://datasets/google/frames-benchmark/test.tsv", sep="\t")

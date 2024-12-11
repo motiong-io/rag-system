@@ -23,7 +23,7 @@ def test_reactor(question:str):
             content=question,
         )
     ]
-    llm_answer = llm.full_response(conversation, sys_prompt="You are an intelligent assistant specialized in solving multi-hop questions.Your task is to refine the subquery list with the observed answer of sub questions.",temperature=0)
+    llm_answer = llm.full_response(conversation, sys_prompt="You are an intelligent assistant specialized in solving multi-hop questions.",temperature=0)
     return llm_answer
 
 
@@ -47,9 +47,6 @@ df = pd.read_csv("hf://datasets/google/frames-benchmark/test.tsv", sep="\t")
 df_first_30 = df.head(30)
 
 for index, row in df_first_30.iterrows():
-    # if index <24:
-    #     continue
-    print(f"==================== {index} ====================")
     question = row['Prompt']
     answer = row['Answer']
     result = test_reactor(question)

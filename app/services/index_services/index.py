@@ -2,10 +2,10 @@ from app.model.document_model import Document
 from app.model.embeddings_model import Embeddings
 from app.services.docs_loader.wikipedia_loader import WikipediaLoader
 from app.services.index_services.document_splitter import DocumentSplitter
-from app.services.index_services.chunk_contextualizer import AsyncChunkContextualizer, ChunkContextualizer
+from app.services.index_services.chunk_contextualizer import AsyncChunkContextualizer #, ChunkContextualizer
 from app.services.index_services.embedding_creator import EmbeddingCreator
 from app.repo.weaviate_cloud import WeaviateClient
-from app.repo.elastic_cloud import ElasticSearchClient
+# from app.repo.elastic_cloud import ElasticSearchClient
 import asyncio
 import os
 from typing import Literal

@@ -16,7 +16,7 @@ def get_QAD(row_num:int,ds=dataset):
 
 def index():
     kis = KnowledgeIndexService(collection_name=collection_name)
-    for i in range (10,20):
+    for i in range (30):
         q,a,docs=get_QAD(i)
         print(f"==================== {i} ====================")
         print(f"Question: {q}")

@@ -7,24 +7,19 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-agentjo = "^0.0.1"
 pydantic-settings = "^2.6.0"
 weaviate-client = "^4.9.0"
 langchain-community = "^0.3.3"
 wikipedia = "^1.4.0"
 anthropic = "^0.37.1"
-elasticsearch = "^8.15.1"
 voyageai = "^0.2.4"
 matplotlib = "^3.9.2"
 cohere = "^5.11.2"
-datasets = "^3.1.0"
-langchain-openai = "^0.2.5"
 markdownify = "^0.13.1"
 mwparserfromhell = "^0.6.6"
-pypdf = "^5.1.0"
 infinity-client = "^0.0.70"
-streamlit = "^1.40.2"
 motiongreactor = {git = "git@github.com:motiong-io/reactor.git",branch = "feat-rag-benchmark"}
+datasets = "^3.2.0"
 
 
 

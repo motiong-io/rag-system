@@ -19,20 +19,24 @@ class WeaviateContextProvider(BaseContextProvider):
             alpha=0.8,
             limit=30
         )
-        print(response)
-        return response
+        return [obj.properties['text_to_embed'] for obj in response.objects]
 
     def close(self):
         self.weaviate_client.close()
 
     async def provide_contexts(self, query_vector: list[float], query:str) -> list[str]:
-        print("Querying weaviate...")
+        # print("Querying weaviate...")
+        if len(query_vector) == 1 and query_vector[0] :
+            query_vector = query_vector[0]  
+
+        # print(query_vector)
+        # print(query)
         tasks = [
             asyncio.to_thread(self.hybrid_search,query_vector,query),
         ]
         results = await asyncio.gather(*[task for task in tasks])
-        print(results)
-        return results
+        # print(results)
+        return results[0]
     
     def check(self):
         try:

@@ -11,3 +11,5 @@ def get_directories(save_markdown, save_document, save_embeddings):
     return markdown_dir, document_dir, embeddings_dir
 
 WEAVIATE_COLLECTION_NAME = "ContextualVectors"
+
+

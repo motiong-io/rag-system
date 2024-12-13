@@ -18,14 +18,15 @@ from app.services.retrieve_services.rerank_service import CohereRerankService
 from app.config import env
 
 
-# initialize the RAG services
-# llm = BasicLLM(base_url=env.openai_base_url,
-#                 api_key=env.openai_api_key,
-#                 model="gpt-4o-mini")
-
+#local
 llm = BasicLLM(base_url=env.nvidia_local_base_url,
                 api_key="abc",
                 model="nemotron-70b")
+# #remote
+# llm = BasicLLM(base_url=env.nvidia_base_url,
+#                 api_key=env.nvidia_api_key,
+#                 model="nvidia/llama-3.1-nemotron-70b-instruct")
+
 
 
 context_provider = WeaviateContextProvider(weaviate_url=env.weaviate_url,
@@ -48,6 +49,7 @@ def test_reactor(question:str):
             content=question,
         )
     ]
+
     full_answer = ""
     for x in reactor.react(
         conversation=conversation, product_related_prompt=None
@@ -76,22 +78,22 @@ df = pd.read_csv("hf://datasets/google/frames-benchmark/test.tsv", sep="\t")
 df_first_30 = df.head(30)
 
 try:
-    # captured_output = io.StringIO()
-    # sys.stdout = captured_output
+    captured_output = io.StringIO()
+    sys.stdout = captured_output
 
     for index, row in df_first_30.iterrows():
-        # if index <24:
-        #     continue
+        if index <26:
+            continue
         print(f"==================== {index} ====================")
         question = row['Prompt']
         answer = row['Answer']
         result = test_reactor(question)
-        # log = captured_output.getvalue()
+        log = captured_output.getvalue()
 
-        record_result(index,question,answer,result,None)
+        record_result(index,question,answer,result,log)
         # time.sleep(1)
-        # captured_output.truncate(0)
-        # captured_output.seek(0)
+        captured_output.truncate(0)
+        captured_output.seek(0)
 
 except Exception as e:
     print(e)

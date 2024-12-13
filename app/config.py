@@ -20,4 +20,5 @@ class Settings(BaseSettings):
     nvidia_base_url: str
     nvidia_api_key: str
 
+    nvidia_local_base_url: str
 env = Settings()

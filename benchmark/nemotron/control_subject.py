@@ -48,7 +48,7 @@ df = pd.read_csv("hf://datasets/google/frames-benchmark/test.tsv", sep="\t")
 df_first_30 = df.head(30)
 
 for index, row in df_first_30.iterrows():
-    if index <25:
+    if index <0:
         continue
     question = row['Prompt']
     answer = row['Answer']

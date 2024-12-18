@@ -9,9 +9,17 @@ from app.repo.weaviate_cloud import WeaviateClient
 import asyncio
 import os
 from typing import Literal
+import tracemalloc
+
+def create_dir():
+    os.makedirs("assets/dataset/markdown_files",exist_ok=True)
+    os.makedirs("assets/dataset/document_json",exist_ok=True)
+    os.makedirs("assets/dataset/embeddings_list",exist_ok=True)
+
 
 class KnowledgeIndexService:
     def __init__(self,save_markdown:bool=True,save_document:bool=True,save_embeddings:bool=True,collection_name:str="ContextualVectors") -> None:
+        create_dir()
         self.markdown_dir = "assets/dataset/markdown_files" if save_markdown else None
         self.document_dir="assets/dataset/document_json" if save_document else None
         self.embeddings_dir="assets/dataset/embeddings_list" if save_embeddings else None
@@ -30,7 +38,17 @@ class KnowledgeIndexService:
 
         if not os.path.exists(f"{self.document_dir}/{wikipedia_loader.uuid}.json"):
             # Contextualize the chunks
-            document = asyncio.run(AsyncChunkContextualizer(model).contextualize_document(document_with_chunks_no_contextualized_text))
+            try:
+                tracemalloc.start()
+                document = asyncio.run(AsyncChunkContextualizer(model).contextualize_document(document_with_chunks_no_contextualized_text))
+            finally:
+                snapshot = tracemalloc.take_snapshot()
+                top_stats = snapshot.statistics('lineno')
+
+                print("[ Top 10 ]")
+                for stat in top_stats[:10]:
+                    print(stat)
+            
 
             # document = ChunkContextualizer().contextualize_document(document_with_chunks_no_contextualized_text)
             # Save the document to a file
@@ -54,7 +72,7 @@ class KnowledgeIndexService:
         # success=self.elastic_client.index_document(document)
         # return success
     
-    def batch_index_wikipedia_urls(self, wikipedia_urls:list, model:Literal['gpt', 'nemotron']):
+    def batch_index_wikipedia_urls(self, wikipedia_urls:list, model:Literal['gpt', 'nemotron','local_nemotron']):
         for url in wikipedia_urls:
             self.index_from_wikipedia_url(url,model)
 

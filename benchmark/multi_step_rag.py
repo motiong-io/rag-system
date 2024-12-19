@@ -19,9 +19,14 @@ from app.config import env
 
 
 # initialize the RAG services
-llm = BasicLLM(base_url=env.openai_base_url,
-                api_key=env.openai_api_key,
-                model="gpt-4o-mini")
+# llm = BasicLLM(base_url=env.openai_base_url,
+#                 api_key=env.openai_api_key,
+#                 model="gpt-4o-mini")
+
+llm = BasicLLM(base_url=env.nvidia_local_base_url,
+                api_key="abc",
+                model="nemotron-70b")
+
 
 context_provider = WeaviateContextProvider(weaviate_url=env.weaviate_url,
                                             weaviate_key=env.weaviate_api_key,
@@ -71,22 +76,22 @@ df = pd.read_csv("hf://datasets/google/frames-benchmark/test.tsv", sep="\t")
 df_first_30 = df.head(30)
 
 try:
-    captured_output = io.StringIO()
-    sys.stdout = captured_output
+    # captured_output = io.StringIO()
+    # sys.stdout = captured_output
 
     for index, row in df_first_30.iterrows():
-        if index <24:
-            continue
+        # if index <24:
+        #     continue
         print(f"==================== {index} ====================")
         question = row['Prompt']
         answer = row['Answer']
         result = test_reactor(question)
-        log = captured_output.getvalue()
+        # log = captured_output.getvalue()
 
-        record_result(index,question,answer,result,log)
-        time.sleep(1)
-        captured_output.truncate(0)
-        captured_output.seek(0)
+        record_result(index,question,answer,result,None)
+        # time.sleep(1)
+        # captured_output.truncate(0)
+        # captured_output.seek(0)
 
 except Exception as e:
     print(e)

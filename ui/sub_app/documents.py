@@ -2,11 +2,11 @@ import streamlit as st
 
 from app.constant import MARKDOWN_DIR, DOCUMENT_DIR, EMBEDDINGS_DIR, WEAVIATE_COLLECTION_NAME
 
+from ui.st_utils.constant import ST_HIDE_HEADER_HTML
+st.markdown(ST_HIDE_HEADER_HTML, unsafe_allow_html=True)
+
 
 st.title("Documents")
 
-st.header("Add Document")
-url_input = st.text_input("Wikipedia URL")
-if st.button("Add",use_container_width=True,type="primary"):
-    st.write("Document added")
+
 

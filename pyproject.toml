@@ -20,11 +20,13 @@ mwparserfromhell = "^0.6.6"
 infinity-client = "^0.0.70"
 motiongreactor = {git = "git@github.com:motiong-io/reactor.git",branch = "feat-rag-benchmark"}
 datasets = "^3.2.0"
+streamlit = "^1.41.0"
 
 
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"
+ipdb = "^0.13.13"
 
 [build-system]
 requires = ["poetry-core"]

@@ -6,7 +6,7 @@ services:
       context: ..
       dockerfile: .devcontainer/Dockerfile
     ports:
-      - "5736:5736"
+      - "8503:8503"
     volumes:
       - ~/.ssh:/opt/motiong/.ssh
       - ~/.ssh/id_rsa:/opt/motiong/.ssh/id_rsa

@@ -60,14 +60,19 @@ import asyncio
 from tqdm.asyncio import tqdm
 from typing import Literal
 
+
+
 class AsyncChunkContextualizer:
-    def __init__(self, model:Literal["gpt", "nemotron"]) -> None:
+    def __init__(self, model:Literal["gpt", "nemotron","local_nemotron"]) -> None:
         if model == "gpt":
             self.client = AsyncOpenAI(base_url=env.openai_base_url, api_key=env.openai_api_key)
             self.model = "gpt-4o-mini"
         elif model == "nemotron":
             self.client = AsyncOpenAI(base_url=env.nvidia_base_url, api_key=env.nvidia_api_key)
             self.model = "nvidia/llama-3.1-nemotron-70b-instruct"
+        elif model == "local_nemotron":
+            self.client = AsyncOpenAI(base_url=env.nvidia_local_base_url, api_key="abc")
+            self.model = "nemotron-70b"
         else:
             raise ValueError("Invalid model")
 
@@ -116,8 +121,15 @@ class AsyncChunkContextualizer:
             task = self.situate_context(document.content, chunk.content)
             tasks.append(task)
 
-        results = await tqdm.gather(*tasks, desc="Contextualizing chunks")
-
+        try:
+            # 使用 tqdm 的 gather 处理任务
+            results = await tqdm.gather(*tasks, desc="Contextualizing chunks")
+        except Exception as e:
+            # 捕获异常，取消所有未完成任务
+            for task in tasks:
+                task.cancel()
+            raise e  # 重新抛出异常
+    
         for chunk, (contextualized_text, _) in zip(document.chunks, results):
             chunk.contextualized_text = contextualized_text
 

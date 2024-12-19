@@ -85,7 +85,46 @@ class KnowledgeIndexService:
     def close(self):
         self.weaviate_client.close()
     
+    def simple_index_from_wikipedia_url(self, wikipedia_url:str, model:Literal['gpt', 'nemotron']):
+        # Load the wikipedia page to document
+        wikipedia_loader = WikipediaLoader(wikipedia_url)
+        if self.markdown_dir:
+            wikipedia_loader.save_markdown(f"{self.markdown_dir}/{wikipedia_loader.uuid}.md") # Save the markdown file
+        document_no_chunks = wikipedia_loader.to_document()
+        # Split the document into chunks
+        document_with_chunks_no_contextualized_text = DocumentSplitter().split_document(document_no_chunks)
 
+        if not os.path.exists(f"{self.document_dir}/{wikipedia_loader.uuid}.json"):
+            # Contextualize the chunks
+            print("Use fake contextualizer")
+            document = asyncio.run(AsyncChunkContextualizer(model).fake_contextualize_document(document_with_chunks_no_contextualized_text))
+            
+
+            # document = ChunkContextualizer().contextualize_document(document_with_chunks_no_contextualized_text)
+            # Save the document to a file
+            if self.document_dir:
+                document.save_json(f"{self.document_dir}/{document.original_uuid}.json")
+        else:
+            print(f"Document already exists for {wikipedia_loader.uuid}")
+            document = Document.load_json(f"{self.document_dir}/{document_no_chunks.original_uuid}.json")
+
+        if not os.path.exists(f"{self.embeddings_dir}/{wikipedia_loader.uuid}.json"):
+            # Create embeddings for the document
+            embeddings= EmbeddingCreator().create_embeddings_for_document(document)
+            if self.embeddings_dir:
+                embeddings.save_json(f"{self.embeddings_dir}/{document.original_uuid}.json")
+        # import embeddings to weaviate
+        else:
+            print(f"Embeddings already exists for {wikipedia_loader.uuid}")
+            embeddings = Embeddings.load_json(f"{self.embeddings_dir}/{document.original_uuid}.json")
+        self.weaviate_client.batch_import(embeddings)
+        # Index the document to elastic search
+        # success=self.elastic_client.index_document(document)
+        # return success
+    
+    def batch_simple_index_wikipedia_urls(self, wikipedia_urls:list, model:Literal['gpt', 'nemotron','local_nemotron']):
+        for url in wikipedia_urls:
+            self.simple_index_from_wikipedia_url(url,model)
 
 def test_document_from_wikipedia_url():
     url_list=[

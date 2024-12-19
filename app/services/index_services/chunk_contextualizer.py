@@ -135,6 +135,17 @@ class AsyncChunkContextualizer:
 
         return document
 
+    async def fake_situate_context(self, doc: str, chunk: str) -> tuple[str, Any]:
+        # Fake implementation that returns an empty string for context
+        return "", None
+
+    async def fake_contextualize_document(self, document: Document) -> Document:
+        for chunk in document.chunks:
+            chunk.contextualized_text, _ = await self.fake_situate_context(document.content, chunk.content)
+        return document
+
+
+
 
 # def test_contextualize_document():
 #     document=Document.load_json('assets/dataset/document_json/1ddadbaf23ada8730ff72097d7101243.json')

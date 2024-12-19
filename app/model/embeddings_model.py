@@ -10,7 +10,7 @@ class EmbeddingObjProperties:
         self.original_index = original_index
         self.original_content = original_content
         self.contextualized_text = contextualized_text
-        self.text_to_embed = original_content + "\n\n" + contextualized_text
+        self.text_to_embed = original_content + "\n\n" + contextualized_text if contextualized_text else original_content
 
     def to_dict(self):
         return {

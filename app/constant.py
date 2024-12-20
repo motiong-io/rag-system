@@ -1,5 +1,5 @@
 # Constants for directory paths
-MARKDOWN_DIR = "assets/dataset/markdown_files"
+MARKDOWN_DIR = "assets/markdown_files"
 DOCUMENT_DIR = "assets/dataset/document_json"
 EMBEDDINGS_DIR = "assets/dataset/embeddings_list"
 

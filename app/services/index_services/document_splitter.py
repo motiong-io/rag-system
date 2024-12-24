@@ -6,7 +6,7 @@ class DocumentSplitter:
     def __init__(self, chunk_size: int = 1000, overlap_size: int = 100):
 
         self.spliter = RecursiveCharacterTextSplitter(
-            chunk_size=chunk_size,
+            chunk_size=chunk_size, 
             chunk_overlap=overlap_size,
             length_function=len,
             is_separator_regex=False

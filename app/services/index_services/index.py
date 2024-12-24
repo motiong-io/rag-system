@@ -27,7 +27,7 @@ class KnowledgeIndexService:
         if self.embeddings_dir:
             os.makedirs(self.embeddings_dir,exist_ok=True)
 
-    def index_from_wikipedia_url(self, wikipedia_url:str, model:Literal['gpt', 'nemotron']):
+    def index_from_wikipedia_url(self, wikipedia_url:str, model:Literal['gpt', 'nemotron','local_nemotron','local_llama3_3']):
         # Load the wikipedia page to document
         wikipedia_loader = WikipediaLoader(wikipedia_url)
         if self.markdown_dir:
@@ -72,7 +72,7 @@ class KnowledgeIndexService:
         # success=self.elastic_client.index_document(document)
         # return success
     
-    def batch_index_wikipedia_urls(self, wikipedia_urls:list, model:Literal['gpt', 'nemotron','local_nemotron']):
+    def batch_index_wikipedia_urls(self, wikipedia_urls:list, model:Literal['gpt', 'nemotron','local_nemotron','local_llama3_3']):
         for url in wikipedia_urls:
             self.index_from_wikipedia_url(url,model)
 
@@ -85,7 +85,7 @@ class KnowledgeIndexService:
     def close(self):
         self.weaviate_client.close()
     
-    def simple_index_from_wikipedia_url(self, wikipedia_url:str, model:Literal['gpt', 'nemotron']):
+    def simple_index_from_wikipedia_url(self, wikipedia_url:str, model:Literal['gpt', 'nemotron','local_nemotron','local_llama3_3']):
         # Load the wikipedia page to document
         wikipedia_loader = WikipediaLoader(wikipedia_url)
         if self.markdown_dir:
@@ -122,7 +122,7 @@ class KnowledgeIndexService:
         # success=self.elastic_client.index_document(document)
         # return success
     
-    def batch_simple_index_wikipedia_urls(self, wikipedia_urls:list, model:Literal['gpt', 'nemotron','local_nemotron']):
+    def batch_simple_index_wikipedia_urls(self, wikipedia_urls:list, model:Literal['gpt', 'nemotron','local_nemotron','local_llama3_3']):
         for url in wikipedia_urls:
             self.simple_index_from_wikipedia_url(url,model)
 

@@ -63,7 +63,7 @@ from typing import Literal
 
 
 class AsyncChunkContextualizer:
-    def __init__(self, model:Literal["gpt", "nemotron","local_nemotron"]) -> None:
+    def __init__(self, model:Literal["gpt", "nemotron","local_nemotron","local_llama3_3"]) -> None:
         if model == "gpt":
             self.client = AsyncOpenAI(base_url=env.openai_base_url, api_key=env.openai_api_key)
             self.model = "gpt-4o-mini"
@@ -73,6 +73,9 @@ class AsyncChunkContextualizer:
         elif model == "local_nemotron":
             self.client = AsyncOpenAI(base_url=env.nvidia_local_base_url, api_key="abc")
             self.model = "nemotron-70b"
+        elif model == "local_llama3_3":
+            self.client = AsyncOpenAI(base_url=env.nvidia_local_base_url, api_key="abc")
+            self.model = "llama3_3"
         else:
             raise ValueError("Invalid model")
 

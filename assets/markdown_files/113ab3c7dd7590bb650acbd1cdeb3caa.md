@@ -3,7 +3,7 @@
 | Christmas | |
 | --- | --- |
 | Nativity scene depicted using Christmas lights | |
-| Also called | Noël, Nativity, Koleda, Xmas |
+| Also called | Noël, Nativity, Koleda, Xmas, Boro Din |
 | Observed by | Christians, many non-Christians |
 | Type | Christian, cultural, international |
 | Significance | Commemoration of the nativity of Jesus |
@@ -17,7 +17,7 @@
 * January 7 (O.S. December 25\) (most Oriental Orthodox and part of the Eastern Orthodox churches)
 * January 19 (O.S. January 6\) (Armenian Patriarchate of Jerusalem)
 
-**Christmas** is an annual festival commemorating the birth of Jesus Christ, observed primarily on December 25\[a] as a religious and cultural celebration among billions of people around the world. A liturgical feast central to Christianity, preparation for Christmas begins on the First Sunday of Advent and it is followed by Christmastide, which historically in the West lasts twelve days and culminates on Twelfth Night. Christmas Day is a public holiday in many countries, is celebrated religiously by a majority of Christians, as well as culturally by many non-Christians, and forms an integral part of the holiday season surrounding it.
+**Christmas** is an annual festival commemorating the birth of Jesus Christ, observed primarily on December 25\[a] as a religious and cultural celebration among billions of people around the world. A liturgical feast central to Christianity, preparation for Christmas begins on the First Sunday of Advent and it is followed by Christmastide, which historically in the West lasts twelve days and culminates on Twelfth Night. Christmas Day is a public holiday in many countries, is observed religiously by a majority of Christians, as well as celebrated culturally by many non-Christians, and forms an integral part of the annual holiday season.
 
 The traditional Christmas narrative recounted in the New Testament, known as the Nativity of Jesus, says that Jesus was born in Bethlehem, in accordance with messianic prophecies. When Joseph and Mary arrived in the city, the inn had no room, and so they were offered a stable where the Christ Child was soon born, with angels proclaiming this news to shepherds, who then spread the word.
 
@@ -58,7 +58,7 @@ In 567, the Council of Tours put in place the season of Christmastide, proclaimi
 
 The prominence of Christmas Day increased gradually after Charlemagne was crowned Emperor on Christmas Day in 800\. King Edmund the Martyr was anointed on Christmas in 855 and King William I of England was crowned on Christmas Day 1066\.
 
-By the High Middle Ages, the holiday had become so prominent that chroniclers routinely noted where various magnates celebrated Christmas. King Richard II of England hosted a Christmas feast in 1377 at which 28 oxen and 300 sheep were eaten. The Yule boar was a common feature of medieval Christmas feasts. Caroling also became popular, and was originally performed by a group of dancers who sang. The group was composed of a lead singer and a ring of dancers that provided the chorus. Various writers of the time condemned caroling as lewd, indicating that the unruly traditions of Saturnalia and Yule may have continued in this form. "Misrule"—drunkenness, promiscuity, gambling—was also an important aspect of the festival. In England, gifts were exchanged on New Year's Day, and there was special Christmas ale.
+By the High Middle Ages, the holiday had become so prominent that chroniclers routinely noted where various magnates celebrated Christmas. King Richard II of England hosted a Christmas feast in 1377 at which 28 oxen and 300 sheep were eaten. The Yule boar was a common feature of medieval Christmas feasts. Caroling also became popular, and was originally performed by a group of dancers who sang. The group was composed of a lead singer and a ring of dancers that provided the chorus. Various writers of the time condemned caroling as lewd, indicating that the unruly traditions of Saturnalia and Yule may have continued in this form. "Misrule"—drunkenness, promiscuity, gambling—was also an important aspect of the festival. In England, gifts were exchanged on New Year's Day (a custom at the royal court), and there was special Christmas ale.
 
 Christmas during the Middle Ages was a public festival that incorporated ivy, holly, and other evergreens. Christmas gift-giving during the Middle Ages was usually between people with legal relationships, such as tenant and landlord. The annual indulgence in eating, dancing, singing, sporting, and card playing escalated in England, and by the 17th century the Christmas season featured lavish dinners, elaborate masques, and pageants. In 1607, King James I insisted that a play be acted on Christmas night and that the court indulge in games. It was during the Reformation in 16th–17th-century Europe that many Protestants changed the gift bringer to the Christ Child or *Christkindl*, and the date of giving gifts changed from December 6 to Christmas Eve.
 
@@ -105,7 +105,7 @@ During the First World War and particularly (but not exclusively) in 1914, a ser
 
 Under the state atheism of the Soviet Union, after its foundation in 1917, Christmas celebrations—along with other Christian holidays—were prohibited in public. During the 1920s, 1930s, and 1940s, the League of Militant Atheists encouraged school pupils to campaign against Christmas traditions, such as the Christmas tree, as well as other Christian holidays, including Easter; the League established an antireligious holiday to be the 31st of each month as a replacement. At the height of this persecution, in 1929, on Christmas Day, children in Moscow were encouraged to spit on crucifixes as a protest against the holiday. Instead, the importance of the holiday and all its trappings, such as the Christmas tree and gift-giving, was transferred to the New Year. It was not until the dissolution of the Soviet Union in 1991 that the persecution ended and Orthodox Christmas became a state holiday again for the first time in Russia after seven decades.
 
-European History Professor Joseph Perry wrote that likewise, in Nazi Germany, "because Nazi ideologues saw organized religion as an enemy of the totalitarian state, propagandists sought to deemphasize—or eliminate altogether—the Christian aspects of the holiday" and that "Propagandists tirelessly promoted numerous Nazified Christmas songs, which replaced Christian themes with the regime's racial ideologies."
+In 1991, the Gubbio Christmas Tree, in Italy, 650 meters high and decorated with over 700 lights, entered the Guinness Book of Records as the tallest Christmas tree in the world. European History Professor Joseph Perry wrote that likewise, in Nazi Germany, "because Nazi ideologues saw organized religion as an enemy of the totalitarian state, propagandists sought to deemphasize—or eliminate altogether—the Christian aspects of the holiday" and that "Propagandists tirelessly promoted numerous Nazified Christmas songs, which replaced Christian themes with the regime's racial ideologies."
 
 As Christmas celebrations began to spread globally even outside traditional Christian cultures, several Muslim-majority countries began to ban the observance of Christmas, claiming it undermined Islam. In 2023, public Christmas celebrations were cancelled in Bethlehem, the city synonymous with the birth of Jesus. Palestinian leaders of various Christian denominations cited the ongoing Israel–Hamas war in their unanimous decision to cancel celebrations.
 
@@ -204,12 +204,24 @@ Christmas during the Middle Ages was a public festival with annual indulgences i
 
 More recently, in the United States, both NFL and NBA have held fixtures on Christmas Day.
 
+### Christmas in China
+
+In the late Qing Dynasty, Christmas was initially referred to as the "Foreign Winter Solstice" when it was first introduced to China.
+
+### Nordic Region
+
+In Sweden, it is traditional for companies to host a Christmas buffet lunch (julbord or jullunch) for their employees a week before Christmas. To prevent food poisoning during the holiday season, Swedish newspapers annually publish reports and laboratory tests warning the public to avoid leaving cold cuts, mayonnaise, and other perishable foods at room temperature to prevent spoilage. Christmas in Sweden is a time to indulge in festive meals, with roasted ham being the centerpiece of the feast. However, the exact day for enjoying this treat varies across regions, with each area having its own traditions. Another well-established custom in Sweden is tuning in to watch a special Disney television program at precisely 3 p.m. on December 24\.
+
+In Norway, the Christmas feast is held on December 24, with each region offering its own special dishes for Christmas dinner. After the meal, "Julenissen" (where "jule" means Christmas and "nissen" refers to a mythical elf in Norwegian folklore) brings gifts to well-behaved children. Following a quiet family gathering on December 25, another grand celebration takes place on Boxing Day, December 26, where children go door-to-door visiting neighbors and receiving treats.
+
+In Finland, Joulupukki (or the "Christmas Goat") is the Finnish version of Santa Claus. He delivers gifts to well-behaved children while riding a sleigh pulled by reindeer.
+
 Choice of date
 --------------
 
 ### Theories
 
-There are several theories as to why December 25 was chosen as the date for Christmas, although theology professor Susan Roll notes that "no liturgical historian \[...] goes so far as to deny that it has any sort of relation with the sun, the winter solstice and the popularity of solar worship in the later Roman Empire". The early Church linked Jesus Christ to the Sun and referred to him as the 'Sun of Righteousness' (*Sol Justitiae*) prophesied by Malachi. In the early fifth century, Augustine of Hippo and Maximus of Turin preached that it was fitting to celebrate Christ's birth at the winter solstice, because it marked the point when the hours of daylight begin to grow.
+There are several theories as to why December 25 was chosen as the date for Christmas. However, theology professor Susan Roll notes that "no liturgical historian \[...] goes so far as to deny that it has any sort of relation with the sun, the winter solstice and the popularity of solar worship in the later Roman Empire". The early Church linked Jesus Christ to the Sun and referred to him as the 'Sun of Righteousness' (*Sol Justitiae*) prophesied by Malachi. In the early fifth century, Augustine of Hippo and Maximus of Turin preached that it was fitting to celebrate Christ's birth at the winter solstice, because it marked the point when the hours of daylight begin to grow.
 
 The 'history of religions' or 'substitution' theory suggests that the Church chose December 25 as Christ's birthday (*dies Natalis Christi*) to appropriate the Roman winter solstice festival *dies Natalis Solis Invicti* (birthday of *Sol Invictus*, the 'Invincible Sun'), held on this date since 274 AD; before the earliest evidence of Christmas on that date. Gary Forsythe, Professor of Ancient History, says that the *Natalis Solis Invicti* followed "the seven-day period of the *Saturnalia* (December 17–23\), Rome's most joyous holiday season since Republican times, characterized by parties, banquets, and exchanges of gifts". Roll says that "the specific nature of the relation" between Christmas and the *Natalis Solis Invicti* has not yet been "conclusively proven from extant texts".
 
@@ -248,10 +260,6 @@ Although it follows the Julian calendar, the Ancient Church of the East decided 
 Also, some Byzantine Rite Catholics and Byzantine Rite Lutherans.
 
 Most Protestants (P'ent'ay/Evangelicals) in the diaspora have the option of choosing the Ethiopian calendar (Tahsas 29/January 7\) or the Gregorian calendar (December 25\) for religious holidays, with this option being used when the corresponding eastern celebration is not a public holiday in the western world (with most diaspora Protestants celebrating both days).\[*citation needed*]
-
-### Venezuela
-
-In September 2024, Venezuelan president Nicolás Maduro declared Christmas to be brought forward from December 25 to October 1\.
 
 Economy
 -------

@@ -22,6 +22,8 @@ motiongreactor = {git = "git@github.com:motiong-io/reactor.git",branch = "feat-r
 datasets = "^3.2.0"
 streamlit = "^1.41.0"
 motiongchunker = {git = "git@github.com:motiong-io/motiong-chunker.git"}
+pyomo = {version = "^6.8.2", extras = ["optional"]}
+
 
 
 [tool.poetry.group.dev.dependencies]

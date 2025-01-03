@@ -19,6 +19,7 @@
 - Independent variables to investigate:
     - Number of chunks retrieved by hybrid search: `int N_s in range(3, 301)`
     - Number of chunks picked after reranking `int N_r in range(1, 11)`
+    - Hybrid search alpha  `float alpha in [0.0, 1.0]`
     - LLM temperature `float T in [0.0, 1.0]`
     - LLM frequency penalty `float P_f in [-2.0, 2.0]`
     - Multi-step or not (simple RAG) `bool M True or False`

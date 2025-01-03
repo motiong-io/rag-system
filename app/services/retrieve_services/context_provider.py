@@ -5,20 +5,27 @@ from weaviate.classes.init import Auth
 import weaviate.classes as wvc
 
 class WeaviateContextProvider(BaseContextProvider):
-    def __init__(self,weaviate_url:str, weaviate_key:str, collection_name:str, chunks_N:int=50 ) -> None:
+    def __init__(self,weaviate_url:str, weaviate_key:str, collection_name:str,
+                 chunks_retrieved:int = 50, hybrid_search_alpha:float = 0.8
+                 ) -> None:
         self.weaviate_client = weaviate.connect_to_weaviate_cloud(
                 cluster_url=weaviate_url,                       
                 auth_credentials=Auth.api_key(weaviate_key),
             )
         self.collection=self.weaviate_client.collections.get(collection_name)
-        self.chunks_N=chunks_N
+
+        # Parameters
+        self.chunks_retrieved=chunks_retrieved
+        self.hybrid_search_alpha=hybrid_search_alpha
+
+
 
     def hybrid_search(self, query_vector: list[float], query:str):
         response = self.collection.query.hybrid(
             query=query,
             vector=query_vector,
-            alpha=0.8,
-            limit=self.chunks_N
+            alpha=self.hybrid_search_alpha,
+            limit=self.chunks_retrieved
         )
         return [obj.properties['text_to_embed'] for obj in response.objects]
 

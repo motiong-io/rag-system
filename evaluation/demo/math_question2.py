@@ -37,10 +37,11 @@ for point in random_initial_points:
     print(f"Initial y: {model.y()}")
 
     solver.solve(model, strategy='GOA',time_limit=13600,
-                                    #    mip_solver= 'cplex', 
-                                    nlp_solver='ipopt',
+                                    #    mip_solver= 'glpk', 
+                                    # nlp_solver='ipopt',
                                     # tee=True,
-                                    use_mcpp = True
+                                    use_mcpp = True,
+                                    add_cuts_at_incumbent = True
                                     )
 
     print(f"Optimal x: {model.x()}")

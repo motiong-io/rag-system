@@ -2342,7 +2342,7 @@ openai = "^1.54.4"
 type = "git"
 url = "git@github.com:motiong-io/reactor.git"
 reference = "HEAD"
-resolved_reference = "24591248a30e29098495d5addc6d3cb7233cd73b"
+resolved_reference = "b750dbfc0704046f6e851504c6ee7a8935ec9b01"
 
 [[package]]
 name = "multidict"

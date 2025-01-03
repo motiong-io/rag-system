@@ -14,6 +14,7 @@ class InfinityRerankService(BaseReranker):
         self.model_name = model_name
         self.client = Client(base_url=self.client_url)
 
+
     def rerank(self, corpus: List[str], query: str, top_n: int = None) -> list[str]:
         with Client(base_url=self.client_url) as client:
             reranked_corpus = rerank.sync(
@@ -37,18 +38,21 @@ from typing import Literal
 
 class CohereRerankService(BaseReranker):
 
-    def __init__(self, cohere_api_key,rerank_model:Literal['rerank-english-v3.0']):
+    def __init__(self, cohere_api_key,rerank_model:Literal['rerank-english-v3.0'],
+                 output_chunks_number:int=50):
         self.client = cohere.Client(cohere_api_key)
         self.rerank_model = rerank_model
+        self.output_chunks_number =  output_chunks_number  
 
-    def rerank(self, contexts:List[str], query:str,top_n:int=None) -> List[str]:
+    def rerank(self, contexts:List[str], query:str) -> List[str]:
         response = self.client.rerank(
             model=self.rerank_model,
             query=query,
             documents=contexts,
-            top_n=top_n,
+            top_n=self.output_chunks_number,
             return_documents=True
         )
+        
         # final_results = []
         # for r in response.results:
         #     original_result = semantic_results[r.index]

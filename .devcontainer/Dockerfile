@@ -32,7 +32,10 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
 # Install protoc
 RUN apt-get update && apt-get install -y protobuf-compiler
 
+# install glpk
+RUN sudo apt-get update && apt-get install -y glpk-utils
 
+RUN sudo apt-get update && apt-get install -y gcc g++ gfortran git patch wget pkg-config liblapack64-dev libmetis-dev
 
 # Setup env
 RUN mkdir ${DOCKER_HOME}/.ssh && \

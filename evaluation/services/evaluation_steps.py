@@ -12,7 +12,7 @@ from app.config import env
 from evaluation.services.check_answer import check_answer
 
 
-class EVA:
+class EvaluationSteps:
     """
     calculate
     
@@ -91,9 +91,12 @@ class EVA:
         print(f"Ground Truth: {ground_truth}")
         print(f"Generated Answer: {generated_answer}")
         print(f"Check Result: {check_result}")
-        
+        return check_result
+    
+
+
 def test_EVA():
-    eva = EVA(number_chunks_limit=100,
+    eva = EvaluationSteps(number_chunks_limit=30,
               hybrid_search_alpha=0.5,
               number_chunks_rerank=10,
               temperature_LLM=0.1,
@@ -105,6 +108,7 @@ def test_EVA():
     ground_truth = "Jane Ballou"
     eva.run(question,ground_truth)
     eva.context_provider.close()
+
 
 
 if __name__ == "__main__":

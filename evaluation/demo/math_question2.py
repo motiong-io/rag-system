@@ -1,5 +1,7 @@
 from pyomo.environ import *
 from pyomo.contrib.mindtpy.MindtPy import MindtPySolver
+from pyomo.opt import SolverStatus, TerminationCondition
+
 import random
 
 def generate_random_initial_points():
@@ -36,19 +38,22 @@ for point in random_initial_points:
     print(f"Initial x: {model.x()}")
     print(f"Initial y: {model.y()}")
 
-    solver.solve(model, strategy='GOA',time_limit=13600,
+    results = solver.solve(model, strategy='GOA',time_limit=13600,
                                     #    mip_solver= 'glpk', 
                                     # nlp_solver='ipopt',
-                                    # tee=True,
+                                    tee=True,
                                     use_mcpp = True,
                                     add_cuts_at_incumbent = True
                                     )
-
+    
+    print(f"Solver status: {results.solver.status}")
+    print(f"Termination condition: {results.solver.termination_condition}")
     print(f"Optimal x: {model.x()}")
     print(f"Optimal y: {model.y()}")
     print(f"minimum loss: {model.loss()}")
 
 
 # model.display()
+# model.solutions.store_to(model)
 
 # print(f"x=1.57,y=1:{f(1.57,1)}")

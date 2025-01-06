@@ -31,6 +31,7 @@ scipy = "^1.14.1"
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"
 ipdb = "^0.13.13"
+scikit-learn = "^1.6.0"
 
 [build-system]
 requires = ["poetry-core"]

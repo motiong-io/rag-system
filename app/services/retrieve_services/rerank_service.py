@@ -9,13 +9,14 @@ from typing import List
 
 
 class InfinityRerankService(BaseReranker):
-    def __init__(self, client_url, model_name):
+    def __init__(self, model_name:str ="mixedbread-ai/mxbai-rerank-xsmall-v1", client_url:str = "http://10.2.3.50:7997", output_chunks_number:int=50):
         self.client_url = client_url
         self.model_name = model_name
         self.client = Client(base_url=self.client_url)
+        self.output_chunks_number = output_chunks_number
 
 
-    def rerank(self, corpus: List[str], query: str, top_n: int = None) -> list[str]:
+    def rerank(self, corpus: List[str], query: str) -> list[str]:
         with Client(base_url=self.client_url) as client:
             reranked_corpus = rerank.sync(
                 client=client,
@@ -25,7 +26,7 @@ class InfinityRerankService(BaseReranker):
                         "documents": corpus,
                         "return_documents": True,
                         "model": self.model_name,
-                        "top_n": top_n,
+                        "top_n": self.output_chunks_number,
                     }
                 ),
             )
@@ -74,7 +75,7 @@ def test_infinity_rerank_service():
         "A man is riding a horse.",
         "A woman is playing violin."
     ]
-    rerank_service = InfinityRerankService(client_url, model)
+    rerank_service = InfinityRerankService(client_url, model,3)
     reranked_corpus = rerank_service.rerank(corpus, query)
     print(reranked_corpus)
 

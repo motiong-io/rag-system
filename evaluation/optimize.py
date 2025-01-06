@@ -65,7 +65,7 @@ eva = EvaluationSteps(
 
 model.loss = pyo.Objective(expr=calculate_loss(eva), sense=pyo.minimize)
 
-results = opt_solver.solve(model,strategy='GOA', tee=True,use_mcpp = True, add_cuts_at_incumbent = True)
+results = opt_solver.solve(model,strategy='GOA', tee=True,use_mcpp = True, add_cuts_at_incumbent = True, time_limit=3600)
 
 eva.context_provider.close()
 

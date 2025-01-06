@@ -3,7 +3,7 @@ from app.model.message_for_llm import MessageForLLM
 
 from app.services.retrieve_services.context_provider import WeaviateContextProvider
 from app.services.retrieve_services.query_embedding import QueryEmbedding
-from app.services.retrieve_services.rerank_service import CohereRerankService
+from app.services.retrieve_services.rerank_service import InfinityRerankService#CohereRerankService
 
 from app.llm.get_llm import get_llm
 
@@ -48,7 +48,8 @@ class EvaluationSteps:
 
         ## Query Embedding
         self.query_embedding = QueryEmbedding()
-        self.reranker = CohereRerankService(env.cohere_api_key,'rerank-english-v3.0',output_chunks_number=self.number_chunks_rerank)
+        # self.reranker = CohereRerankService(env.cohere_api_key,'rerank-english-v3.0',output_chunks_number=self.number_chunks_rerank)
+        self.reranker = InfinityRerankService(client_url="http://10.2.3.50:7997",model_name="mixedbread-ai/mxbai-rerank-xsmall-v1",output_chunks_number=self.number_chunks_rerank)
 
         if self.if_multi_step_RAG:
             from motiongreactor.orchestrators.multi_step_rag import MultiStepRagOrchestrator

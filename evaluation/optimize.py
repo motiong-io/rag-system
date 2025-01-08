@@ -3,6 +3,7 @@ from pyomo.opt import SolverFactory
 
 # ==> Create a solver and load the model
 opt_solver = SolverFactory('mindtpy')
+
 model = pyo.ConcreteModel()
 
 # ==> Define the variables
@@ -23,6 +24,8 @@ model.MSR = pyo.Var(within=pyo.Binary)
 # 7. if_contextual_embedding: bool
 model.CE = pyo.Var(within=pyo.Binary)
 
+# ==> Set constraints
+model.c_N_s_N_r = pyo.Constraint(expr=model.N_s >= model.N_r)
 
 # ==> Generate random initial points
 import random
@@ -51,25 +54,28 @@ model.display()
 
 
 # ==> Define the objective function
-from evaluation.services.evaluation_steps import EvaluationSteps
-from evaluation.calculate_loss import calculate_loss
-eva = EvaluationSteps(
-    number_chunks_limit=model.N_s.value,
-    hybrid_search_alpha=model.alpha.value,
-    number_chunks_rerank=model.N_r.value,
-    temperature_LLM=model.T.value,
-    penalty_frequency_LLM = model.P_f.value,
-    if_multi_step_RAG= model.MSR.value,
-    if_contextual_embedding = model.CE.value
-)
 
-model.loss = pyo.Objective(expr=calculate_loss(eva), sense=pyo.minimize)
+from evaluation.calculate_loss import calculate_loss,calculate_loss_threaded
 
-results = opt_solver.solve(model,strategy='GOA', tee=True,use_mcpp = True, add_cuts_at_incumbent = True, time_limit=3600)
+model.loss = pyo.Objective(expr=calculate_loss_threaded(
+            model.N_s.value,
+            model.N_r.value,
+            model.alpha.value,
+            model.T.value,
+            model.P_f.value,
+            model.MSR.value,
+            model.CE.value
+        ), sense=pyo.minimize)
 
-eva.context_provider.close()
+results = opt_solver.solve(model,strategy='GOA', tee=True,use_mcpp = True, add_cuts_at_incumbent = True, time_limit=36000,
+                           nlp_solver='ipopt',nlp_solver_args={'timelimit': 36000, } ,
+                           mip_solver='glpk', mip_solver_args={'timelimit': 36000} 
+                           )
 
-# ==> Display the results
+
+
+
+# # ==> Display the results
 print(f"Solver status: {results.solver.status}")
 print(f"Termination condition: {results.solver.termination_condition}")
 print(f"Optimal N_s: {model.N_s()}")

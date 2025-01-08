@@ -2,13 +2,15 @@ from pyomo.environ import *
 from pyomo.contrib.mindtpy.MindtPy import MindtPySolver
 from pyomo.opt import SolverStatus, TerminationCondition
 
+ConfigDict = {}
+
 import random
 
 def generate_random_initial_points():
     x_val = random.uniform(0.0, 2.0)  # Random value for x in [0.0, 2.0]
     y_val = random.choice([-1, 0, 1])  # Random integer value for y from {-1, 0, 1}
     return {'x': x_val, 'y': y_val}
-random_initial_points = [generate_random_initial_points() for _ in range(10)]
+random_initial_points = [generate_random_initial_points() for _ in range(3)]
 
 model = ConcreteModel()
 
@@ -25,11 +27,12 @@ def loss_rule(m):
     return f(m.x, m.y)
 
 
-model.loss = Objective(rule=loss_rule, sense=minimize)
 
 model.loss = Objective(expr=f(model.x,model.y), sense=minimize)
 
 solver = MindtPySolver()
+
+
 
 for point in random_initial_points:
     print("=========================================")
@@ -38,15 +41,20 @@ for point in random_initial_points:
     print(f"Initial x: {model.x()}")
     print(f"Initial y: {model.y()}")
 
-    results = solver.solve(model, strategy='GOA',time_limit=13600,
-                                    #    mip_solver= 'glpk', 
-                                    # nlp_solver='ipopt',
-                                    tee=True,
-                                    use_mcpp = True,
-                                    add_cuts_at_incumbent = True
-                                    )
-    
+    # results = solver.solve(model, strategy='GOA',time_limit=13600,
+    #                                 #    mip_solver= 'glpk', 
+    #                                 # nlp_solver='ipopt',
+    #                                 tee=True,
+    #                                 use_mcpp = True,
+    #                                 add_cuts_at_incumbent = True
+    #                                 )
+    results = solver.solve(model,strategy='GOA', tee=True,
+                           use_mcpp = True, add_cuts_at_incumbent = True, time_limit=36000,
+                           nlp_solver='ipopt', nlp_solver_args=dict(timelimit = 36000, option_file_name = 'ipopt'),
+                           mip_solver='glpk', mip_solver_args={'timelimit': 36000} 
+                           )
     print(f"Solver status: {results.solver.status}")
+    # print(f"Solver option: {results.solver._option}")
     print(f"Termination condition: {results.solver.termination_condition}")
     print(f"Optimal x: {model.x()}")
     print(f"Optimal y: {model.y()}")

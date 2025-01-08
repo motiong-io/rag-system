@@ -1,0 +1,3 @@
+tol 1e-6
+max_iter 5000
+gradient_approximation finite-difference-values

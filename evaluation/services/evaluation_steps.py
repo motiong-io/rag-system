@@ -3,7 +3,7 @@ from app.model.message_for_llm import MessageForLLM
 
 from app.services.retrieve_services.context_provider import WeaviateContextProvider
 from app.services.retrieve_services.query_embedding import QueryEmbedding
-from app.services.retrieve_services.rerank_service import InfinityRerankService#CohereRerankService
+from app.services.retrieve_services.rerank_service import InfinityRerankService #CohereRerankService
 
 from app.llm.get_llm import get_llm
 
@@ -94,6 +94,36 @@ class EvaluationSteps:
         print(f"Check Result: {check_result}")
         return check_result
     
+    async def __a_react(self,question:str):
+        if self.if_multi_step_RAG:
+            temperature_setting = [0, self.temperature_LLM,0,0]
+            frequency_penalty_setting = [self.penalty_frequency_LLM]*4
+        else:
+            temperature_setting = self.temperature_LLM
+            frequency_penalty_setting = self.penalty_frequency_LLM
+
+        conversation = [
+            MessageForLLM(
+                role="user",
+                content=question,
+            )
+        ]
+        full_answer = ""
+        async for x in self.reactor.a_react(
+            conversation=conversation, product_related_prompt=None, llm_temperature=temperature_setting, frequency_penalty=frequency_penalty_setting
+        ):
+            full_answer += x
+        return full_answer
+    
+    async def a_run(self, question:str,ground_truth:str):
+        generated_answer = await self.__a_react(question)
+        check_result = check_answer(question, ground_truth, generated_answer)
+        print(f"Question: {question}")
+        print(f"Ground Truth: {ground_truth}")
+        print(f"Generated Answer: {generated_answer}")
+        print(f"Check Result: {check_result}")
+        return check_result
+
 
 
 def test_EVA():

@@ -10,7 +10,20 @@ from app.llm.get_llm import get_llm
 from app.config import env
 
 from evaluation.services.check_answer import check_answer
+from evaluation.results.record import ResultRecordService
+import sys
+import io
 
+def capture_stdout(func, *args, **kwargs):
+    old_stdout = sys.stdout  # 保存原 stdout
+    new_stdout = io.StringIO()  # 创建一个新的缓冲区
+    sys.stdout = new_stdout  # 替换 stdout 为缓冲区
+    try:
+        result = func(*args, **kwargs)  # 调用目标函数
+    finally:
+        sys.stdout = old_stdout  # 恢复原 stdout
+    output = new_stdout.getvalue()  # 获取缓冲区内容
+    return result, output
 
 class EvaluationSteps:
     """
@@ -86,12 +99,18 @@ class EvaluationSteps:
         return full_answer
 
     def run(self, question:str,ground_truth:str):
-        generated_answer = self.__react(question)
+        generated_answer,log = capture_stdout(self.__react , question)
         check_result = check_answer(question, ground_truth, generated_answer)
+        rrs = ResultRecordService()
+        rrs.add_contents(log)
         print(f"Question: {question}")
         print(f"Ground Truth: {ground_truth}")
         print(f"Generated Answer: {generated_answer}")
         print(f"Check Result: {check_result}")
+        rrs.add_contents(f"Question: {question}")
+        rrs.add_contents(f"Ground Truth: {ground_truth}")
+        rrs.add_contents(f"Generated Answer: {generated_answer}")
+        rrs.add_contents(f"Check Result: {check_result}")
         return check_result
     
     async def __a_react(self,question:str):

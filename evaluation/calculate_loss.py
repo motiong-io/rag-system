@@ -3,8 +3,9 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 from evaluation.services.evaluation_steps import EvaluationSteps
 from typing import Literal
 from pqdm.processes import pqdm
-import asyncio
+from evaluation.results.record import ResultRecordService
 
+rrs = ResultRecordService()
 # benchmark data read
 def get_qa(row_index:int):
     row=read_data_row(row_index)
@@ -59,7 +60,10 @@ def evaluate_thread(index, N_s, N_r, alpha, T, P_f, MSR, CE):
     eva.context_provider.close()
     return check_result
 
-def evaluate_in_threads(indices, N_s, N_r, alpha, T, P_f, MSR, CE, max_workers=4):
+
+
+## for fast_api
+def evaluate_in_threads(indices:list, N_s, N_r, alpha, T, P_f, MSR, CE, max_workers=4):
     """
     多线程调用 evaluate_thread 函数。
 
@@ -84,10 +88,12 @@ def evaluate_in_threads(indices, N_s, N_r, alpha, T, P_f, MSR, CE, max_workers=4
             index = future_to_index[future]
             try:
                 results[index] = future.result()
-                print("==============================")
+                # print("==============================")
+                rrs.add_contents(f"Index {index} finished.")
                 print(f" {len(results)} / {len(indices)} finished.")
             except Exception as e:
                 print(f"Index {index} generated an exception: {e}")
+                rrs.add_contents(f"Index {index} generated an exception: {e}")
                 results[index] = None
     return results
 
@@ -113,6 +119,7 @@ def calculate_loss_threaded(
     print(f"Number of incorrect answers: {n_count}")
     print(f"Loss: {return_loss}")
     return return_loss
+
 
 
 async def a_calculate_loss(
@@ -153,6 +160,12 @@ async def a_calculate_loss(
     print(f"Number of incorrect answers: {n_count}")
     print(f"Loss: {return_loss}")
     return return_loss
+
+
+
+
+
+
 
 
 if __name__ == '__main__':

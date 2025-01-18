@@ -38,16 +38,17 @@ class KnowledgeIndexService:
 
         if not os.path.exists(f"{self.document_dir}/{wikipedia_loader.uuid}.json"):
             # Contextualize the chunks
-            try:
-                tracemalloc.start()
-                document = asyncio.run(AsyncChunkContextualizer(model).contextualize_document(document_with_chunks_no_contextualized_text))
-            finally:
-                snapshot = tracemalloc.take_snapshot()
-                top_stats = snapshot.statistics('lineno')
+            # tracemalloc.start()
+            # try:
+            document = asyncio.run(AsyncChunkContextualizer(model).contextualize_document(document_with_chunks_no_contextualized_text))
+            # finally:
+                # snapshot = tracemalloc.take_snapshot()
+                # top_stats = snapshot.statistics('lineno')
 
-                print("[ Top 10 ]")
-                for stat in top_stats[:10]:
-                    print(stat)
+                # print(top_stats)
+                # print("[ Top 10 ]")
+                # for stat in top_stats[:10]:
+                #     print(stat)
             
 
             # document = ChunkContextualizer().contextualize_document(document_with_chunks_no_contextualized_text)

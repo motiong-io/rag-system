@@ -1,0 +1,7 @@
+Question: What was the running time of the first cartoon in the series that inspired the name of the Looney Tunes franchise?
+Ground truth: 5 minutes and 31 seconds
+log:
+
+Generated answer: The provided text does not mention the running time of the first cartoon in the series that inspired the name of the Looney Tunes franchise. The text appears to be a collection of unrelated passages, including discussions about a tapestry, film directors, Warner Bros. Records, and Czech filmography. If you have any further questions or could provide more context, I'd be happy to try and help.
+
+Check result: N

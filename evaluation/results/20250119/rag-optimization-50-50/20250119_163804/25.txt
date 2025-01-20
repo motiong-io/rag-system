@@ -1,0 +1,16 @@
+Question: What was the age difference between Mike Tyson and Tyson Fury on the respective days on which they lost their first ever fights? Represent the figure in years only.
+Ground truth: 12 years.
+log:
+
+Generated answer: To determine the age difference, we first need to find out when each boxer lost their first fight.
+
+Mike Tyson lost to James "Buster" Douglas on February 11, 1990. On that day, Mike Tyson was 23 years old.
+
+Tyson Fury lost to Deontay Wilder did not happen until December 1, 2018 (it was a draw), but he lost for the first time against Francesco Pianeta didn't happen either. However his first loss came at the hands of Deontay Wilder's rematch on February 22, 2020. On that day, Tyson Fury was 31 years old.
+
+Now we can find the age difference between them on their respective loss days.
+31 (Tyson Fury's age) - 23 (Mike Tyson's age) = 8
+
+The answer is 8.
+
+Check result: N

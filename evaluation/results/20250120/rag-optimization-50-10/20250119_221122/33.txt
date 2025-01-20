@@ -1,0 +1,65 @@
+Question: How old would the founder of the publishing company of the magazine that serialized the manga series Raw Hero have been the year the magazine ended publication?
+Ground truth: 145
+log:['What is the name of the magazine that serialized the manga series Raw Hero?', 'What is the name of the publishing company of the magazine found in sub-query 1?', 'Who is the founder of the publishing company found in sub-query 2?', 'In what year did the magazine found in sub-query 1 end publication?', 'What is the birth year of the founder found in sub-query 3?', 'Calculate the age of the founder found in sub-query 3 the year the magazine ended publication, using the birth year from sub-query 5 and the year the magazine ended publication from sub-query 4.']
+['What is the name of the magazine that serialized the manga series Raw Hero?', 'What is the name of the publishing company of the magazine "Evening"?', 'Who is the founder of the publishing company Kodansha?', 'In what year did the magazine "Evening" end publication?', 'What is the birth year of the founder Tsuguharu Inoue or other possible founders of Kodansha?']
+['What is the birth year of the founder Tsuguharu Inoue or other possible founders of Kodansha?', 'In what year did the magazine "Evening" end publication?']
+['What is the year the magazine "Evening" ended publication?', 'How old would Seiji Noma have been in the year the magazine "Evening" ended publication?']
+['How old would Seiji Noma have been in 2023?']
+['What is the name of the publishing company of the magazine "Evening"?', 'What is the birth year of the founder of Kodansha?', 'How old would the founder of Kodansha have been in 2023?']
+['What is the birth year of the founder of Kodansha?', 'How old would the founder of Kodansha have been in 2023?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What is the name of the magazine that serialized the manga series Raw Hero?:
+The magazine that serialized the manga series "Raw Hero" is "Evening", a Japanese seinen manga magazine published by Kodansha.
+
+What is the name of the magazine that serialized the manga series Raw Hero?:
+The magazine that serialized the manga series "Raw Hero" is "Evening", a Japanese seinen manga magazine published by Kodansha.
+
+What is the birth year of the founder Tsuguharu Inoue or other possible founders of Kodansha?:
+The founder of Kodansha is Seiji Noma, not Tsuguharu Inoue. Seiji Noma was born in 1878.
+
+What is the year the magazine "Evening" ended publication?:
+The magazine "Evening" ended publication in 2023.
+
+How old would Seiji Noma have been in 2023?:
+Seiji Noma was born in 1878 and died in 1938. To find his age in 2023, we need to subtract his birth year from 2023.
+
+2023 - 1878 = 145
+
+So, Seiji Noma would have been 145 years old in 2023 if he were still alive.
+
+What is the name of the publishing company of the magazine "Evening"?:
+The publishing company of the magazine "Evening" is Kodansha.
+
+
+        
+
+
+Generated answer: To answer this question, we need to follow these steps:
+
+1. Identify the magazine that serialized the manga series "Raw Hero". 
+The magazine is "Evening".
+
+2. Identify the publishing company of the magazine "Evening". 
+The publishing company is Kodansha.
+
+3. Identify the founder of Kodansha. 
+The founder of Kodansha is Seiji Noma.
+
+4. Identify the year the magazine "Evening" ended publication. 
+The magazine "Evening" ended publication in 2023.
+
+5. Calculate the age of Seiji Noma in 2023. 
+Seiji Noma was born in 1878. 
+
+2023 - 1878 = 145
+
+So, Seiji Noma would have been 145 years old in 2023 if he were still alive.
+
+Therefore, the founder of the publishing company of the magazine that serialized the manga series Raw Hero would have been 145 years old the year the magazine ended publication.
+
+Check result: Y

@@ -1,0 +1,7 @@
+Question: As of August 1 2024, what is the most recently described genus of Colosteidae?
+Ground truth: Deltaherpeton, first described in 2010
+log:
+
+Generated answer: As of my knowledge cutoff in December 2023, the most recently described genus of Colosteidae is *Deltaherpeton*, which was named by John R. Bolt and R. Eric Lombard in 2010. However, please note that my knowledge may not be up to date, and there may have been new discoveries or descriptions of Colosteidae genera between December 2023 and August 1, 2024. For the most recent information, I recommend checking scientific publications or databases for updates on Colosteidae research.
+
+Check result: Y

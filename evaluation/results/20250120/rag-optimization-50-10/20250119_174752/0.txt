@@ -1,0 +1,23 @@
+Question: If my future wife has the same first name as the 15th first lady of the United States' mother and her surname is the same as the second assassinated president's mother's maiden name, what is my future wife's name? 
+Ground truth: Jane Ballou
+log:
+
+Generated answer: The 15th President of the United States was James Buchanan, and his niece, Harriet Lane, acted as the First Lady during his presidency. However, if we consider the 15th First Lady in chronological order (not by president), it would be Mary Todd Lincoln's predecessor. Since Mary Todd Lincoln was the 16th First Lady (wife of Abraham Lincoln), her predecessor would be Jane Pierce (wife of Franklin Pierce) or Harriet Lane (as acting First Lady for James Buchanan). 
+
+However, since Jane Pierce is often considered the 14th or 15th First Lady and her husband Franklin Pierce is considered the 14th President of the United States. Therefore we will look at Jane Pierce's mother: Elizabeth Means.
+
+Elizabeth Means married Benjamin Pierce and they had a son named Franklin.
+
+Now let us find out who is the second assassinated U.S. President: 
+1st - Abraham Lincoln
+2nd - James A. Garfield
+
+James A. Garfield's mother was Eliza Ballou before marrying Abram Garfield.
+
+Combining these facts together:
+First name: Elizabeth
+Last name: Ballou
+
+So your future wife's name could be Elizabeth Ballou.
+
+Check result: N

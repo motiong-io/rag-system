@@ -1,0 +1,30 @@
+Question: Małgorzata Rożniecka is a model who won the title of Miss International. What is the difference in title years from when she won and the pageant winner who was murdered by her stalker?
+Ground truth: 10 years
+log:['In what year did Małgorzata Rożniecka win the title of Miss International?', 'Who is the pageant winner that was murdered by her stalker?', 'In what year was the pageant winner murdered by her stalker?']
+['Who is the pageant winner that was murdered by her stalker?', 'In what year was the pageant winner murdered by her stalker?']
+['None']
+['What is the difference in title years from when Małgorzata Rożniecka won (2001) and the pageant winner who was murdered by her stalker?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        In what year did Małgorzata Rożniecka win the title of Miss International?:
+Małgorzata Rożniecka won the title of Miss International in 2001.
+
+Who is the pageant winner that was murdered by her stalker?:
+None of the provided contexts mention a pageant winner being murdered by her stalker. They discuss various topics, including the Miss International pageant, Mike Tyson's rape trial, Princess Diana's life and death, and Jane Eyre. If you're looking for information on a specific incident or person, please provide more context or clarify your question.
+
+None:
+You've chosen not to use any of the provided contexts. How can I assist you today? Do you have a question or topic you'd like to discuss?
+
+
+        
+
+
+Generated answer: Unfortunately, I don't have information on a pageant winner being murdered by her stalker, including the year of the incident. However, I can tell you that Małgorzata Rożniecka won the title of Miss International in 2001.
+
+If you could provide more context or information about the pageant winner who was murdered by her stalker, I may be able to help you better. Alternatively, if you're looking for information on a specific incident or person, please let me know and I'll do my best to assist you.
+
+Check result: N

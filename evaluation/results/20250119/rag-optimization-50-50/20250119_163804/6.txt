@@ -1,0 +1,19 @@
+Question: I have an element in mind and would like you to identify the person it was named after. Here's a clue: The element's atomic number is 9 higher than that of an element discovered by the scientist who discovered Zirconium in the same year.
+Ground truth: Mendelevium is named after Dmitri Mendeleev.
+log:
+
+Generated answer: The element Zirconium was discovered by Dirk Coster and Georg von Hevesy, but not alone. They were searching for element 72, which they found and named Hafnium, in zirconium ores. 
+
+However, the scientist who discovered an element in the same year as the discovery of Zirconium (1911 is not correct as it is for Hafnium but rather 1789 for zircon or more precisely a related mineral) is actually Martin Heinrich Klaproth. 
+
+Klaproth discovered Uranium (atomic number 92). The element that has an atomic number 9 higher than Uranium would be Mendelevium's neighbor on the periodic table - or rather - an element with atomic number 101.
+
+So the person it was named after is Glenn T. Seaborg, an American chemist who developed the actinide concept of heavy-element electronic structure and worked on developing atomic bombs during World War II.
+
+The answer to your riddle would be 'Seaborg', from Seaborgium (Sg), which indeed has an atomic number of 106 - however I've deduced that you are referring to 'Mendelev' from Mendelevium (Md), given its relation to being '9 higher' than that of uranium and having no direct connection with Sg being named after him directly resulting from this specific question's parameters.
+
+
+
+Thus: Dmitri Mendeleev
+
+Check result: Y

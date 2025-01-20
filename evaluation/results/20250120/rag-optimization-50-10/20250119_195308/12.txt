@@ -1,0 +1,34 @@
+Question: The Basibasy mine is located in Madagascar. This mine is abundant in a specific chemical element that was discovered for the first time in 1791. The person who discovered this element was born on what is now known as a major US holiday - what holiday is this?
+Ground truth: Christmas
+log:['What chemical element is abundant in the Basibasy mine in Madagascar?', 'Who discovered the chemical element found in the Basibasy mine?', 'On which US holiday was the discoverer of the chemical element born?']
+['Who discovered Titanium?', 'On which US holiday was the discoverer of Titanium born?']
+['On which US holiday was William Gregor born?', '', '']
+['What US holiday was William Gregor, the discoverer of Titanium, born on?', '', '']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What chemical element is abundant in the Basibasy mine in Madagascar?:
+The chemical element that is abundant in the Basibasy mine in Madagascar is Titanium.
+
+Who discovered Titanium?:
+According to the provided contexts, Titanium was discovered by William Gregor in 1791. He found it in a black sand in the Manaccan valley in Cornwall, Great Britain, and named it "manaccanite". Later, Martin Heinrich Klaproth independently discovered the same element in 1795 and named it "Titanium" after the Titans of Greek mythology. However, it is acknowledged that William Gregor made the discovery first.
+
+On which US holiday was William Gregor born?:
+William Gregor was born on December 25, 1761, which is Christmas Day.
+
+
+        
+
+
+Generated answer: To answer your question, we need to follow a few steps. The Basibasy mine in Madagascar is abundant in a specific chemical element. According to my knowledge, this element is Titanium. 
+
+Now, let's find out who discovered Titanium and when. I know that Titanium was discovered by William Gregor in 1791.
+
+Lastly, we need to determine the US holiday on which William Gregor was born. I found that William Gregor was born on December 25, 1761, which is now known as Christmas Day.
+
+So, the major US holiday on which the person who discovered the chemical element abundant in the Basibasy mine was born is Christmas Day.
+
+Check result: Y

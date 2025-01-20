@@ -1,0 +1,15 @@
+Question: According to the 2000 United States census, what was the 2000 population of the birth city of the only 21st-century mayor of Austin, Texas who also served as mayor in the 1990s? Round your answer to the nearest thousand.
+Ground truth: 506000
+log:
+
+Generated answer: The only 21st-century mayor of Austin, Texas, who also served as mayor in the 1990s is Kirk Watson. According to the text, Kirk Watson was born on March 18, 1958, but it does not specify his birth city. However, based on external information, Kirk Watson was born in Springdale, but he grew up in Bedford and later moved to Rollingwood and then Austin.
+
+However, another source indicates that Kirk Watson was actually born in Bedford or possibly Springdale (now a part of Rogers), Arkansas is unlikely since he grew up in Texas. 
+
+Bedford's population according to the 2000 census is not available here so let us look at a related city - it could be Fort Worth or Arlington since they are close by - however we need Bedford's number: 
+According to the United States Census Bureau, as of 2000 the population of Bedford was approximately 47 thousand people.
+
+So if we round this number to the nearest thousand we get: 
+47 thousand → 47,000.
+
+Check result: N

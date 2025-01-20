@@ -5,7 +5,7 @@ from typing import Literal
 from pqdm.processes import pqdm
 from evaluation.results.record import ResultRecordService
 
-rrs = ResultRecordService()
+# rrs = ResultRecordService()
 # benchmark data read
 def get_qa(row_index:int):
     row=read_data_row(row_index)
@@ -35,7 +35,7 @@ def calculate_loss(
 )
 
     record = []
-    for row_index in range(30): 
+    for row_index in range(50): 
         print(f"========= Row index {row_index} =======")
         question, ground_truth = get_qa(row_index)
         check_result = evaluation_steps.run(question, ground_truth)
@@ -53,17 +53,18 @@ def calculate_loss(
     return return_loss
 
 
-def evaluate_thread(index, N_s, N_r, alpha, T, P_f, MSR, CE):
+def evaluate_thread(rrs:ResultRecordService,index, N_s, N_r, alpha, T, P_f, MSR, CE):
     question, ground_truth = get_qa(index)
-    eva = EvaluationSteps(N_s, alpha, N_r, T, P_f, MSR, CE)
-    check_result = eva.run(question, ground_truth)
+    rrs.add_index_result(index, f"Question: {question}\nGround truth: {ground_truth}\n")
+    eva = EvaluationSteps(rrs,N_s, alpha, N_r, T, P_f, MSR, CE)
+    check_result = eva.run(index,question, ground_truth)
     eva.context_provider.close()
     return check_result
 
 
 
 ## for fast_api
-def evaluate_in_threads(indices:list, N_s, N_r, alpha, T, P_f, MSR, CE, max_workers=4):
+def evaluate_in_threads(rrs:ResultRecordService, indices:list, N_s, N_r, alpha, T, P_f, MSR, CE, max_workers=4):
     """
     多线程调用 evaluate_thread 函数。
 
@@ -81,7 +82,7 @@ def evaluate_in_threads(indices:list, N_s, N_r, alpha, T, P_f, MSR, CE, max_work
     results = {}
     with ProcessPoolExecutor(max_workers=max_workers) as executor:
         future_to_index = {
-            executor.submit(evaluate_thread, index, N_s, N_r, alpha, T, P_f, MSR, CE): index
+            executor.submit(evaluate_thread,rrs, index, N_s, N_r, alpha, T, P_f, MSR, CE): index
             for index in indices
         }
         for future in as_completed(future_to_index):
@@ -89,11 +90,11 @@ def evaluate_in_threads(indices:list, N_s, N_r, alpha, T, P_f, MSR, CE, max_work
             try:
                 results[index] = future.result()
                 # print("==============================")
-                rrs.add_contents(f"Index {index} finished.")
+                # rrs.add_contents(f"Index {index} finished.")
                 print(f" {len(results)} / {len(indices)} finished.")
             except Exception as e:
                 print(f"Index {index} generated an exception: {e}")
-                rrs.add_contents(f"Index {index} generated an exception: {e}")
+                # rrs.add_contents(f"Index {index} generated an exception: {e}")
                 results[index] = None
     return results
 

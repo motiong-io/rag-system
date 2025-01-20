@@ -1,0 +1,22 @@
+Question: The state, whose motto was adopted March 26, 1928, has 0.94% of the population in 2024 speaking a language that is native to which country?
+Ground truth: Philippines
+log:
+
+Generated answer: The text does not specify the country of origin for the language spoken by 0.94% of the population. However, it does mention that 1.2% of Monaco's population are U.S. nationals, and it also mentions that Lincoln, a city in the United States, has a significant number of people speaking different languages.
+
+However, another part of the text states that "0.4% Islam" and "0.2% other" are religions practiced in Monaco and also mentions "0.4%... 0.2%" is related to language as well: 
+
+"According to 2019 studies... U.S. nationals (1\.2%)."
+
+and 
+
+"* 0\.4% Islam 
+* 0\.2% other"
+
+There is another percentage given: 
+
+"* Monégasques (21\.6%), Italian (18\.7%), British (7\.5%), Belgian (2\.8%), German (2\.5%), Swiss (2\.5%) and U.S. nationals (1\.2%)"
+
+The answer would be: The state has **0.94 is not present but there is a** **1** **.** **2** % which indicates that this could be referring to the United States since it says "**U** **.** **S**."
+
+Check result: N

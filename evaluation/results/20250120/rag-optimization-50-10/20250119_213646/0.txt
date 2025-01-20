@@ -1,0 +1,50 @@
+Question: If my future wife has the same first name as the 15th first lady of the United States' mother and her surname is the same as the second assassinated president's mother's maiden name, what is my future wife's name? 
+Ground truth: Jane Ballou
+log:['Who is the 15th first lady of the United States?', "What is the name of the 15th first lady's mother?", 'Who is the second assassinated president of the United States?', "What is the maiden name of the second assassinated president's mother?"]
+["What is the name of the 15th first lady's mother?", 'Who is the second assassinated president of the United States?', "What is the maiden name of the second assassinated president's mother?"]
+['Who is the second assassinated president of the United States?', "What is the maiden name of the second assassinated president's mother?", "If my future wife has the same first name as the 15th first lady of the United States' mother and her surname is the same as the second assassinated president's mother's maiden name, what is my future wife's name?"]
+["What is the maiden name of the second assassinated president's mother?", "If my future wife has the same first name as the 15th first lady of the United States' mother and her surname is the same as the second assassinated president's mother's maiden name, what is my future wife's name?"]
+["Who is the 15th first lady of the United States' mother?", 'Who is the second assassinated president of the United States?', "What is the maiden name of the second assassinated president's mother?"]
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        Who is the 15th first lady of the United States?:
+The 15th President of the United States was James Buchanan, and he was a bachelor, so he did not have a wife to serve as First Lady. Instead, his niece, Harriet Lane Johnston, acted as the First Lady of the United States during his presidency, from 1857 to 1861.
+
+What is the name of the 15th first lady's mother?:
+The 15th President of the United States was James Buchanan, and he was a bachelor, so he didn't have a wife to serve as First Lady. Instead, his niece Harriet Lane served as the acting First Lady during his presidency. 
+
+According to the text, Harriet Lane's mother was Jane Ann Buchanan Lane.
+
+Who is the second assassinated president of the United States?:
+The second American president to die in office was Zachary Taylor, but he died from acute gastroenteritis, not by assassination. 
+
+The second president to be assassinated was Abraham Lincoln, who was shot by John Wilkes Booth on April 14, 1865.
+
+What is the maiden name of the second assassinated president's mother?:
+The second assassinated president was Abraham Lincoln's predecessor in being assassinated, which was James A. Garfield. However, the text actually refers to Abraham Lincoln as the first American president to be killed by an assassin.
+
+According to historical records, Abraham Lincoln's mother was Nancy Hanks Lincoln. Therefore, her maiden name is Hanks.
+
+However, if we consider James A. Garfield as the second president to be assassinated after Abraham Lincoln, then his mother was Eliza Ballou Garfield. Her maiden name is Ballou.
+
+
+        
+
+
+Generated answer: To determine your future wife's name, we need to gather information from the previous conversations.
+
+The 15th first lady of the United States was Harriet Lane Johnston, and her mother's name was Jane Ann Buchanan Lane. So, the first name we are looking for is "Jane".
+
+The second assassinated president of the United States was Abraham Lincoln (considering James A. Garfield as the second after Lincoln), but if we consider him as the first, then the second would be James A. Garfield or another president. However, according to historical records mentioned earlier about Abraham Lincoln and his mother's maiden name being "Hanks", if we stick with this information: 
+
+The second assassinated president's mother's maiden name is indeed "Hanks". 
+
+So, combining these two pieces of information: your future wife's first name would be "Jane" (the same as Harriet Lane's mother), and her surname would be "Hanks" (the same as Abraham Lincoln's mother's maiden name).
+
+Therefore, your future wife's name would be Jane Hanks.
+
+Check result: N

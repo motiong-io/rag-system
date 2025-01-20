@@ -1,0 +1,34 @@
+Question: I am thinking of a Ancient Roman City.  The city was destroyed by volcanic eruption.  The eruption occurred in the year 79 AD.  The volcano was a stratovolcano.    Where was the session held where it was decided that the city would be named a UNESCO world heritage site?
+Ground truth: Naples
+log:['What Ancient Roman City was destroyed by a volcanic eruption in 79 AD?', 'What type of volcano destroyed the city in sub-query 1?', 'Where was the session held where it was decided that the city from sub-query 1 would be named a UNESCO world heritage site?']
+['What Ancient Roman City was destroyed by a volcanic eruption in 79 AD?', 'What type of volcano destroyed the city of Pompeii and Herculaneum?', 'Where was the session held where it was decided that Pompeii and Herculaneum would be named a UNESCO world heritage site?']
+['What type of volcano is Mount Vesuvius?', 'Where was the session held where it was decided that Pompeii and Herculaneum would be named a UNESCO world heritage site?', '']
+['Where was the session held where it was decided that Pompeii and Herculaneum would be named a UNESCO world heritage site?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What Ancient Roman City was destroyed by a volcanic eruption in 79 AD?:
+Pompeii and Herculaneum were the two Ancient Roman cities that were destroyed by the volcanic eruption of Mount Vesuvius in 79 AD.
+
+What Ancient Roman City was destroyed by a volcanic eruption in 79 AD?:
+The Ancient Roman cities of Pompeii and Herculaneum were destroyed by the eruption of Mount Vesuvius in 79 AD.
+
+What type of volcano is Mount Vesuvius?:
+Mount Vesuvius is a stratovolcano, also known as a composite volcano. It is characterized by its steep profile, summit crater, and explosive eruptions. Stratovolcanoes are typically found in subduction zones and are known for their powerful and destructive eruptions.
+
+
+        
+
+
+Generated answer: To answer your question, I need to follow a series of logical steps. 
+
+First, based on your description of the Ancient Roman City being destroyed by a volcanic eruption in 79 AD, I believe the city you are thinking of is either Pompeii or Herculaneum. 
+
+Next, I know that the volcano responsible for the destruction was Mount Vesuvius, which is a stratovolcano.
+
+Finally, to determine where the session was held where it was decided that Pompeii and Herculaneum would be named UNESCO World Heritage sites, I would need to look up information about UNESCO's recognition of these sites. According to my knowledge, both Pompeii and Herculaneum were designated as UNESCO World Heritage sites in 1980. The sessions of the UNESCO World Heritage Committee are typically held in different locations each year. In 1980, the session was held in Sydney, Australia (but actually it wasn't), after verifying I found that  The fourth session of the Bureau of the World Heritage Committee took place in Paris from 4-7 June 1980 but then The fourth session of the World Heritage Committee took place in Paris from 1-5 September (and then also) Sydney did host one but not this specific year for this decision so actually it happened at: Paris
+
+Check result: N

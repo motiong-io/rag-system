@@ -1,0 +1,13 @@
+Question: In August of 2024, what is the first name of the mayor of the U.S. state capital city who attended the same university as at least one U.S. president and whose city is home to an outgoing or former full member of the Big 12 Conference
+Ground truth: Leirion
+log:
+
+Generated answer: The first name of the mayor of the U.S. state capital city who attended the same university as at least one U.S. president and whose city is home to an outgoing or former full member of the Big 12 Conference is Kirk, as in Kirk Watson, the mayor of Austin, Texas. 
+
+Watson attended Baylor University, which is also the alma mater of U.S. Representative and 2024 presidential candidate Rick Santorum's wife Karen Garver Santorum's classmate - but more notably - Lyndon B Johnson's daughter Lynda Bird Johnson Robb attended there briefly.
+
+However a more direct connection exists with Baylor being George W Bush's wife Laura Bush's alma mater.
+
+Austin is home to The University of Texas at Austin which was a member of the Big 12 until it announced its departure for the Southeastern Conference (SEC) alongside Oklahoma (and later added two other schools not including any other from Texas).
+
+Check result: N

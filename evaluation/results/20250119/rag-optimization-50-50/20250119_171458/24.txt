@@ -1,0 +1,28 @@
+Question: Giorgio Rognoni was an Italian professional footballer who played as a midfielder. 10 years after his death who was the midfielder who played in Milan that was born in Besana in Brianza,?
+Ground truth: Demetrio Albertini
+log:['When did Giorgio Rognoni die?', "What year is 10 years after Giorgio Rognoni's death?", 'Who was the midfielder born in Besana in Brianza that played in Milan in that year?']
+['What year is 10 years after 1986?', 'Who was the midfielder born in Besana in Brianza that played in Milan in 1996?']
+['Who was the midfielder born in Besana in Brianza that played in Milan in 1996?']
+['When did Giorgio Rognoni die?', 'Who was the midfielder born in Besana in Brianza that played in Milan in 1996?', '']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        When did Giorgio Rognoni die?:
+Giorgio Rognoni died on 20 March 1986, at the age of 39, due to amyotrophic lateral sclerosis (ALS), in Pistoia, Italy.
+
+What year is 10 years after 1986?:
+The year 10 years after 1986 is 1996.
+
+Who was the midfielder born in Besana in Brianza that played in Milan in 1996?:
+The midfielder born in Besana in Brianza that played in Milan in 1996 is Demetrio Albertini.
+
+
+        
+
+
+Generated answer: Giorgio Rognoni, the Italian professional footballer, passed away in 1986. 10 years after his death would be 1996. In 1996, the midfielder who played in Milan and was born in Besana in Brianza was Demetrio Albertini.
+
+Check result: Y

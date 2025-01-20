@@ -1,0 +1,58 @@
+Question: If you subtract the year that William McCrary "Billy" Ray II was born from the year Obama was first sworn in as President to the United States and multiply it by the number of administrative regions in France as of January 1, 2024, what number would you get?
+Ground truth: 828
+log:['What year was William McCrary "Billy" Ray II born?', 'In what year was Obama first sworn in as President to the United States?', 'How many administrative regions are in France as of January 1, 2024?']
+['In what year was Obama first sworn in as President to the United States?', 'How many administrative regions are in France as of January 1, 2024?']
+['If you subtract the year that William McCrary "Billy" Ray II was born from the year Obama was first sworn in as President to the United States and multiply it by 18, what number would you get?']
+['What are the number of administrative regions in France as of January 1, 2024?', 'If you subtract 1963 from 2009 and multiply it by the number of administrative regions in France as of January 1, 2024, what number would you get?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What year was William McCrary "Billy" Ray II born?:
+William McCrary "Billy" Ray II was born in 1963.
+
+In what year was Obama first sworn in as President to the United States?:
+According to the text, Barack Obama was first sworn in as President of the United States on January 20, 2009.
+
+If you subtract the year that William McCrary "Billy" Ray II was born from the year Obama was first sworn in as President to the United States and multiply it by 18, what number would you get?:
+To calculate the answer, we need to know the year William McCrary "Billy" Ray II was born and the year Obama was first sworn in as President.
+
+According to the text, William McCrary "Billy" Ray II was born in 1963. 
+
+Barack Obama was first sworn in as President on January 20, 2009.
+
+Now, let's do the math:
+
+2009 (year Obama was sworn in) - 1963 (year William McCrary "Billy" Ray II was born) = 46
+
+ Multiply 46 by 18:
+
+46 * 18 = 828
+
+The answer is 828.
+
+
+        
+
+
+Generated answer: To calculate the answer, we need to know the year William McCrary "Billy" Ray II was born and the year Obama was first sworn in as President.
+
+According to the text, William McCrary "Billy" Ray II was born in 1963. 
+
+Barack Obama was first sworn in as President on January 20, 2009.
+
+Now, let's do the math:
+
+2009 (year Obama was sworn in) - 1963 (year William McCrary "Billy" Ray II was born) = 46
+
+As of my knowledge cutoff, France has 18 administrative regions. 
+
+ Multiply 46 by the number of administrative regions in France:
+
+46 * 18 = 828
+
+The answer is 828.
+
+Check result: Y

@@ -1,0 +1,22 @@
+Question: A general motors vehicle is named after the largest ward in the country of Monaco.  How many people had walked on the moon as of the first model year of the vehicle? Note: the model year is not the same as the year the model was first produced.
+Ground truth: 4
+log:
+
+Generated answer: The vehicle is the Chevrolet Monte Carlo. The first model year of the Monte Carlo was 1970. 
+
+As of 1970, a total of 12 people had walked on the moon as part of NASA's Apollo missions: 
+
+1. Neil Armstrong (Apollo 11)
+2. Edwin "Buzz" Aldrin (Apollo 11)
+3. Pete Conrad (Apollo 12)
+4. Alan Bean (Apollo 12)
+5. Alan Shepard (Apollo 14)
+6. Edgar Mitchell (Apollo 14)
+7. David Scott (Apollo 15)
+8. James Irwin (Apollo 15)
+9. John Young (Apollo 16)
+10. Charles Duke (Apollo 16)
+11. Eugene Cernan (Apollo 17)
+12. Harrison Schmitt (Apache 17)
+
+Check result: N

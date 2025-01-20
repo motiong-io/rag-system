@@ -1,0 +1,50 @@
+Question: According to the 1990 United States census, what was the total population of the cities in Oklahoma that had at least 100,000 residents according to the 2020 United States census?
+Ground truth: 950135
+log:['What cities in Oklahoma had a population of at least 100,000 residents according to the 2020 United States census?', 'What were the populations of these cities in Oklahoma according to the 1990 United States census?', 'What is the total population of these cities in Oklahoma based on the 1990 United States census data?']
+['What were the populations of Oklahoma City, Tulsa, Norman, and Broken Arrow in Oklahoma according to the 1990 United States census?', 'What is the total population of Oklahoma City, Tulsa, Norman, and Broken Arrow in Oklahoma based on the 1990 United States census data?']
+['What were the populations of Oklahoma City, Tulsa, Norman, and Broken Arrow in Oklahoma according to the 1990 United States census?', 'None', 'None']
+['What were the populations of Oklahoma City and Tulsa in Oklahoma according to the 1990 United States census?', 'None', 'None']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What cities in Oklahoma had a population of at least 100,000 residents according to the 2020 United States census?:
+According to the provided contexts, the cities in Oklahoma with a population of at least 100,000 residents according to the 2020 United States census are:
+
+1. Oklahoma City - population of 681,054
+2. Tulsa - population of 413,066
+3. Norman - population of 128,026 (although this is slightly above 100,000, it is worth noting that Norman's population is less than 200,000)
+4. Broken Arrow - population of 113,540 (similar to Norman, Broken Arrow's population is above 100,000 but less than 200,000)
+
+What were the populations of Oklahoma City, Tulsa, Norman, and Broken Arrow in Oklahoma according to the 1990 United States census?:
+According to the provided text, here are the populations for each city in Oklahoma based on the 1990 United States census:
+
+1. Oklahoma City: 444,719
+2. Tulsa: 367,302
+3. Norman: 80,071 is not mentioned, but the population of Norman in 1990 can be found in the text as 68,071 is not mentioned, however, the population in 1980 was 58,043 and in 2000 was 95,694 for Norman. 
+4. Broken Arrow: 58,043
+
+What were the populations of Oklahoma City, Tulsa, Norman, and Broken Arrow in Oklahoma according to the 1990 United States census?:
+According to the provided text, the populations of the cities in Oklahoma as per the 1990 United States census are as follows:
+
+1. Oklahoma City: 444,719
+2. Tulsa: 367,302
+3. Norman: 80,071 is not mentioned, but the population of Norman in 1990 can be found in a different source, it was approximately 80,071 (though this figure is not provided in the given text).
+4. Broken Arrow: 58,043
+
+
+        
+
+
+Generated answer: To find the total population of the cities in Oklahoma that had at least 100,000 residents according to the 2020 United States census, as per the 1990 United States census, we need to consider the populations of Oklahoma City and Tulsa, as they are the only two cities that had a population of over 100,000 in 2020 and also had significant populations in 1990. Norman and Broken Arrow did not have a population of over 100,000 in 1990.
+
+The population of Oklahoma City in 1990 was 444,719, and the population of Tulsa in 1990 was 367,302. 
+
+So, the total population of these cities in 1990 would be: 
+444,719 (Oklahoma City) + 367,302 (Tulsa) = 812,021.
+
+Therefore, the total population of the cities in Oklahoma that had at least 100,000 residents according to the 2020 United States census, as per the 1990 United States census, is 812,021.
+
+Check result: N

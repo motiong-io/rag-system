@@ -1,0 +1,40 @@
+Question: How old was Stephen Baldwin when Hailey and Justin got married?
+Ground truth: 52
+log:['When did Hailey and Justin get married?', "What is Stephen Baldwin's birthdate?", 'Calculate the age of Stephen Baldwin based on the marriage date of Hailey and Justin.']
+["What is Stephen Baldwin's birthdate?", 'Calculate the age of Stephen Baldwin based on September 13, 2018.']
+['None', 'None', 'None']
+['How old was Stephen Baldwin on September 13, 2018?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        When did Hailey and Justin get married?:
+None of the provided contexts mention Hailey and Justin's marriage date. However, I can tell you that according to general knowledge, Hailey Baldwin and Justin Bieber got married on September 13, 2018, in a private ceremony in New York City.
+
+What is Stephen Baldwin's birthdate?:
+I couldn't find any information about a person named Stephen Baldwin in the provided contexts. However, I found information about Stanley Baldwin and Stephen Stills. If you are referring to one of them, please let me know, and I'll be happy to help. 
+
+Stanley Baldwin was born on August 3, 1867. 
+
+Stephen Stills' birthdate wasn't mentioned in the provided contexts, but according to general knowledge, Stephen Stills was born on January 3, 1945.
+
+None:
+You've chosen none of the provided contexts. If you're ready to ask a question or need assistance with something else, feel free to ask!
+
+
+        
+
+
+Generated answer: To answer this question, I need to find the age of Stephen Baldwin when Hailey and Justin got married. 
+
+First, I need to find the birthdate of Stephen Baldwin. Although the provided contexts don't mention it, according to general knowledge, Stephen Baldwin, the American actor and Hailey Baldwin's father, was born on May 12, 1966.
+
+Next, I need to find the marriage date of Hailey and Justin. According to general knowledge, Hailey Baldwin and Justin Bieber got married on September 13, 2018.
+
+Now, let's calculate Stephen Baldwin's age when Hailey and Justin got married. 
+Stephen Baldwin was born on May 12, 1966, and Hailey and Justin got married on September 13, 2018. 
+So, Stephen Baldwin was 52 years old when Hailey and Justin got married.
+
+Check result: Y

@@ -1,0 +1,14 @@
+Question: As of 2023, how many more employees does the company alphabetically first by ticker symbol in the S&P500 have than the company alphabetically 2nd to last by ticker symbol in the S&P500?
+Ground truth: 8,350
+log:
+
+Generated answer: The company alphabetically first by ticker symbol in the S&P500 is AAPL (Apple Inc.). The company alphabetically 2nd to last by ticker symbol in the S&P500 is ZTS (Zoetis Inc.).
+
+As of 2023, according to their respective websites and public filings:
+
+- Apple Inc. has approximately 164,000 employees.
+- Zoetis Inc. has approximately 14,000 employees (as of 2022, the most recent available).
+
+So, Apple has about 150,000 more employees than Zoetis.
+
+Check result: N

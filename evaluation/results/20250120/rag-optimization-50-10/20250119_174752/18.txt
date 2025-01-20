@@ -1,0 +1,15 @@
+Question: How many years after the founding of the 50th most populous US city, based on 2023 estimate population data, did Frank Fox receive UK Patent (1344259)?
+Ground truth: 98 Years (Arlington, TX & Rubik's Cube)
+log:
+
+Generated answer: Arlington is the 50th-most populous city in the United States. 
+The city had a population of 398,431 in 2020. 
+Arlington was formally incorporated on April 21, 1965, but it was first settled in the 1840s and was officially established as a township on November 8, 1846.
+
+Frank Fox received UK Patent (1344259) in 1971 for an Improved Wheelchair.
+
+So if we consider Arlington's founding as its formal incorporation (1965), then Frank Fox received UK Patent (1344259) approximately 6 years later. 
+
+If we consider Arlington's founding as its initial settlement or establishment as a township (in the 1840s or November 8, 1846), then Frank Fox received UK Patent (1344259) approximately 125 years later.
+
+Check result: N

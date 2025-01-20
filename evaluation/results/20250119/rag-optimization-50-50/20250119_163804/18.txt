@@ -1,0 +1,8 @@
+Question: How many years after the founding of the 50th most populous US city, based on 2023 estimate population data, did Frank Fox receive UK Patent (1344259)?
+Ground truth: 98 Years (Arlington, TX & Rubik's Cube)
+log:
+
+Generated answer: Arlington is the 50th-most populous city in the United States. It was founded in 1876. 
+Frank Fox received UK Patent (1344259) in 1971 for a 'Vehicle for use by disabled persons', or 95 years after Arlington's founding.
+
+Check result: N

@@ -1,0 +1,52 @@
+Question: Of the four main characters on Seinfeld, which actor is the oldest?
+Ground truth: Michael Richards
+log:['Who are the four main characters on Seinfeld?', 'What are the names of the actors who play these characters?', 'Which of these actors is the oldest?']
+['What are the names of the actors who play the four main characters on Seinfeld?', 'Which of these actors, Jerry Seinfeld, Julia Louis-Dreyfus, Jason Alexander, or Michael Richards, is the oldest?']
+['Which of these actors, Jerry Seinfeld, Julia Louis-Dreyfus, Jason Alexander, or Michael Richards, is the oldest?']
+['Who are the names of the actors that play the four main characters on Seinfeld?', 'Which of these actors, Jerry Seinfeld, Julia Louis-Dreyfus, Jason Alexander, or Michael Richards, is the oldest?', '']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        Who are the four main characters on Seinfeld?:
+The four main characters on Seinfeld are:
+
+1. Jerry Seinfeld (played by Jerry Seinfeld) - a fictionalized version of himself, a stand-up comedian.
+2. Elaine Benes (played by Julia Louis-Dreyfus) - Jerry's ex-girlfriend and later friend.
+3. George Costanza (played by Jason Alexander) - Jerry's best friend since high school.
+4. Cosmo Kramer (played by Michael Richards) - Jerry's neighbor and friend, known for his eccentric personality and frequent entrances into Jerry's apartment.
+
+What are the names of the actors who play the four main characters on Seinfeld?:
+The names of the actors who play the four main characters on Seinfeld are:
+
+1. Jerry Seinfeld (played by Jerry Seinfeld)
+2. Elaine Benes (played by Julia Louis-Dreyfus)
+3. George Costanza (played by Jason Alexander)
+4. Cosmo Kramer (played by Michael Richards)
+
+Which of these actors, Jerry Seinfeld, Julia Louis-Dreyfus, Jason Alexander, or Michael Richards, is the oldest?:
+According to the provided text, the birthdates of the actors are:
+
+* Jerry Seinfeld: April 29, 1954
+* Julia Louis-Dreyfus: January 13, 1961
+* Jason Alexander: September 23, 1959
+* Michael Richards: July 24, 1949
+
+Based on these birthdates, Michael Richards is the oldest.
+
+
+        
+
+
+Generated answer: According to the information, the birthdates of the actors are:
+
+* Jerry Seinfeld: April 29, 1954
+* Julia Louis-Dreyfus: January 13, 1961
+* Jason Alexander: September 23, 1959
+* Michael Richards: July 24, 1949
+
+Based on these birthdates, Michael Richards (who plays Cosmo Kramer) is the oldest among the four main characters on Seinfeld.
+
+Check result: Y

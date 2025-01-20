@@ -1,0 +1,39 @@
+Question: If my future wife has the same first name as the 15th first lady of the United States' mother and her surname is the same as the second assassinated president's mother's maiden name, what is my future wife's name? 
+Ground truth: Jane Ballou
+log:['Who is the 15th first lady of the United States?', "What is the name of the 15th first lady of the United States' mother?", 'Who is the second assassinated president of the United States?', "What is the maiden name of the second assassinated president's mother?"]
+["What is the name of Harriet Lane Johnston's mother?", 'Who is the second assassinated president of the United States?', "What is the maiden name of the second assassinated president's mother?"]
+["What is the maiden name of James A. Garfield's mother?", "If my future wife has the same first name as Jane Ann Buchanan Lane and her surname is the same as the maiden name of James A. Garfield's mother, what is my future wife's name?"]
+["What is the maiden name of James A. Garfield's mother?", "If my future wife has the same first name as Jane Ann Buchanan Lane and her surname is the same as Eliza Ballou, what is my future wife's name?", '']
+["What is Jane Ann Buchanan Lane's first name?", 'None, as we already have the surname as Eliza Ballou', 'None, as we can directly construct the answer from the given information']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        Who is the 15th first lady of the United States?:
+According to historical records, Harriet Lane Johnston, the niece of President James Buchanan, served as the acting First Lady of the United States from 1857 to 1861, making her the 15th woman to hold this position, although not through marriage.
+
+What is the name of Harriet Lane Johnston's mother?:
+Jane Ann Buchanan Lane.
+
+What is the maiden name of James A. Garfield's mother?:
+The maiden name of James A. Garfield's mother is Eliza Ballou, but also known as Eliza Garfield born as Eliza Ballou.
+
+What is the maiden name of James A. Garfield's mother?:
+The maiden name of James A. Garfield's mother is Eliza Ballou before she married Abram Garfield, and then Eliza Garfield before she remarried Warren (or Alfred) Belden. So, Eliza Ballou is the answer to the question.
+
+
+        
+
+
+Generated answer: To determine your future wife's name, we need to break down the information provided:
+
+1. The 15th first lady of the United States is Harriet Lane Johnston.
+2. Harriet Lane Johnston's mother's first name is Jane.
+3. The second assassinated president is James A. Garfield.
+4. James A. Garfield's mother's maiden name is Eliza Ballou.
+
+Given that your future wife has the same first name as Harriet Lane Johnston's mother (Jane) and her surname is the same as James A. Garfield's mother's maiden name (Ballou), your future wife's name would be Jane Ballou.
+
+Check result: Y

@@ -1,0 +1,34 @@
+Question: I am thinking of a Ancient Roman City.  The city was destroyed by volcanic eruption.  The eruption occurred in the year 79 AD.  The volcano was a stratovolcano.    Where was the session held where it was decided that the city would be named a UNESCO world heritage site?
+Ground truth: Naples
+log:['What Ancient Roman City was destroyed by a volcanic eruption in 79 AD?', 'What type of volcano destroyed the city in sub-query 1?', 'Where was the session held where it was decided that the city from sub-query 1 would be named a UNESCO world heritage site?']
+['What Ancient Roman City was destroyed by a volcanic eruption in 79 AD?', 'What type of volcano destroyed Pompeii?', 'Where was the session held where it was decided that Pompeii would be named a UNESCO world heritage site?']
+['Where was the session held where it was decided that Pompeii would be named a UNESCO world heritage site?']
+['Where was the session held where it was decided that Pompeii would be named a UNESCO world heritage site?', '', '']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What Ancient Roman City was destroyed by a volcanic eruption in 79 AD?:
+None of the provided contexts mention an Ancient Roman City being destroyed by a volcanic eruption in 79 AD. However, it is well-known that Pompeii and Herculaneum were destroyed by the eruption of Mount Vesuvius in 79 AD.
+
+What Ancient Roman City was destroyed by a volcanic eruption in 79 AD?:
+None of the provided texts mention an Ancient Roman City being destroyed by a volcanic eruption in 79 AD. However, it is well-known historically that Pompeii and Herculaneum were destroyed by the eruption of Mount Vesuvius in 79 AD.
+
+Where was the session held where it was decided that Pompeii would be named a UNESCO world heritage site?:
+The information provided does not mention Pompeii or a session where it was decided that Pompeii would be named a UNESCO World Heritage site. However, according to UNESCO's official website, the Archaeological Area of Pompeii, Herculaneum, and Torre Annunziata was inscribed as a UNESCO World Heritage site in 1980. 
+
+If you're looking for information on the specific session where this decision was made, I would recommend checking UNESCO's official records or the minutes of their 1980 conference.
+
+
+        
+
+
+Generated answer: Based on your description of the Ancient Roman City being destroyed by a volcanic eruption in 79 AD, I believe the city you are thinking of is either Pompeii or Herculaneum. Both cities were destroyed by the eruption of Mount Vesuvius, which is a stratovolcano.
+
+As for your question about the session where it was decided that the city would be named a UNESCO World Heritage site, I found that the Archaeological Area of Pompeii, Herculaneum, and Torre Annunziata was inscribed as a UNESCO World Heritage site in 1980. Unfortunately, I don't have specific information on the location of the session where this decision was made. However, I can suggest that you check UNESCO's official records or the minutes of their 1980 conference for more information.
+
+It's worth noting that UNESCO's World Heritage Committee meetings are typically held in different locations each year. The 1980 conference was likely held at the UNESCO headquarters in Paris, but I would need to verify this information to provide a more accurate answer.
+
+Check result: N

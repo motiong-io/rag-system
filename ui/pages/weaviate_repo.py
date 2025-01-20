@@ -3,7 +3,7 @@ from nicegui import ui
 from nicegui.events import GenericEventArguments
 
 
-from ui.utils.manage_weaviate import check_weaviate_connection, check_collections, aggregate_collection
+from ui.utils.manage_weaviate import check_weaviate_connection, check_collections, aggregate_collection, aggregate_objects_by_property
 from ui.utils.benchmark_dataset import load_data,get_page_data,string_to_list,get_docs_data
 
 @ui.page('/weaviate_repo')
@@ -57,8 +57,12 @@ def weaviate_repo():
 
             def display_wikidocs(uuid:str):
                 dialog.clear()
-                with dialog, ui.card():
+                with dialog, ui.card().style('width:50%'):
                     ui.label(uuid)
+
+                    related_chunks = aggregate_objects_by_property(displayed_collection['collection_name'],'original_uuid',uuid)
+                    
+                    ui.label(f"Related chunks: {related_chunks}")
                 dialog.open()
 
             def display_dataset_page(page_index:int):

@@ -1,0 +1,52 @@
+Question: The state, whose motto was adopted March 26, 1928, has 0.94% of the population in 2024 speaking a language that is native to which country?
+Ground truth: Philippines
+log:["Which state's motto was adopted on March 26, 1928?", 'What percentage of the population in this state speaks a language that is not native to the United States in 2024?', 'Which country is native to the language spoken by 0.94% of the population in the state found in sub-query 1?']
+['What percentage of the population in New Jersey speaks a language that is not native to the United States in 2024?', 'Which country is native to the language spoken by 0.94% of the population in New Jersey?']
+['Which country is native to the language spoken by 0.94% of the population in New Jersey?']
+['Which country is native to the language spoken by 0.94% of the population in New Jersey?', 'What percentage of the population in New Jersey speaks a language that is not native to the United States in 2024?', '']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        Which state's motto was adopted on March 26, 1928?:
+New Jersey's motto, "Liberty and prosperity", was adopted on March 26, 1928.
+
+What percentage of the population in New Jersey speaks a language that is not native to the United States in 2024?:
+According to the provided text, as of 2024, the following percentages of the population in New Jersey speak a language that is not native to the United States:
+
+* Spanish: 15.9%
+* Indo-Aryan: 2.7%
+* Chinese: 1.5%
+* Korean: 1.1%
+* French: 0.97%
+* Tagalog: 0.94%
+* Portuguese: 0.91%
+* Italian: 0.83% (although Italian is not entirely non-native, as there are native Italian-American speakers)
+* Arabic: 0.76%
+* Polish: 0.72%
+* Russian: 0.57%
+
+To find the total percentage of the population that speaks a non-native language, we need to add up these percentages and subtract the percentage of people who speak only English (69.4%). However, since some individuals may speak multiple languages, including English and a non-native language, this calculation might not be entirely accurate.
+
+Assuming that all individuals who speak these languages also speak English or another native language (which may not be true), we can estimate that around:
+
+100% - 69.4% = approximately 30-31% 
+
+of New Jersey's population speaks at least one non-native language at home.
+
+Keep in mind that this calculation has limitations due to potential overlaps between languages spoken by individuals and does not account for other factors like bilingualism or multilingualism within households.
+
+Therefore, it can be estimated roughly around thirty percent but please note it could vary based on how you interpret "speaks a language" in context with those numbers given above which themselves don't directly answer what portion exclusively use them versus alongside an official U.S tongue such english etcetera .
+
+Which country is native to the language spoken by 0.94% of the population in New Jersey?:
+The language spoken by 0.94% of the population in New Jersey is Tagalog. Tagalog is a language native to the Philippines.
+
+
+        
+
+
+Generated answer: The state whose motto was adopted on March 26, 1928, is New Jersey. According to the information provided, 0.94% of the population in New Jersey speaks Tagalog, which is a language native to the Philippines. Therefore, the country whose native language is spoken by 0.94% of the population in New Jersey (the state with the motto adopted on March 26, 1928) is the Philippines.
+
+Check result: Y

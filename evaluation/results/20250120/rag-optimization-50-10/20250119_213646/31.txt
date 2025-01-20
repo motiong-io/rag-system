@@ -1,0 +1,33 @@
+Question: What is the middle name of the U.S. president who died on the same day of the year as Virginia Woolf?
+Ground truth: David
+log:['What is the day of the year that Virginia Woolf died?', 'Which U.S. president died on the same day of the year as determined in sub-query 1?', 'What is the middle name of the U.S. president determined in sub-query 2?']
+['What is the day of the year that Virginia Woolf died?', 'Which U.S. president died on March 28?', 'What is the middle name of the U.S. president determined in sub-query 2?']
+['Which U.S. president died on March 28?', 'What is the middle name of the U.S. president determined in sub-query 1?']
+['Which U.S. president died on March 28?', 'What is the middle name of Dwight D. Eisenhower?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What is the day of the year that Virginia Woolf died?:
+The day of the year that Virginia Woolf died is March 28.
+
+What is the day of the year that Virginia Woolf died?:
+According to the text, Virginia Woolf died on March 28, 1941. This is the 87th day of the year.
+
+Which U.S. president died on March 28?:
+Dwight D. Eisenhower, the 34th President of the United States, died on March 28, 1969.
+
+
+        
+
+
+Generated answer: To answer this question, we need to follow a chain of information. 
+
+First, we know that Virginia Woolf died on March 28. 
+Then, we also know that a U.S. president died on the same day of the year as Virginia Woolf, which is March 28.
+The U.S. president who died on March 28 is Dwight D. Eisenhower.
+So, the middle name of the U.S. president who died on the same day of the year as Virginia Woolf is David.
+
+Check result: N

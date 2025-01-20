@@ -1,0 +1,42 @@
+Question: How old was Harvard University, when the person whom the longest river in British Columbia is named after, was born?  The river in question only flows within the confines of British Columbia and does not enter any other province or territory.  
+Ground truth: 140 years old.
+log:['What is the name of the longest river in British Columbia that only flows within the province and does not enter any other province or territory?', 'Who is the person that the river is named after?', 'How old was Harvard University when the person from sub-query 2 was born?']
+['How old was Harvard University when Simon Fraser was born?', '', '']
+['How old was Harvard University when Simon Fraser was born?', 'None', 'None']
+['What is the name of the person whom the longest river in British Columbia is named after, where the river only flows within the province and does not enter any other province or territory?', 'How old was Harvard University when Simon Fraser was born?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What is the name of the longest river in British Columbia that only flows within the province and does not enter any other province or territory?:
+The longest river in British Columbia that only flows within the province and does not enter any other province or territory is the Fraser River.
+
+How old was Harvard University when Simon Fraser was born?:
+Harvard University was founded in 1636, and Simon Fraser was born in 1776. To find the age of Harvard University when Simon Fraser was born, we need to subtract the founding year from the birth year.
+
+1776 - 1636 = 140
+
+So, Harvard University was 140 years old when Simon Fraser was born.
+
+How old was Harvard University when Simon Fraser was born?:
+Harvard University was founded in 1636, and Simon Fraser was born in 1776. Therefore, Harvard University was 140 years old when Simon Fraser was born.
+
+
+        
+
+
+Generated answer: To answer this question, we need to follow a series of steps. 
+
+First, we need to identify the longest river in British Columbia that only flows within the province and does not enter any other province or territory. According to our knowledge, this river is the Fraser River.
+
+Next, we need to find out who the Fraser River is named after. The Fraser River is named after Simon Fraser.
+
+Now, we need to determine how old Harvard University was when Simon Fraser was born. We know that Harvard University was founded in 1636, and Simon Fraser was born in 1776. To find the age of Harvard University when Simon Fraser was born, we subtract the founding year from the birth year.
+
+1776 - 1636 = 140
+
+Therefore, Harvard University was 140 years old when Simon Fraser, the person after whom the longest river in British Columbia (that only flows within the province) is named, was born.
+
+Check result: Y

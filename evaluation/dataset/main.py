@@ -11,7 +11,7 @@ def save_data(n:int):
 
 
 def read_data_row(row_index:int):
-    df= pd.read_csv("evaluation/dataset/row_0_29.csv")
+    df= pd.read_csv("evaluation/dataset/row_50.csv")
     # print(df.head())
     result = df.loc[df["Unnamed: 0"] == row_index, ["Prompt", "Answer","wiki_links"]].to_dict(orient="records")[0]
     # print(result)
@@ -19,7 +19,7 @@ def read_data_row(row_index:int):
 
 
 def read_data_page(page_index:int, page_size:int=10):
-    df= pd.read_csv("evaluation/dataset/row_0_29.csv")
+    df= pd.read_csv("evaluation/dataset/row_50.csv")
     start_index = page_index * page_size
     end_index = start_index + page_size
     data = df.loc[start_index:end_index, ["Prompt", "Answer","wiki_links"]].to_dict(orient="records")

@@ -1,0 +1,15 @@
+Question: I am moving to the G40 postcode area - what train stations are nearby, as of 2024?
+Ground truth: Bridgeton Railway Station and Dalmarnock Railway Station.
+log:
+
+Generated answer: The G40 postcode area is located in Glasgow, Scotland. As of 2024, some nearby train stations include:
+
+1. Bridgeton railway station: This station is approximately a 10-15 minute walk from the G40 postcode area and offers regular services to Glasgow Central, Edinburgh, and other surrounding areas.
+2. Dalmarnock railway station: This station is about a 15-20 minute walk from the G40 postcode area and provides services to Glasgow Central, Rutherglen, and other nearby destinations.
+3. Bellgrove railway station: Although slightly further away (around 20-25 minutes on foot), Bellgrove station offers connections to Glasgow Central and other parts of the city.
+
+Please note that walking times may vary depending on your specific location within the G40 postcode area and your individual pace. You can use online route planners or maps to get more accurate estimates.
+
+Additionally, you can check with National Rail or ScotRail for up-to-date information on train schedules, fares, and any potential engineering works that might affect services.
+
+Check result: Y

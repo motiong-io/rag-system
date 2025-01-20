@@ -54,7 +54,7 @@ def get_docs_data(wiki_links:list):
                 'no': i+1,
                 'url': url_html,
                 'uuid': uuid,
-                # 'related_chunks':related_chunks
+                'chunk':'->'
             }
         )
 
@@ -64,7 +64,7 @@ def get_docs_data(wiki_links:list):
             {'headerName': 'No.', 'field': 'no', 'width': 40},
             {'headerName': 'url', 'field': 'url'},
             {'headerName': 'uuid', 'field': 'uuid'},
-            # {'headerName': 'related_chunks', 'field': 'related_chunks'}
+            {'headerName': 'chunk', 'field': 'chunk','width': 40},
         ],
         'rowData':row_data
         }

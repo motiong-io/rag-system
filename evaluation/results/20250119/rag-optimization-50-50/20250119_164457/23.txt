@@ -1,0 +1,28 @@
+Question: What was the political party of the person who advocated for the type of government used in Chikhali, Latur district to become the foundation of India's political system?
+Ground truth: Indian National Congress
+log:['What type of government is used in Chikhali, Latur district?', "Who advocated for this type of government to become the foundation of India's political system?", 'What was the political party of the person who advocated for this type of government?']
+["Who advocated for the Panchayati raj to become the foundation of India's political system?", 'What was the political party of the person who advocated for the Panchayati raj?']
+['What was the political party of Mahatma Gandhi?']
+['What was the political party of Mahatma Gandhi?', '', '']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What type of government is used in Chikhali, Latur district?:
+The type of government used in Chikhali, Latur district is Panchayati raj.
+
+Who advocated for the Panchayati raj to become the foundation of India's political system?:
+Mahatma Gandhi advocated for the Panchayati raj to become the foundation of India's political system. He envisioned it as a decentralized form of government, where each village would be responsible for its own affairs, and termed this vision "Gram Swaraj" or "village self-governance".
+
+What was the political party of Mahatma Gandhi?:
+The political party of Mahatma Gandhi was the Indian National Congress.
+
+
+        
+
+
+Generated answer: The type of government used in Chikhali, Latur district is Panchayati raj. Mahatma Gandhi advocated for the Panchayati raj to become the foundation of India's political system. The political party of Mahatma Gandhi was the Indian National Congress. Therefore, the answer to your question is: Indian National Congress.
+
+Check result: Y

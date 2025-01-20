@@ -1,0 +1,9 @@
+Question: What is the name of the vocalist from the first band to make it in the top 200 under the record label that produced the third studio album for Dismal Euphony?
+Ground truth: Jens Kidman
+log:
+
+Generated answer: According to the text, the third studio album for Dismal Euphony was "All Little Devils", which was released under the Nuclear Blast label. However, it is mentioned that Warner Bros. Records had success with various bands, including Alice Cooper.
+
+The first band to make it into the top 200 under Warner Bros. Records mentioned in the text is Alice Cooper, and their vocalist is Vincent Furnier, also known as Alice Cooper (the stage name/persona of the singer and main songwriter).
+
+Check result: N

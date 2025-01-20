@@ -1,0 +1,7 @@
+Question: If Princess Diana had been born three years earlier, who would have been Prime Minister when she was ten? 
+Ground truth: Harold Wilson
+log:
+
+Generated answer: Princess Diana was born on July 1, 1961. If she had been born three years earlier, in 1958, then when she was ten years old, in 1968, the Prime Minister of the United Kingdom would have been Harold Wilson.
+
+Check result: Y

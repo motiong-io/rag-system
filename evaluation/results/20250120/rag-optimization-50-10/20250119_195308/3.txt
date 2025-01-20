@@ -1,0 +1,2 @@
+Question: As of August 1, 2024, which country were holders of the FIFA World Cup the last time the UEFA Champions League was won by a club from London?
+Ground truth: France

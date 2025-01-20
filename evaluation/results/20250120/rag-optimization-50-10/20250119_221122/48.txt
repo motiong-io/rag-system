@@ -1,0 +1,46 @@
+Question: The state, whose motto was adopted March 26, 1928, has 0.94% of the population in 2024 speaking a language that is native to which country?
+Ground truth: Philippines
+log:["Which state's motto was adopted on March 26, 1928?", 'What percentage of the population in this state speaks a language that is not native to the United States in 2024?', 'Which country is native to the language spoken by 0.94% of the population in the state found in sub-query 1?']
+['What percentage of the population in New Jersey speaks a language that is not native to the United States in 2024?', 'Which country is native to the language spoken by 0.94% of the population in New Jersey?']
+['Which country is native to the language Tagalog?']
+['Which country is native to the language Tagalog?', '', '']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        Which state's motto was adopted on March 26, 1928?:
+New Jersey's motto, "Liberty and prosperity", was adopted on March 26, 1928.
+
+What percentage of the population in New Jersey speaks a language that is not native to the United States in 2024?:
+According to the provided text, as of 2024, the following percentages of the population in New Jersey speak a language that is not native to the United States:
+
+* Spanish: 15.9%
+* Indo-Aryan: 2.7%
+* Chinese: 1.5%
+* Korean: 1.1%
+* French: 0.97%
+* Tagalog: 0.94%
+* Portuguese: 0.91%
+* Italian: 0.83%
+* Arabic: 0.76%
+* Polish: 0.72%
+* Russian: 0.57%
+
+Adding up these percentages gives a total of approximately 28.3% of the population in New Jersey speaking a language that is not native to the United States in 2024. However, please note that this calculation may not be exact, as there might be other languages spoken in New Jersey that are not listed here.
+
+It's also worth mentioning that the text states that "Almost one-tenth of all households in the state, or over 323,000, are millionaires, the highest representation of millionaires among all states" and "New Jersey ranks near the top on both the American Human Development Index and the standard Human Development Index", but these statements are not directly related to the question about language. 
+
+Additionally, the text mentions that "28.69% (2,345,644) of New Jersey's population age 5 and older spoke a mother language other than English" as of 2010, but this information is not from 2024.
+
+Which country is native to the language Tagalog?:
+The Philippines is the country where Tagalog is native.
+
+
+        
+
+
+Generated answer: The state whose motto was adopted on March 26, 1928, is New Jersey. According to the observations, 0.94% of the population in New Jersey speaks Tagalog, which is a language native to the Philippines.
+
+Check result: Y

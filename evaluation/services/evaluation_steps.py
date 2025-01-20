@@ -31,6 +31,7 @@ class EvaluationSteps:
     
     """
     def __init__(self,
+                 result_record_service:ResultRecordService,
                  number_chunks_limit:int,
                  hybrid_search_alpha:float,
                  number_chunks_rerank:int,
@@ -38,6 +39,9 @@ class EvaluationSteps:
                  penalty_frequency_LLM:float,
                  if_multi_step_RAG:bool,
                  if_contextual_embedding:bool) -> None:
+
+        # Result Record Service
+        self.rrs = result_record_service
 
         # Parameters for the optimization
         self.number_chunks_limit = number_chunks_limit
@@ -98,19 +102,20 @@ class EvaluationSteps:
             full_answer += x
         return full_answer
 
-    def run(self, question:str,ground_truth:str):
+    def run(self, index,question:str,ground_truth:str):
         generated_answer,log = capture_stdout(self.__react , question)
         check_result = check_answer(question, ground_truth, generated_answer)
-        rrs = ResultRecordService()
-        rrs.add_contents(log)
-        print(f"Question: {question}")
-        print(f"Ground Truth: {ground_truth}")
-        print(f"Generated Answer: {generated_answer}")
-        print(f"Check Result: {check_result}")
-        rrs.add_contents(f"Question: {question}")
-        rrs.add_contents(f"Ground Truth: {ground_truth}")
-        rrs.add_contents(f"Generated Answer: {generated_answer}")
-        rrs.add_contents(f"Check Result: {check_result}")
+        # rrs = ResultRecordService()
+        self.rrs.add_index_result(index, f"log:{log}\n\nGenerated answer: {generated_answer}\n\nCheck result: {check_result}\n")
+        # rrs.add_contents(log)
+        # print(f"Question: {question}")
+        # print(f"Ground Truth: {ground_truth}")
+        # print(f"Generated Answer: {generated_answer}")
+        # print(f"Check Result: {check_result}")
+        # rrs.add_contents(f"Question: {question}")
+        # rrs.add_contents(f"Ground Truth: {ground_truth}")
+        # rrs.add_contents(f"Generated Answer: {generated_answer}")
+        # rrs.add_contents(f"Check Result: {check_result}")
         return check_result
     
     async def __a_react(self,question:str):

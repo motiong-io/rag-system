@@ -1,0 +1,28 @@
+Question: The Basibasy mine is located in Madagascar. This mine is abundant in a specific chemical element that was discovered for the first time in 1791. The person who discovered this element was born on what is now known as a major US holiday - what holiday is this?
+Ground truth: Christmas
+log:['What chemical element is abundant in the Basibasy mine in Madagascar?', 'Who discovered the chemical element found in the Basibasy mine?', 'On which US holiday was the discoverer of the chemical element born?']
+['Who discovered Titanium?', 'On which US holiday was the discoverer of Titanium born?']
+['On which US holiday was William Gregor born?']
+['What US holiday was William Gregor born on, considering he discovered the chemical element abundant in the Basibasy mine in Madagascar?', '', '']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What chemical element is abundant in the Basibasy mine in Madagascar?:
+The chemical element that is abundant in the Basibasy mine in Madagascar is Titanium.
+
+Who discovered Titanium?:
+William Gregor, a British clergyman and geologist, discovered titanium in 1791. He found it in a mineral called ilmenite in Cornwall, Great Britain, and named it "manaccanite". Later, in 1795, Martin Heinrich Klaproth, a German chemist, independently discovered the same element in a mineral called rutile and named it "titanium" after the Titans of Greek mythology. Although Klaproth's discovery was made later, his name for the element stuck, and Gregor is now recognized as the first person to discover titanium.
+
+On which US holiday was William Gregor born?:
+William Gregor was born on December 25, 1761, which is Christmas Day.
+
+
+        
+
+
+Generated answer: That's a interesting connection. Based on my knowledge, the Basibasy mine in Madagascar is abundant in Titanium. Titanium was first discovered by William Gregor in 1791. And, as it happens, William Gregor was born on December 25, 1761, which is now known as Christmas Day, a major US holiday. So, the answer is Christmas Day.
+
+Check result: Y

@@ -1,0 +1,28 @@
+Question: One of Barbara Kingsolver's best known novels is about an American missionary family which moves to Africa. At the time, the country they move to was a Belgian colony. Which year did it become independent?
+Ground truth: 1960
+log:["What is the title of Barbara Kingsolver's novel about an American missionary family moving to Africa?", 'Which country did the American missionary family move to in the novel?', 'In what year did that country gain independence from Belgium?']
+['What is the country where the story of "The Poisonwood Bible" takes place?', 'In what year did the country from sub-query 1 gain independence from Belgium?']
+["What is the title of Barbara Kingsolver's novel about an American missionary family moving to Africa?", 'What is the country where the story of "The Poisonwood Bible" takes place?', 'In what year did the Democratic Republic of Congo gain independence from Belgium?']
+['In what year did the Democratic Republic of Congo gain independence from Belgium?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What is the title of Barbara Kingsolver's novel about an American missionary family moving to Africa?:
+The title of Barbara Kingsolver's novel about an American missionary family moving to Africa is "The Poisonwood Bible".
+
+What is the country where the story of "The Poisonwood Bible" takes place?:
+The country where the story of "The Poisonwood Bible" takes place is the Belgian Congo (now known as the Democratic Republic of Congo).
+
+What is the title of Barbara Kingsolver's novel about an American missionary family moving to Africa?:
+The title of Barbara Kingsolver's novel about an American missionary family moving to Africa is "The Poisonwood Bible".
+
+
+        
+
+
+Generated answer: The country where the story takes place is the Belgian Congo, which is now known as the Democratic Republic of Congo. The Belgian Congo gained independence on June 30, 1960.
+
+Check result: Y

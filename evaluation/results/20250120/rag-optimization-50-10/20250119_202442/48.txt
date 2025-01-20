@@ -1,0 +1,30 @@
+Question: The state, whose motto was adopted March 26, 1928, has 0.94% of the population in 2024 speaking a language that is native to which country?
+Ground truth: Philippines
+log:["Which state's motto was adopted on March 26, 1928?", 'What is the language spoken by 0.94% of the population in that state in 2024?', 'Which country is the native country of the language spoken by 0.94% of the population in that state?']
+['What is the language spoken by 0.94% of the population in New Jersey in 2024?', 'Which country is the native country of the language spoken by 0.94% of the population in New Jersey?']
+['Which country is the native country of the Tagalog language?']
+['Which country is the native country of the Tagalog language?', 'What is the language spoken by 0.94% of the population in New Jersey in 2024?', '']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        Which state's motto was adopted on March 26, 1928?:
+New Jersey's motto, "Liberty and prosperity", was adopted on March 26, 1928.
+
+What is the language spoken by 0.94% of the population in New Jersey in 2024?:
+According to the text, the language spoken by 0.94% of the population in New Jersey is Tagalog.
+
+Which country is the native country of the Tagalog language?:
+The native country of the Tagalog language is the Philippines.
+
+
+        
+
+
+Generated answer: Based on the observations, the state whose motto was adopted on March 26, 1928, is New Jersey. In New Jersey, 0.94% of the population speaks Tagalog, which is native to the Philippines. 
+
+So, the answer is: the Philippines.
+
+Check result: Y

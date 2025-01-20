@@ -1,0 +1,2 @@
+Question: What was the age difference between Mike Tyson and Tyson Fury on the respective days on which they lost their first ever fights? Represent the figure in years only.
+Ground truth: 12 years.

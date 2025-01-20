@@ -1,0 +1,15 @@
+Question: Of the four main characters on Seinfeld, which actor is the oldest?
+Ground truth: Michael Richards
+log:
+
+Generated answer: The four main characters on Seinfeld are Jerry Seinfeld, Elaine Benes (Julia Louis-Dreyfus), George Costanza (Jason Alexander), and Cosmo Kramer (Michael Richards).
+
+According to their birthdates:
+- Jerry Seinfeld was born on April 29, 1954
+- Julia Louis-Dreyfus was born on January 13, 1956
+- Jason Alexander was born on September 23, 1959
+- Michael Richards was born on July 24, 1949
+
+So, Michael Richards (Kramer) is the oldest of the four main actors.
+
+Check result: Y

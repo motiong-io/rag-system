@@ -1,0 +1,7 @@
+Question: As of August 1, 2024, which country were holders of the FIFA World Cup the last time the UEFA Champions League was won by a club from London?
+Ground truth: France
+log:
+
+Generated answer: The last time a club from London won the UEFA Champions League was in 2012, when Chelsea won the title. As of 2012, the holders of the FIFA World Cup were Spain, who won the tournament in 2010.
+
+Check result: N

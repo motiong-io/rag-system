@@ -1,0 +1,28 @@
+Question: One of Barbara Kingsolver's best known novels is about an American missionary family which moves to Africa. At the time, the country they move to was a Belgian colony. Which year did it become independent?
+Ground truth: 1960
+log:["What is the title of Barbara Kingsolver's novel about an American missionary family moving to Africa?", 'Which country did the American missionary family move to in the novel?', 'In what year did the country from sub-query 2 gain independence from Belgium?']
+['Which country did the American missionary family move to in the novel "The Poisonwood Bible"?', 'In what year did the Congo gain independence from Belgium?']
+['In what year did the Congo gain independence from Belgium?']
+["What is the title of Barbara Kingsolver's novel about an American missionary family moving to Africa?", 'Which country did the American missionary family move to in the novel "The Poisonwood Bible"?', 'In what year did the Congo gain independence from Belgium?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What is the title of Barbara Kingsolver's novel about an American missionary family moving to Africa?:
+The title of Barbara Kingsolver's novel about an American missionary family moving to Africa is "The Poisonwood Bible".
+
+Which country did the American missionary family move to in the novel "The Poisonwood Bible"?:
+The American missionary family, the Prices, moved to the Belgian Congo (now known as the Democratic Republic of the Congo) in the novel "The Poisonwood Bible".
+
+In what year did the Congo gain independence from Belgium?:
+The Congo gained independence from Belgium on June 30, 1960.
+
+
+        
+
+
+Generated answer: The novel you're referring to is "The Poisonwood Bible". The American missionary family, the Prices, moved to the Belgian Congo, which is now known as the Democratic Republic of the Congo. According to historical records, the Congo gained independence from Belgium on June 30, 1960.
+
+Check result: Y

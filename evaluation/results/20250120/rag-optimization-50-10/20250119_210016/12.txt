@@ -1,0 +1,34 @@
+Question: The Basibasy mine is located in Madagascar. This mine is abundant in a specific chemical element that was discovered for the first time in 1791. The person who discovered this element was born on what is now known as a major US holiday - what holiday is this?
+Ground truth: Christmas
+log:['What chemical element is abundant in the Basibasy mine in Madagascar?', 'Who discovered the chemical element found in the Basibasy mine?', 'On which US holiday was the discoverer of the chemical element born?']
+['Who discovered Titanium?', 'On which US holiday was the discoverer of Titanium born?']
+['On which US holiday was William Gregor born?', '', '']
+['On which US holiday was William Gregor born?', 'Who discovered Titanium?', 'What chemical element is abundant in the Basibasy mine in Madagascar?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What chemical element is abundant in the Basibasy mine in Madagascar?:
+The chemical element that is abundant in the Basibasy mine in Madagascar is Titanium.
+
+Who discovered Titanium?:
+According to the provided contexts, Titanium was discovered by William Gregor in 1791. He was a British clergyman and mineralogist who found the element in ilmenite, a mineral from Cornwall, Great Britain. However, it was Martin Heinrich Klaproth who independently discovered Titanium in 1795 and named it after the Titans of Greek mythology. Gregor had initially named the element "manaccanite", but Klaproth's name "Titanium" was eventually adopted.
+
+On which US holiday was William Gregor born?:
+William Gregor was born on December 25, 1761, which is Christmas Day.
+
+
+        
+
+
+Generated answer: To answer your question, we need to follow a few steps. The Basibasy mine in Madagascar is abundant in a specific chemical element. According to my knowledge, this element is Titanium. 
+
+Now, let's find out who discovered Titanium and when. Titanium was discovered by William Gregor in 1791. 
+
+Lastly, we need to determine the US holiday on which William Gregor was born. William Gregor was born on December 25, 1761, which is now known as Christmas Day.
+
+So, the US holiday on which the discoverer of the chemical element abundant in the Basibasy mine was born is Christmas Day.
+
+Check result: Y

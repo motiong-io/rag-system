@@ -1,0 +1,11 @@
+Question: I am thinking of a Ancient Roman City.  The city was destroyed by volcanic eruption.  The eruption occurred in the year 79 AD.  The volcano was a stratovolcano.    Where was the session held where it was decided that the city would be named a UNESCO world heritage site?
+Ground truth: Naples
+log:
+
+Generated answer: The city you are referring to is Pompeii. 
+
+Pompeii was destroyed by the eruption of Mount Vesuvius, a stratovolcano, in 79 AD. 
+
+The session where it was decided that Pompeii would be named a UNESCO World Heritage site was held in 1980, in Sydney, Australia.
+
+Check result: N

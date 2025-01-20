@@ -1,0 +1,28 @@
+Question: In Slovakia there is a well known Film Festival called the Bratistlava International Film Festival. What city/ town was the film editor for the Grand Prix winner of 2003 born in?
+Ground truth: Roudnice nad Labem
+log:['What was the Grand Prix winner of the Bratislava International Film Festival in 2003?', 'Who was the film editor for the Grand Prix winner of 2003?', 'In which city or town was the film editor born?']
+['Who was the film editor for "Bored in Brno", the Grand Prix winner of the Bratislava International Film Festival in 2003?', 'In which city or town was the film editor of "Bored in Brno" born?']
+['In which city or town was Jiří Brožek born?']
+['In which city or town was Jiří Brožek born?', 'Who was the film editor for "Bored in Brno", the Grand Prix winner of the Bratislava International Film Festival in 2003?', 'What was the Grand Prix winner of the Bratislava International Film Festival in 2003?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What was the Grand Prix winner of the Bratislava International Film Festival in 2003?:
+The Grand Prix winner of the Bratislava International Film Festival in 2003 was "Bored in Brno" (directed by Vladimír Morávek, Czech Republic).
+
+Who was the film editor for "Bored in Brno", the Grand Prix winner of the Bratislava International Film Festival in 2003?:
+The film editor for "Bored in Brno" was Jiří Brožek.
+
+In which city or town was Jiří Brožek born?:
+Jiří Brožek was born in Roudnice nad Labem, Czechoslovakia.
+
+
+        
+
+
+Generated answer: The Grand Prix winner of the Bratislava International Film Festival in 2003 was "Bored in Brno". The film editor for "Bored in Brno" was Jiří Brožek. Jiří Brožek was born in Roudnice nad Labem, Czechoslovakia. So, the answer is Roudnice nad Labem.
+
+Check result: Y

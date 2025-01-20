@@ -1,0 +1,9 @@
+Question: As of 2024, at the time of his birth, what was the middle name of the U.S. president who won Alaska, graduated from Yale University, and had a son named Michael?
+Ground truth: Lynch
+log:
+
+Generated answer: The U.S. president who won Alaska and graduated from Yale University is William H. Seward's close associate, but more likely it is referring to  the U.S. president who graduated from Yale University and had a son named Michael, which would be George H.W. Bush or George W. Bush doesn't fit as his son's name isn't Michael but rather his brother is, however the former does have a son named Neil Mallon Bush but also has other sons including John Ellis "Jeb" Bush and another being Marvin Pierce Bush's sibling - Prescott, Robert and Jeb aren't correct fits for this question either - that leaves us with one of these two: 
+George Herbert Walker '41 or 
+George Walker '68 - given that neither seems to fit perfectly I will guess George Herbert Walker as his middle name was indeed 'Herbert'
+
+Check result: N

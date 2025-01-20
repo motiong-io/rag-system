@@ -1,0 +1,30 @@
+Question: The Basibasy mine is located in Madagascar. This mine is abundant in a specific chemical element that was discovered for the first time in 1791. The person who discovered this element was born on what is now known as a major US holiday - what holiday is this?
+Ground truth: Christmas
+log:['What chemical element is abundant in the Basibasy mine in Madagascar?', 'Who discovered the chemical element found in the Basibasy mine?', 'On which US holiday was the discoverer of the chemical element born?']
+['Who discovered Titanium?', 'On which US holiday was the discoverer of Titanium born?']
+['On which US holiday was William Gregor born?', '', '']
+['What US holiday was William Gregor, the discoverer of Titanium, born on?', '', '']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What chemical element is abundant in the Basibasy mine in Madagascar?:
+The chemical element that is abundant in the Basibasy mine in Madagascar is Titanium. According to the context, the Basibasy mine is one of the largest titanium mines in Madagascar, with reserves amounting to 446 million tonnes of ore grading 5.5% titanium.
+
+Who discovered Titanium?:
+Titanium was discovered by William Gregor in 1791. He was a British clergyman and mineralogist who found the element in ilmenite, a mineral in Cornwall, Great Britain. However, it was Martin Heinrich Klaproth who later verified the discovery and named the element "titanium" after the Titans of Greek mythology.
+
+On which US holiday was William Gregor born?:
+William Gregor was born on December 25, 1761, which is Christmas Day.
+
+
+        
+
+
+Generated answer: To answer this question, we need to follow a series of connections. The Basibasy mine in Madagascar is abundant in Titanium. Titanium was discovered by William Gregor in 1791. William Gregor was born on December 25, 1761, which is now known as Christmas Day, a major US holiday. 
+
+So, the person who discovered the chemical element abundant in the Basibasy mine was born on Christmas Day.
+
+Check result: Y

@@ -1,0 +1,50 @@
+Question: A general motors vehicle is named after the largest ward in the country of Monaco.  How many people had walked on the moon as of the first model year of the vehicle? Note: the model year is not the same as the year the model was first produced.
+Ground truth: 4
+log:['What is the largest ward in the country of Monaco?', 'Which General Motors vehicle is named after the ward found in sub-query 1?', 'What is the first model year of the vehicle found in sub-query 2?', 'How many people had walked on the moon as of the year found in sub-query 3?']
+['What is the largest ward in the country of Monaco?', 'Which General Motors vehicle is named after Monte Carlo?', 'What is the first model year of the Chevrolet Monte Carlo?']
+['How many people had walked on the moon as of 1970?', '', '']
+['What is the first model year of the Chevrolet Monte Carlo?', 'How many people had walked on the moon as of the first model year of the Chevrolet Monte Carlo?']
+['How many people had walked on the moon as of 1970?', 'None', 'None']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What is the largest ward in the country of Monaco?:
+The largest ward in Monaco is Monte Carlo.
+
+What is the largest ward in the country of Monaco?:
+The largest ward in Monaco is Monte Carlo.
+
+How many people had walked on the moon as of 1970?:
+As of 1970, only the Apollo 11 mission had successfully landed on the Moon, which occurred in July 1969. During this mission, two people walked on the Moon: Neil Armstrong and Buzz Aldrin.
+
+However, by 1970, there was another mission, Apollo 13, that was planned to land on the Moon but unfortunately failed due to an explosion on board. 
+
+Another mission, Apollo 12, had also  landed on the Moon in November 1969, and two people from this mission, Pete Conrad and Alan Bean, had also walked on the Moon.
+
+Therefore, as of 1970, a total of 4 people (Neil Armstrong, Buzz Aldrin, Pete Conrad, and Alan Bean) had walked on the Moon.
+
+What is the first model year of the Chevrolet Monte Carlo?:
+The first model year of the Chevrolet Monte Carlo is 1970. It was formally introduced in September 1969, but it is considered a 1970 model.
+
+
+        
+
+
+Generated answer: That's a interesting multi-hop question. 
+
+First, I need to identify the vehicle named after the largest ward in Monaco. The largest ward in Monaco is Monte Carlo. 
+
+There is a General Motors vehicle named Chevrolet Monte Carlo. 
+
+The first model year of the Chevrolet Monte Carlo is 1970. 
+
+Now, I need to find out how many people had walked on the moon as of 1970. 
+
+As of 1970, a total of 4 people (Neil Armstrong, Buzz Aldrin, Pete Conrad, and Alan Bean) had walked on the Moon.
+
+So, the answer is 4 people had walked on the moon as of the first model year of the Chevrolet Monte Carlo.
+
+Check result: Y

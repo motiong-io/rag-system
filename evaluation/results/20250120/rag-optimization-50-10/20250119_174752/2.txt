@@ -1,0 +1,22 @@
+Question: How many years earlier would Punxsutawney Phil have to be canonically alive to have made a Groundhog Day prediction in the same state as the US capitol?
+Ground truth: 87
+log:
+
+Generated answer: To determine this, we need to consider the history of Groundhog Day and the location of the US capital.
+
+Groundhog Day, as we know it today, was first celebrated in 1887 in Punxsutawney, Pennsylvania. However, the tradition is based on a German superstition that was brought to North America by German settlers.
+
+The US capital, on the other hand, has been located in Washington D.C. since 1800. Prior to that, it was located in Philadelphia (1790-1800) and New York City (1789-1790).
+
+To have made a Groundhog Day prediction in the same state as the US capital before 1887 (when Groundhog Day started), Punxsutawney Phil would have had to be alive when the US capital was still located in Philadelphia (which is also in Pennsylvania).
+
+So, let's calculate:
+
+US capital moved from Philadelphia to Washington D.C.: 1800
+First Groundhog Day celebration: 1887
+
+Therefore, Punxsutawney Phil would have had to be canonically alive at least 87 years earlier than his claimed "birth" year (which is not explicitly stated but implied to be around or after 1886) to make a prediction during the time when Philadelphia was still the US capital.
+
+In other words, he would have had to be alive around or before 1813-1800 = roughly 80-87 years before his first "official" prediction.
+
+Check result: Y

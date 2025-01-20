@@ -1,0 +1,9 @@
+Question: On the same day that the The Mercedes-Benz W222 arrived at dealerships, a star of the sit-com Modern Family was wed. Who did the star marry?
+Ground truth: Justin Mikita
+log:
+
+Generated answer: The Mercedes-Benz W222 (S-Class) was unveiled on May 15, 2013, and it arrived at dealerships in September or October of that year, depending on the location. 
+
+Jesse Tyler Ferguson, a star of the sitcom Modern Family, married Justin Mikita on July 20, 2013.
+
+Check result: N

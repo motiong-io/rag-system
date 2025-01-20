@@ -1,0 +1,7 @@
+Question: As of July 1, 2024, what is the parent company of the current record label of the singer of Edge of Seventeen?
+Ground truth: Warner Music Group
+log:
+
+Generated answer: The parent company of the current record label of Stevie Nicks, the singer of "Edge of Seventeen", is Warner Music Group.
+
+Check result: Y

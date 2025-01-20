@@ -1,0 +1,30 @@
+Question: The Pope born Pietro Barbo ended a long-running war two years after his papacy began, which famous conflict, immortalized in tapestry took place 400 years earlier?
+Ground truth: The Battle of Hastings.
+log:['Who is the Pope born Pietro Barbo?', 'What long-running war did this Pope end two years after his papacy began?', 'What famous conflict, immortalized in tapestry, took place 400 years earlier?']
+['What long-running war did Pope Paul II end two years after his papacy began?', 'What famous conflict, immortalized in tapestry, took place 400 years earlier than 1466?']
+['What famous conflict, immortalized in tapestry, took place 400 years earlier than 1466?']
+['Who is the Pope born Pietro Barbo?', 'What famous conflict, immortalized in tapestry, took place 400 years earlier than 1466?', '']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        Who is the Pope born Pietro Barbo?:
+The Pope born Pietro Barbo is Pope Paul II. He was born on February 23, 1417, in Venice, and served as the head of the Catholic Church and ruler of the Papal States from August 30, 1464, until his death on July 26, 1471.
+
+What long-running war did Pope Paul II end two years after his papacy began?:
+The Thirteen Years' War (1454-1466) between the Teutonic Knights and the Kingdom of Poland. Pope Paul II helped to negotiate the Second Peace of Thorn, which was signed on October 10, 1466, ending the war.
+
+What famous conflict, immortalized in tapestry, took place 400 years earlier than 1466?:
+The Battle of Hastings, which is immortalized in the Bayeux Tapestry, took place in 1066. This is approximately 400 years before 1466.
+
+
+        
+
+
+Generated answer: The Pope born Pietro Barbo is Pope Paul II. He ended the Thirteen Years' War between the Teutonic Knights and the Kingdom of Poland two years after his papacy began. 
+
+The famous conflict, immortalized in tapestry, that took place 400 years earlier than 1466, is the Battle of Hastings, which is depicted in the Bayeux Tapestry. It occurred in 1066, approximately 400 years before the end of the Thirteen Years' War in 1466.
+
+Check result: Y

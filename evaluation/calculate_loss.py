@@ -4,6 +4,7 @@ from evaluation.services.evaluation_steps import EvaluationSteps
 from typing import Literal
 from pqdm.processes import pqdm
 from evaluation.results.record import ResultRecordService
+from tqdm import tqdm
 
 # rrs = ResultRecordService()
 # benchmark data read
@@ -85,17 +86,28 @@ def evaluate_in_threads(rrs:ResultRecordService, indices:list, N_s, N_r, alpha, 
             executor.submit(evaluate_thread,rrs, index, N_s, N_r, alpha, T, P_f, MSR, CE): index
             for index in indices
         }
+        
+        progress_bar = tqdm(total=len(indices))
         for future in as_completed(future_to_index):
             index = future_to_index[future]
             try:
                 results[index] = future.result()
-                # print("==============================")
-                # rrs.add_contents(f"Index {index} finished.")
-                print(f" {len(results)} / {len(indices)} finished.")
             except Exception as e:
                 print(f"Index {index} generated an exception: {e}")
-                # rrs.add_contents(f"Index {index} generated an exception: {e}")
                 results[index] = None
+            progress_bar.update(1)
+        progress_bar.close()
+        
+        # for future in as_completed(future_to_index):
+        #     index = future_to_index[future]
+        #     try:
+        #         results[index] = future.result()
+                # print("==============================")
+                # rrs.add_contents(f"Index {index} finished.")
+            # except Exception as e:
+            #     print(f"Index {index} generated an exception: {e}")
+                # rrs.add_contents(f"Index {index} generated an exception: {e}")
+                # results[index] = None
     return results
 
 

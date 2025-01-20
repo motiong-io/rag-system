@@ -32,7 +32,7 @@ def weaviate_repo():
         left_main_space = ui.column().style('width:100%;padding:5px')#.classes('border border-blue-100')
         # middle_main_space = ui.column().style('width:1%').classes('border border-blue-100')
         # right_main_space = ui.column().style('width:30%').classes('border border-blue-100')
-        with ui.dialog() as dialog,ui.card():
+        with ui.dialog(value=False) as dialog, ui.card().style('width: 66%; max-width: none'):
             ui.label('Wiki Docs')
 
     # header
@@ -57,12 +57,47 @@ def weaviate_repo():
 
             def display_wikidocs(uuid:str):
                 dialog.clear()
-                with dialog, ui.card().style('width:50%'):
+                with dialog, ui.card().style('width: 66%; max-width: none ;height: 80vh'):
                     ui.label(uuid)
 
-                    related_chunks = aggregate_objects_by_property(displayed_collection['collection_name'],'original_uuid',uuid)
+                    related_chunks,properties = aggregate_objects_by_property(displayed_collection['collection_name'],'original_uuid',uuid)
                     
                     ui.label(f"Related chunks: {related_chunks}")
+
+                    options = {
+                            'defaultColDef': {'flex': 1},
+                            'columnDefs': [
+                                {'headerName': 'original_index', 'field': 'original_index', 'width': 60, 'sort': 'asc'},
+                                {'headerName': 'doc_id', 'field': 'doc_id','width': 100},
+                                {'headerName': 'original_uuid', 'field': 'original_uuid','width': 100},
+                                {'headerName': 'chunk_id', 'field': 'chunk_id','width': 100},
+                                {'headerName': 'original_content', 'field': 'original_content',
+                                    'editable': True,  
+                                    'cellEditor': 'agLargeTextCellEditor',
+                                    'cellEditorPopup': True,                                
+                                 },
+                                {'headerName': 'contextualized_text', 'field': 'contextualized_text',
+                                    'editable': True, 
+                                    'cellEditor': 'agLargeTextCellEditor',
+                                    'cellEditorPopup': True,
+                                    # 'cellEditorParams': {
+                                    # 'maxLength': 100 
+                                    # }
+                                }
+                            ],
+                            'paginationPageSize': 25, 
+                            # 'domLayout': 'autoHeight',
+                            'pagination': True,
+                            'enableCellTextSelection': True,
+                    }
+                    # print(properties)
+                    # for prop in properties:
+                    #     prop.properties["original_uuid"] = str(prop.properties['original_uuid'])
+                    #     rowdata.append(prop.properties)
+                    options['rowData'] = properties
+                    # # ui.label(str(options['rowData'][0]['original_uuid']))
+                    ui.aggrid(options=options).style('width:100%; height: 500px;')
+
                 dialog.open()
 
             def display_dataset_page(page_index:int):

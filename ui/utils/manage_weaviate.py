@@ -1,6 +1,9 @@
 
 import weaviate
 from weaviate.classes.query import Filter
+
+
+
 from app.config import env
 from typing import List
 
@@ -47,9 +50,18 @@ def aggregate_objects_by_property(collection_name:str,property_name:str, propert
         )as client:
 
         collection = client.collections.get(collection_name)
-        response = collection.aggregate.over_all(
+        chunks_count = collection.aggregate.over_all(
             filters=Filter.by_property(property_name).equal(property_value),
-        )
-        return response.total_count
-    
+        ).total_count
 
+        chunks = collection.query.fetch_objects(
+        filters=Filter.by_property(property_name).equal(property_value),
+        limit=chunks_count,
+        ).objects
+        
+        chunk_properties = []
+        for obj in chunks:
+            chunk_properties.append(obj.properties)
+
+        return chunks_count, chunk_properties
+    

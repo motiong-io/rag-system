@@ -1,0 +1,7 @@
+Question: How old would the founder of the publishing company of the magazine that serialized the manga series Raw Hero have been the year the magazine ended publication?
+Ground truth: 145
+log:
+
+Generated answer: I'm not able to verify the age of the founder of the publishing company that published Raw Hero in its final year.
+
+Check result: N

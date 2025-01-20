@@ -20,10 +20,12 @@ mwparserfromhell = "^0.6.6"
 infinity-client = "^0.0.70"
 motiongreactor = {git = "git@github.com:motiong-io/reactor.git"}
 datasets = "^3.2.0"
-streamlit = "^1.41.0"
 motiongchunker = {git = "git@github.com:motiong-io/motiong-chunker.git"}
 cplex = "^22.1.2.0"
 scipy = "^1.14.1"
+pqdm = "^0.2.0"
+nicegui = "^2.9.1"
+websockets = "^11.0"
 
 
 

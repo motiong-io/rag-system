@@ -1,0 +1,32 @@
+Question: Małgorzata Rożniecka is a model who won the title of Miss International. What is the difference in title years from when she won and the pageant winner who was murdered by her stalker?
+Ground truth: 10 years
+log:['In what year did Małgorzata Rożniecka win the title of Miss International?', 'Who is the pageant winner that was murdered by her stalker?', 'In what year was the pageant winner murdered by her stalker?']
+['Who is the pageant winner that was murdered by her stalker?', 'In what year was the pageant winner murdered by her stalker?']
+['In what year was Monica Spear murdered?', '', '']
+['What is the difference in title years from 2001 and the year Monica Spear was murdered?', 'In what year was Monica Spear murdered?', '']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        In what year did Małgorzata Rożniecka win the title of Miss International?:
+Małgorzata Rożniecka won the title of Miss International in 2001.
+
+Who is the pageant winner that was murdered by her stalker?:
+None of the provided contexts mention a pageant winner being murdered by her stalker. However, one of the contexts mentions René Blum, the founder of the Ballet de l'Opéra in Monte Carlo, being murdered at Auschwitz. Another context mentions the execution of René Borghini, Joseph-Henri Lajoux, and Esther Poggio, who were Resistance leaders. 
+
+But, based on general knowledge, you might be referring to Miss World 1996, Priyanka Basanthi is not the one, but there is another one, 2004 Miss Mexico, Laura Zuñiga was not murdered but was kidnapped and a pageant contestant in Colombia, MartharPid Angeles Reyesalette was not either. The one that comes to mind is Monica Spear, who won the title of Miss Venezuela in 2004, she was murdered by her assailants during a robbery in 2014.
+
+In what year was Monica Spear murdered?:
+Monica Spear, a Venezuelan actress and beauty pageant titleholder, was murdered on January 6, 2014.
+
+
+        
+
+
+Generated answer: Małgorzata Rożniecka won the title of Miss International in 2001. However, I must correct that the pageant winner who was murdered was not exactly by her stalker, but Monica Spear, who won the title of Miss Venezuela in 2004, was murdered by her assailants during a robbery in 2014.
+
+To answer your question, the difference in title years between Małgorzata Rożniecka (2001) and Monica Spear (2004) is 3 years.
+
+Check result: N

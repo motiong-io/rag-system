@@ -1,0 +1,52 @@
+Question: A general motors vehicle is named after the largest ward in the country of Monaco.  How many people had walked on the moon as of the first model year of the vehicle? Note: the model year is not the same as the year the model was first produced.
+Ground truth: 4
+log:['What is the largest ward in the country of Monaco?', 'Which General Motors vehicle is named after the ward found in sub-query 1?', 'What is the first model year of the vehicle found in sub-query 2?', 'How many people had walked on the moon as of the year found in sub-question 3?']
+['What is the largest ward in the country of Monaco?', 'Which General Motors vehicle is named after Monte Carlo?', 'What is the first model year of the Chevrolet Monte Carlo?']
+['How many people had walked on the moon as of 1970?', '', '']
+['What is the model year of the first General Motors vehicle named after Monte Carlo?', 'How many people had walked on the moon as of the model year of the vehicle?']
+['What is the largest ward in the country of Monaco?', 'What is the model year of the first General Motors vehicle named after Monte Carlo?', 'How many people had walked on the moon as of the model year of the vehicle?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What is the largest ward in the country of Monaco?:
+The largest ward in Monaco is Monte Carlo.
+
+What is the largest ward in the country of Monaco?:
+The largest ward in Monaco is Monte Carlo.
+
+How many people had walked on the moon as of 1970?:
+As of 1970, a total of 6 people had walked on the Moon during the Apollo 11 and Apollo 12 missions:
+
+1. Neil Armstrong (Apollo 11)
+2. Buzz Aldrin (Apollo 11)
+3. Pete Conrad (Apollo 12)
+4. Alan Bean (Apollo 12)
+
+Note that this number only includes those who walked on the Moon's surface and does not include the other astronauts who were part of these missions but remained in orbit around the Moon.
+
+Later, in 1970, there was an attempt to land on the moon with Apollo 13 but due to an explosion on board, they were unable to land and had to return to Earth without walking on the moon.
+
+In July and August of 1971 Apollo 15 landed on the moon and David Scott and James Irwin became numbers 5 and 6 to walk on it
+
+What is the model year of the first General Motors vehicle named after Monte Carlo?:
+The first General Motors vehicle named after Monte Carlo was the 1970 Chevrolet Monte Carlo.
+
+
+        
+
+
+Generated answer: The largest ward in Monaco is Monte Carlo, and a General Motors vehicle is named after it, which is the Chevrolet Monte Carlo. The first model year of this vehicle is 1970.
+
+As of 1970, a total of 6 people had walked on the Moon during the Apollo 11 and Apollo 12 missions:
+
+1. Neil Armstrong (Apollo 11)
+2. Buzz Aldrin (Apollo 11)
+3. Pete Conrad (Apollo 12)
+4. Alan Bean (Apollo 12)
+
+So, as of the first model year of the Chevrolet Monte Carlo (1970), 6 people had walked on the moon, but only during two missions: Apollo 11 and Apollo 12.
+
+Check result: N

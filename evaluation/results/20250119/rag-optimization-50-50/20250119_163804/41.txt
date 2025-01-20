@@ -1,0 +1,26 @@
+Question: What Formula One car was driven in 1994 by the nephew of a racing driver from Italy who drove a Ferrari 312T and shares a last name with a common cocktail drink?
+Ground truth: Minardi M194
+log:
+
+Generated answer: The answer is the Jordan 194, driven by Alessandro Zanardi's cousin, but more likely the car driven by Andrea de Cesaris' teammate, or the car driven by JJ Lehto and  Vincenzo Sospiri's teammate or possibly the car driven by Pierluigi Martini's teammate or maybe the car driven by  Gerhard Berger's teammate - no. 
+
+The correct answer is: Benetton B194. The driver is JJ Lehto's and Jos Verstappen's and Johnny Herbert's teammate - no. 
+
+It is actually: JJ Lehto, Vincenzo Sospiri and Pierluigi Martini are not nephews of a Ferrari driver.
+
+However: The nephew of Arturo Merzario (who drove a Ferrari) did drive in F1 in 1994 for Minardi but I couldn't find information that he was related to him as his nephew.
+
+Then we have another Italian driver who drove for Ferrari in the past: Michele Alboreto drove for Tyrrell then for Ferrari then Tyrrell then Arrows then Footwork then Minardi then Ligier. But it seems none of his relatives were driving F1 cars.
+
+And there was also another Italian racing driver who shares his last name with a common cocktail drink (a Negroni): Michele isn't one but Stefano Modena isn't either... however there was Riccardo Patrese who shared his last name with an Italian drink made from coffee liqueur... no... 
+
+However we do have one other famous Italian racing driver whose surname shares its name with an alcoholic drink made from Prosecco wine (a Bellini), an Americano which has nothing to do with our case here or indeed Campari (which also fits this description). That would make Giancarlo Baghetti not relevant here nor Clay Regazzoni nor Bruno Giacomelli nor Teo Fabi nor Mauro Baldi fit this bill however there is one other famous F1 racing driver whose surname matches that of an Espresso-based coffee cocktail made from vodka and coffee liqueur - which doesn't apply here either...
+
+But indeed we do have one more example where our required conditions may fit namely where a well-known Espresso-based cocktail does share its name with our target person namely 'Martini'. This indicates that Luca Badoer doesn't fit this question as does Pierluigi Martini being too old at that point to be considered someone who could be described as 'the nephew' unless referring to someone much younger than himself at that time.
+
+
+
+Hence our correct answer can only really now relate to someone driving alongside Schumacher during 1994 namely... 
+the Benetton B194.
+
+Check result: N

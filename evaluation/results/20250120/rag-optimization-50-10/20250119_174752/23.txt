@@ -1,0 +1,7 @@
+Question: What was the political party of the person who advocated for the type of government used in Chikhali, Latur district to become the foundation of India's political system?
+Ground truth: Indian National Congress
+log:
+
+Generated answer: The person who advocated for the panchayati raj system, which is used in Chikhali, Latur district, to become the foundation of India's political system was Mahatma Gandhi. Mahatma Gandhi was a key leader of the Indian National Congress.
+
+Check result: Y

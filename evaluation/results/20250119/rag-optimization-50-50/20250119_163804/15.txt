@@ -1,0 +1,9 @@
+Question: In Slovakia there is a well known Film Festival called the Bratistlava International Film Festival. What city/ town was the film editor for the Grand Prix winner of 2003 born in?
+Ground truth: Roudnice nad Labem
+log:
+
+Generated answer: The Grand Prix winner of 2003 at the Bratislava International Film Festival was "Bored in Brno" directed by Vladimír Morávek. 
+
+Vladimír Morávek was born in Brno, Czech Republic.
+
+Check result: N

@@ -1,0 +1,7 @@
+Question: How old would the founder of the publishing company of the magazine that serialized the manga series Raw Hero have been the year the magazine ended publication?
+Ground truth: 145
+log:
+
+Generated answer: I'm not aware of any information about a manga series called "Raw Hero" or its publication history. Can you provide more context or clarify which magazine you are referring to? I'll do my best to help you with your question.
+
+Check result: N

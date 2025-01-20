@@ -1,0 +1,7 @@
+Question: The Basibasy mine is located in Madagascar. This mine is abundant in a specific chemical element that was discovered for the first time in 1791. The person who discovered this element was born on what is now known as a major US holiday - what holiday is this?
+Ground truth: Christmas
+log:
+
+Generated answer: The Basibasy mine in Madagascar is abundant in titanium. Titanium was discovered by William Gregor in 1791. William Gregor was born on December 25, 1761, which is now known as Christmas Day, a major US holiday.
+
+Check result: Y

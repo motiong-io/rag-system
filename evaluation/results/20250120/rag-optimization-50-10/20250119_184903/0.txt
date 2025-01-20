@@ -1,0 +1,38 @@
+Question: If my future wife has the same first name as the 15th first lady of the United States' mother and her surname is the same as the second assassinated president's mother's maiden name, what is my future wife's name? 
+Ground truth: Jane Ballou
+log:['Who is the 15th first lady of the United States?', "What is the name of the 15th first lady's mother?", 'Who is the second assassinated president of the United States?', "What is the maiden name of the second assassinated president's mother?"]
+["What is the name of Harriet Lane Johnston's mother?", 'Who is the second assassinated president of the United States?', "What is the maiden name of the second assassinated president's mother?"]
+["Who is James A. Garfield's mother?", "The 15th First Lady and her mother's name)", "(The question about your future wife's name is now directly answerable based on previous answers)"]
+["What is your future wife's name if she has the same first name as Jane Ann Buchanan Lane and her surname is the same as Ballou?"]
+["What is the name of Harriet Lane Johnston's mother?", "Who is James A. Garfield's mother?", "If my future wife has the same first name as Jane Ann Buchanan Lane and her surname is the same as Ballou, what is my future wife's name?"]
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        Who is the 15th first lady of the United States?:
+The 15th First Lady of the United States was Harriet Lane Johnston, who served as the acting First Lady during the presidency of her uncle, James Buchanan, from 1857 to 1861.
+
+What is the name of Harriet Lane Johnston's mother?:
+Jane Ann Buchanan Lane.
+
+Who is James A. Garfield's mother?:
+James A. Garfield's mother is Eliza Garfield (née Ballou). She was born in New Hampshire and was the sister of Mehitabel Ballou, whom Abram Garfield (James' father) had originally intended to marry before marrying Eliza instead.
+
+What is your future wife's name if she has the same first name as Jane Ann Buchanan Lane and her surname is the same as Ballou?:
+The first name is Jane, and the surname is Ballou, so her full name would be Jane Ballou.
+
+
+        
+
+
+Generated answer: To determine your future wife's name, we need to identify the 15th first lady of the United States' mother and the second assassinated president's mother's maiden name.
+
+The 15th first lady of the United States was Harriet Lane Johnston, and her mother's name was Jane Ann Buchanan Lane. 
+
+The second assassinated president was James A. Garfield, and his mother's maiden name was Ballou.
+
+So, if your future wife has the same first name as Harriet Lane Johnston's mother (Jane) and her surname is the same as James A. Garfield's mother's maiden name (Ballou), then your future wife's name would be Jane Ballou.
+
+Check result: Y

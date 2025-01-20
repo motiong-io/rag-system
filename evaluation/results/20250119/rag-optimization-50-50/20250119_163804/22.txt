@@ -1,0 +1,23 @@
+Question: According to the 1990 United States census, what was the total population of the cities in Oklahoma that had at least 100,000 residents according to the 2020 United States census?
+Ground truth: 950135
+log:
+
+Generated answer: According to the 2020 United States census, the cities in Oklahoma with at least 100,000 residents are:
+
+1. Oklahoma City - population: 681,054
+2. Tulsa - population: 403,090 (Note: Not exactly 403,090 for the city of Tulsa proper but close enough for this example)
+3. Norman - population: 128,026 (Note: Not exactly over 100,000 but close enough)
+
+Now let's find their populations according to the 1990 United States census:
+
+1. **Oklahoma City - population**: 444,719
+2. **Tulsa - population**: 367,302
+3. **Norman - population**: 80,071 (Below the threshold of this problem but added for completeness)
+
+Total population of these cities in Oklahoma according to the 1990 census is:
+444,719 + 367,302 = 812,021
+
+Adding Norman even though below threshold:
+812,021 + 80,071 = 892,092
+
+Check result: N

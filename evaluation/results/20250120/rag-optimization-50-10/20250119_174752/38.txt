@@ -1,0 +1,11 @@
+Question: Which species from the genus mulona are both found in the same country?
+Ground truth: Mulona barnesi and mulona schausi
+log:
+
+Generated answer: There is no genus called "mulona." It's possible that you may be thinking of a different genus, such as "Mullerornis" or "Mulona," but without more information, it's difficult to provide a specific answer.
+
+However, I found that there is a genus called "Mulona" in the family Erebidae (moth family), but I couldn't find any information on the distribution of species within this genus.
+
+If you could provide more context or clarify which genus you are referring to, I'll do my best to help.
+
+Check result: N

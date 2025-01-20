@@ -1,0 +1,7 @@
+Question: How old was Stephen Baldwin when Hailey and Justin got married?
+Ground truth: 52
+log:
+
+Generated answer: Hailey Baldwin and Justin Bieber got married on September 13, 2018. Stephen Baldwin, Hailey's father, was born on May 12, 1966. Therefore, he was 52 years old when his daughter Hailey married Justin Bieber.
+
+Check result: Y

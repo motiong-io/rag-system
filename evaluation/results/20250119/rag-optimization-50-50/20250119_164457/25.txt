@@ -1,0 +1,51 @@
+Question: What was the age difference between Mike Tyson and Tyson Fury on the respective days on which they lost their first ever fights? Represent the figure in years only.
+Ground truth: 12 years.
+log:["What was the date of Mike Tyson's first professional loss?", "What was Mike Tyson's birthdate?", "What was the date of Tyson Fury's first professional loss?", "What was Tyson Fury's birthdate?", "On the day of their respective first losses, what were Mike Tyson and Tyson Fury's ages in years?"]
+["What was Tyson Fury's birthdate?", "What was the date of Tyson Fury's first professional loss?", "On February 11, 1990, what was Mike Tyson's age in years, and on the day of his first loss, what was Tyson Fury's age in years?"]
+["What was the date of Tyson Fury's first professional loss?", "On December 1, 2015, what was Mike Tyson's age in years, and on the day of his first loss, what was Tyson Fury's age in years?"]
+['What is the absolute difference between twenty-three and thirty-five?']
+['What was the age of Mike Tyson on February 11, 1990?', 'What was the age of Tyson Fury on May 18, 2024?', "What is the absolute difference between Mike Tyson's age on February 11, 1990, and Tyson Fury's age on May 18, 2024?"]
+['What is the absolute difference between twelve and zero?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What was the date of Mike Tyson's first professional loss?:
+Mike Tyson's first professional loss was on February 11, 1990, when he lost to Buster Douglas in Tokyo.
+
+What was Tyson Fury's birthdate?:
+Tyson Fury's birthdate was August 12, 1988.
+
+What was the date of Tyson Fury's first professional loss?:
+The date of Tyson Fury's first professional loss was May 18, 2024, when he lost to Oleksandr Usyk via split decision.
+
+What is the absolute difference between twenty-three and thirty-five?:
+None of the given contexts provide information about calculating absolute differences between numbers. However, I can still calculate the absolute difference for you.
+
+
+The absolute difference between 23 and 35 is |23 - 35| = |-12| = 12.
+
+What was the age of Mike Tyson on February 11, 1990?:
+According to the text, Mike Tyson was born on June 30, 1966. Therefore, on February 11, 1990, he was 23 years old.
+
+
+        
+
+
+Generated answer: To find the age difference, we need to calculate the ages of both Mike Tyson and Tyson Fury on the days they lost their first fights.
+
+Mike Tyson's first loss was on February 11, 1990. He was born on June 30, 1966, so he was 23 years old at that time.
+
+Tyson Fury's first loss was on May 18, 2024. He was born on August 12, 1988. To calculate his age at the time of his first loss: 
+2024 - 1988 = 36 years. Since his birthday is in August and the fight took place in May, he wasn't yet 36 years old when he had his fight. Therefore, at that time he would be still considered as being only about to turn or nearly turning but not yet turned into a new year older than what would have been if it were after August which means we can say roughly around or just before turning into being actually aged thirty-six (35).
+
+Now let's find their age difference:
+Age difference = Age of Tyson Fury - Age of Mike Tyson
+= Approximately around (35) - (23)
+= Approximately around twelve 
+
+So approximately twelve years apart from one another based upon those respective dates mentioned within question itself regarding each fighter having experienced an initial professional boxing match defeat during careers spanning over multiple decades apart starting back then going forward up until now today respectively speaking here!
+
+Check result: Y

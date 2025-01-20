@@ -1,0 +1,7 @@
+Question: Giorgio Rognoni was an Italian professional footballer who played as a midfielder. 10 years after his death who was the midfielder who played in Milan that was born in Besana in Brianza,?
+Ground truth: Demetrio Albertini
+log:
+
+Generated answer: According to the text, 10 years after Giorgio Rognoni's death (which occurred in 1986), Demetrio Albertini was the midfielder who played for Milan and was born in Besana in Brianza.
+
+Check result: Y

@@ -1,0 +1,28 @@
+Question: On the same day that the The Mercedes-Benz W222 arrived at dealerships, a star of the sit-com Modern Family was wed. Who did the star marry?
+Ground truth: Justin Mikita
+log:['When did the Mercedes-Benz W222 arrive at dealerships?', 'Which star of the sit-com Modern Family got married on that day?', 'Who did the star from Modern Family marry on that day?']
+['Which star of the sit-com Modern Family got married on July 20, 2013?', 'Who did the star from Modern Family marry on July 20, 2013?']
+['Who did Jesse Tyler Ferguson marry?', "(Removed sub-query about the Mercedes-Benz W222 arrival date, as it's already known to be July 20, 2013)", '(Removed, as we only need to find out who Jesse Tyler Ferguson married)']
+['Who did Jesse Tyler Ferguson marry?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        When did the Mercedes-Benz W222 arrive at dealerships?:
+The Mercedes-Benz S-Class (W222) arrived at dealerships on July 20, 2013.
+
+Which star of the sit-com Modern Family got married on July 20, 2013?:
+Jesse Tyler Ferguson, the star of Modern Family, got married to Justin Mikita on July 20, 2013.
+
+Who did Jesse Tyler Ferguson marry?:
+Jesse Tyler Ferguson married Justin Mikita, a lawyer, on July 20, 2013, in Manhattan. They have two children together, Beckett Mercer Ferguson-Mikita and Sullivan Louis Ferguson-Mikita.
+
+
+        
+
+
+Generated answer: That's a interesting coincidence. The Mercedes-Benz W222 arrived at dealerships on July 20, 2013. On the same day, Jesse Tyler Ferguson, a star of the sit-com Modern Family, got married to Justin Mikita.
+
+Check result: Y

@@ -1,0 +1,57 @@
+Question: What was the age difference between Mike Tyson and Tyson Fury on the respective days on which they lost their first ever fights? Represent the figure in years only.
+Ground truth: 12 years.
+log:["What was the date of Mike Tyson's first professional loss?", "What was Mike Tyson's age on the date of his first professional loss?", "What was the date of Tyson Fury's first professional loss?", "What was Tyson Fury's age on the date of his first professional loss?", 'What is the age difference in years between Mike Tyson and Tyson Fury on their respective loss dates?']
+["What was Mike Tyson's age on the date of his first professional loss?", "What was the date of Tyson Fury's first professional loss?", "What was Tyson Fury's age on the date of his first professional loss?"]
+["What was the date of Tyson Fury's first professional loss?", "What was Tyson Fury's age on the date of his first professional loss?"]
+['What was the age difference between a 23-year-old and a 35-year-old?', '', '']
+["What was Tyson Fury's age on the date of his first professional loss?", "What was the age difference between a 23-year-old and a Tyson Fury's age on the date of his first professional loss?", '']
+["What was the age difference between Mike Tyson's age on the date of his first professional loss and Tyson Fury's age on the date of his first professional loss?", '', '']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What was the date of Mike Tyson's first professional loss?:
+Mike Tyson's first professional loss was on February 11, 1990, when he lost to Buster Douglas in Tokyo, Japan.
+
+What was Mike Tyson's age on the date of his first professional loss?:
+Mike Tyson's first professional loss was to James "Buster" Douglas on February 11, 1990. According to the provided texts, Mike Tyson was born on June 30, 1966. 
+
+To calculate his age at the time of the fight, we need to subtract his birth year from the year of the fight and then account for the months and days.
+
+1990 - 1966 = 24 years
+
+Since his birthday is June 30, and the fight occurred on February 11, Mike Tyson was 23 years old at the time of his first professional loss.
+
+What was the date of Tyson Fury's first professional loss?:
+According to the text, Tyson Fury's first professional loss was on May 18, 2024, when he lost to Oleksandr Usyk via split decision.
+
+What was the age difference between a 23-year-old and a 35-year-old?:
+The age difference between a 23-year-old and a 35-year-old is 12 years.
+
+What was Tyson Fury's age on the date of his first professional loss?:
+According to the text, Tyson Fury's first professional loss was against Oleksandr Usyk. The date of the fight is not specified in the text snippet, but it is mentioned that Fury was 36 years old at some point. However, another text snippet mentions that Fury announced his retirement on August 12, 2022, and relinquished his title, and later returned to boxing. 
+
+In another snippet, it is mentioned that Fury fought Francis Ngannou on October 28, 2023. Before that, he fought Derek Chisora on December 3, 2022. 
+
+Given that information and the fact that Fury was born on August 12, 1988, we can calculate his age during those fights. On December 3, 2022, Fury was 34 years old. On October 28, 2023, he was 35 years old.
+
+Since the fight against Usyk is mentioned after the retirement and before the Ngannou fight, we can assume it happened sometime in 2022 or 2023. However, without a specific date for the Usyk fight, we cannot determine Fury's exact age at the time of his first professional loss.
+
+
+        
+
+
+Generated answer: To find the age difference, we need to calculate the age of both Mike Tyson and Tyson Fury on the days they lost their first fights.
+
+Mike Tyson's first professional loss was on February 11, 1990, when he was 23 years old.
+
+Tyson Fury's first professional loss was on May 18, 2024. Although we don't have the exact date of his birth in relation to the loss, we know he was born on August 12, 1988. 
+
+So on May 18, 2024, Tyson Fury would be 35 years old.
+
+The age difference between Mike Tyson (23 years old) and Tyson Fury (35 years old) on the days they lost their first fights is: 
+35 - 23 = 12 years.
+
+Check result: Y

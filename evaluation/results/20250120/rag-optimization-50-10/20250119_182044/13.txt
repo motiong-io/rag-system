@@ -1,0 +1,28 @@
+Question: One of Barbara Kingsolver's best known novels is about an American missionary family which moves to Africa. At the time, the country they move to was a Belgian colony. Which year did it become independent?
+Ground truth: 1960
+log:["What is the title of Barbara Kingsolver's novel about an American missionary family moving to Africa?", 'Which country did the American missionary family move to in the novel, which was a Belgian colony at the time?', 'In what year did the country from sub-query 2 gain independence from Belgium?']
+['Which country is the setting for Barbara Kingsolver\'s novel "The Poisonwood Bible", which was a Belgian colony at the time?', 'In what year did Congo gain independence from Belgium?']
+['In what year did the Democratic Republic of the Congo gain independence from Belgium?']
+["What is the title of Barbara Kingsolver's novel about an American missionary family moving to Africa?", 'Which country is the setting for Barbara Kingsolver\'s novel "The Poisonwood Bible", which was a Belgian colony at the time?', 'In what year did the Democratic Republic of the Congo gain independence from Belgium?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What is the title of Barbara Kingsolver's novel about an American missionary family moving to Africa?:
+The title of Barbara Kingsolver's novel about an American missionary family moving to Africa is "The Poisonwood Bible".
+
+Which country is the setting for Barbara Kingsolver's novel "The Poisonwood Bible", which was a Belgian colony at the time?:
+The country is the Democratic Republic of the Congo (specifically, the region that was then known as the Belgian Congo).
+
+In what year did the Democratic Republic of the Congo gain independence from Belgium?:
+The Democratic Republic of the Congo gained independence from Belgium on June 30, 1960. At the time of independence, it was known as the Republic of the Congo and later changed its name to the Democratic Republic of the Congo in 1964.
+
+
+        
+
+
+Generated answer: The novel you're referring to is "The Poisonwood Bible". The country the family moves to is the Democratic Republic of the Congo, which was a Belgian colony at the time. According to my knowledge, the Democratic Republic of the Congo gained independence from Belgium on June 30, 1960.
+
+Check result: Y

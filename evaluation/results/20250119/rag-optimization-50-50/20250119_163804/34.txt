@@ -1,0 +1,11 @@
+Question: The oldest extant football team in Italy plays in a stadium.   The stadium is named after a person.   Who was the emperor of China when that person was 5 years old?
+Ground truth: Guangxu
+log:
+
+Generated answer: The oldest extant football team in Italy is Genoa Cricket and Football Club, which plays at the Stadio Luigi Ferraris. 
+
+Luigi Ferraris was an Italian footballer who played for Genoa and the Italy national team. He was born in 1887.
+
+When Luigi Ferraris was 5 years old (in 1892), the emperor of China was Guangxu.
+
+Check result: Y

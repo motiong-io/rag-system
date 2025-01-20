@@ -1,0 +1,2 @@
+Question: What was the running time of the first cartoon in the series that inspired the name of the Looney Tunes franchise?
+Ground truth: 5 minutes and 31 seconds

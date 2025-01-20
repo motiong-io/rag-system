@@ -1,0 +1,35 @@
+Question: How many years after the founding of the 50th most populous US city, based on 2023 estimate population data, did Frank Fox receive UK Patent (1344259)?
+Ground truth: 98 Years (Arlington, TX & Rubik's Cube)
+log:['What is the 50th most populous US city based on 2023 estimate population data?', 'In what year was the 50th most populous US city founded?', 'When did Frank Fox receive UK Patent (1344259)?']
+['In what year was Arlington, Texas founded?', 'When did Frank Fox receive UK Patent (1344259)?']
+['In what year did Frank Fox receive UK Patent (1344259)?', 'How many years after 1876 did Frank Fox receive UK Patent (1344259)?']
+['How many years after 1876 did Frank Fox receive UK Patent (1344259)?', '', '']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What is the 50th most populous US city based on 2023 estimate population data?:
+The 50th most populous US city based on 2023 estimate population data is Arlington, Texas, with a population of 398,431.
+
+In what year was Arlington, Texas founded?:
+Arlington, Texas was founded in 1876.
+
+In what year did Frank Fox receive UK Patent (1344259)?:
+Frank Fox received UK Patent (1344259) on 16 January 1974.
+
+
+        
+
+
+Generated answer: To find out how many years after the founding of the 50th most populous US city Frank Fox received UK Patent (1344259), we need to subtract the founding year from the patent year.
+
+The 50th most populous US city is Arlington, Texas, which was founded in 1876.
+Frank Fox received UK Patent (1344259) in 1974.
+
+So, 1974 - 1876 = 98 years.
+
+Therefore, Frank Fox received UK Patent (1344259) 98 years after the founding of Arlington, Texas.
+
+Check result: Y

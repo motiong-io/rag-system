@@ -1,0 +1,11 @@
+Question: What number would Tommy Lawton have worn playing for Chelsea FC?
+Ground truth: 9
+log:
+
+Generated answer: The text doesn't specifically mention the number Tommy Lawton wore during his time at Chelsea FC. However, it does provide some general information about squad numbers during that era.
+
+In the 1940s, when Lawton played for Chelsea, squad numbers were not yet standardized, and players often wore different numbers in different games. However, it's likely that Lawton would have worn a number between 1 and 11, as these were the traditional numbers assigned to outfield players during that time.
+
+If I had to make an educated guess, I'd say Lawton might have worn the number 9 shirt, which is often associated with center-forwards. However, without more specific information, it's impossible to say for certain what number he would have worn.
+
+Check result: Y

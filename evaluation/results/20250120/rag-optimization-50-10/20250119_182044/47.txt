@@ -1,0 +1,28 @@
+Question: What was the running time of the first cartoon in the series that inspired the name of the Looney Tunes franchise?
+Ground truth: 5 minutes and 31 seconds
+log:['What is the name of the cartoon series that inspired the name of the Looney Tunes franchise?', 'What is the title of the first cartoon in that series?', 'What was the running time of that first cartoon?']
+['What is the title of the first cartoon in the "Silly Symphonies" series?', 'What was the running time of that first cartoon?']
+['What is the running time of "The Skeleton Dance"?']
+['What is the running time of "The Skeleton Dance"?', 'None', 'None']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What is the name of the cartoon series that inspired the name of the Looney Tunes franchise?:
+The name of the Looney Tunes franchise was inspired by Walt Disney's "Silly Symphonies" cartoon series.
+
+What is the title of the first cartoon in the "Silly Symphonies" series?:
+The title of the first cartoon in the "Silly Symphonies" series is "The Skeleton Dance".
+
+What is the running time of "The Skeleton Dance"?:
+The running time of "The Skeleton Dance" is 5:31 minutes.
+
+
+        
+
+
+Generated answer: The first cartoon in the "Silly Symphonies" series, which inspired the name of the Looney Tunes franchise, is "The Skeleton Dance". The running time of "The Skeleton Dance" is 5:31 minutes.
+
+Check result: N

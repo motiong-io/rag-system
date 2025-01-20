@@ -1,0 +1,15 @@
+Question: As of 2010, if you added the number of times Brazil had won the World Cup to the amount of times the Chicago Bulls had won the NBA Championship and multiplied this number by the amount of times the Dallas Cowboys had won the Super Bowl, what number are you left with?
+Ground truth: 55
+log:
+
+Generated answer: As of 2010, Brazil had won the World Cup 5 times. The Chicago Bulls had won the NBA Championship 6 times. The Dallas Cowboys had won the Super Bowl 5 times.
+
+If we add the number of times Brazil won the World Cup (5) to the number of times the Chicago Bulls won the NBA Championship (6), we get:
+5 + 6 = 11
+
+Then, if we multiply this result (11) by the number of times the Dallas Cowboys won the Super Bowl (5), we get:
+11 * 5 = 55
+
+So, as of 2010, you would be left with the number 55.
+
+Check result: Y

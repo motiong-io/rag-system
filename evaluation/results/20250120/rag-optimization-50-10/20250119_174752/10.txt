@@ -1,0 +1,9 @@
+Question: An Australian artist, born the same year as artist Janet Cumbrae Stewart and fellow member of the Melbourne Society of Women Painters and Sculptors, had her painting featured on the cover of Women's World Magazine in 1923. What is the name of the painting?
+Ground truth: Reve d'Or
+log:
+
+Generated answer: The Australian artist you are referring to is Clarice Beckett, but I couldn't find any information that confirms she had a painting featured on the cover of Women's World Magazine in 1923.
+
+However, another Australian artist, Dora Wilson (also known as Dora ratcliffe), was a fellow member of the Melbourne Society of Women Painters and Sculptors, and her painting "The Corner of the Studio" was featured on the cover of Women's World Magazine in 1923.
+
+Check result: N

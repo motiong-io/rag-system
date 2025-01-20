@@ -1,0 +1,7 @@
+Question: Which football player got 15 or more assists in La Liga during the 2010-2011 season and also played for Arsenal at one point in his career?
+Ground truth: This was Mesut Ozil.
+log:
+
+Generated answer: The football player who got 17 assists in La Liga during the 2010-2011 season and also played for Arsenal at one point in his career is Mesut Özil.
+
+Check result: Y

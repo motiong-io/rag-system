@@ -1,0 +1,32 @@
+Question: Małgorzata Rożniecka is a model who won the title of Miss International. What is the difference in title years from when she won and the pageant winner who was murdered by her stalker?
+Ground truth: 10 years
+log:['In what year did Małgorzata Rożniecka win the title of Miss International?', 'Who is the pageant winner that was murdered by her stalker?', 'In what year was the pageant winner murdered by her stalker?']
+['Who is the pageant winner that was murdered by her stalker?', 'In what year was the pageant winner murdered by her stalker?']
+['In what year was Małgorzata Rożniecka won the title of Miss International?', 'Who is the pageant winner that was murdered by her stalker?']
+['In what year did Małgorzata Rożniecka win the title of Miss International?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        In what year did Małgorzata Rożniecka win the title of Miss International?:
+Małgorzata Rożniecka won the title of Miss International in 2001.
+
+Who is the pageant winner that was murdered by her stalker?:
+None of the provided contexts mention a pageant winner being murdered by her stalker. However, one of the contexts mentions the case of Amber Hagerman, a 9-year-old girl who was abducted and murdered in Arlington, Texas, in 1996. Her case led to the creation of the Amber Alert system.
+
+In what year was Małgorzata Rożniecka won the title of Miss International?:
+Małgorzata Rożniecka won the title of Miss International in 2001.
+
+
+        
+
+
+Generated answer: I couldn't find any information about a pageant winner being murdered by her stalker. However, I do know that Małgorzata Rożniecka won the title of Miss International in 2001.
+
+But I can tell you that there is a case of a beauty pageant winner, Nana Kurashvili, and also JonBenet Ramsey and Monica Spear who were murdered. However the most notable case is of Monica Spear who was murdered in 2014 by her assailants. 
+
+So if we consider Monica Spear as the pageant winner who was murdered, then the difference in title years from when Małgorzata Rożniecka won (2001) and Monica Spear's murder year (2014) would be 13 years (2014 - 2001).
+
+Check result: N

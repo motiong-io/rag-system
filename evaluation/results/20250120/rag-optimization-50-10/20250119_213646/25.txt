@@ -1,0 +1,50 @@
+Question: What was the age difference between Mike Tyson and Tyson Fury on the respective days on which they lost their first ever fights? Represent the figure in years only.
+Ground truth: 12 years.
+log:["What was the date of Mike Tyson's first professional loss?", "What was Mike Tyson's birthdate?", "What was the date of Tyson Fury's first professional loss?", "What was Tyson Fury's birthdate?", 'Calculate the age of Mike Tyson on the day of his first loss.', 'Calculate the age of Tyson Fury on the day of his first loss.', "Find the absolute difference between Mike Tyson's age and Tyson Fury's age on their respective loss days, in years."]
+["What was Mike Tyson's birthdate?", "What was the date of Tyson Fury's first professional loss?", "What was Tyson Fury's birthdate?"]
+["What was the date of Tyson Fury's first professional loss?", "What was Tyson Fury's birthdate?", 'What was the age of Mike Tyson when he lost his first professional fight on February 11, 1990, and what was the age of Tyson Fury on the day of his first professional loss?']
+["What was Tyson Fury's birthdate?", 'What was the age of Mike Tyson when he lost his first professional fight on February 11, 1990, and what was the age of Tyson Fury on May 18, 2024?']
+['What was the age difference between 23 years and 35 years?']
+['What was the age of Mike Tyson on February 11, 1990?', 'What was the age of Tyson Fury on May 18, 2024?', 'What was the age difference between the age of Mike Tyson on February 11, 1990, and the age of Tyson Fury on May 18, 2024?']
+['What was the age difference between 23 years and 35 years?']
+['What was the age of Tyson Fury on May 18, 2024?', 'What was the age difference between 23 years and the age of Tyson Fury on May 18, 2024?', '']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What was the date of Mike Tyson's first professional loss?:
+The date of Mike Tyson's first professional loss was February 11, 1990, when he lost to Buster Douglas in Tokyo.
+
+What was Mike Tyson's birthdate?:
+Mike Tyson's birthdate was June 30, 1966.
+
+What was the date of Tyson Fury's first professional loss?:
+According to the text, Tyson Fury's first professional loss was on May 18, 2024, when he lost to Oleksandr Usyk via split decision.
+
+What was Tyson Fury's birthdate?:
+Tyson Fury was born on August 12, 1988.
+
+What was the age difference between 23 years and 35 years?:
+12 years.
+
+What was the age of Mike Tyson on February 11, 1990?:
+According to the text, Mike Tyson was born on June 30, 1966. Therefore, on February 11, 1990, he was 23 years old. This is also confirmed in the text, which states that at the time of the fight against James "Buster" Douglas, Tyson was "23 years, 7 months" old.
+
+What was the age difference between 23 years and 35 years?:
+12 years.
+
+
+        
+
+
+Generated answer: To find the age difference, we need to calculate the ages of Mike Tyson and Tyson Fury on the days they lost their first fights.
+
+Mike Tyson's first loss was on February 11, 1990. He was born on June 30, 1966, so he was 23 years old.
+
+Tyson Fury's first loss was on May 18, 2024. He was born on August 12, 1988, so he was 35 years old.
+
+The age difference between them on their respective loss days is 35 - 23 = 12 years.
+
+Check result: Y

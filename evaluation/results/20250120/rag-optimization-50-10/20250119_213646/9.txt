@@ -1,0 +1,36 @@
+Question: The Pope born Pietro Barbo ended a long-running war two years after his papacy began, which famous conflict, immortalized in tapestry took place 400 years earlier?
+Ground truth: The Battle of Hastings.
+log:['Who is the Pope born Pietro Barbo?', 'What long-running war did this Pope end two years after his papacy began?', 'What famous conflict, immortalized in tapestry, took place 400 years earlier than the end of the war in sub-query 2?']
+['What long-running war did Pope Paul II end two years after his papacy began?', 'What famous conflict, immortalized in tapestry, took place 400 years earlier than the end of the war ended by Pope Paul II?']
+["What famous conflict, immortalized in tapestry, took place 400 years earlier than the end of the Thirteen Years' War between the Polish Crown and the Teutonic Order?"]
+['Who is the Pope born Pietro Barbo?', "What famous conflict, immortalized in tapestry, took place 400 years earlier than the end of the Thirteen Years' War between the Polish Crown and the Teutonic Order?", '']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        Who is the Pope born Pietro Barbo?:
+The Pope born Pietro Barbo is Pope Paul II. He was born on February 23, 1417, in Venice, and served as the head of the Catholic Church and ruler of the Papal States from August 30, 1464, until his death on July 26, 1471.
+
+What long-running war did Pope Paul II end two years after his papacy began?:
+The Thirteen Years' War between the Polish Crown and the Teutonic Order. Pope Paul II helped to negotiate the Second Peace of Thorn, which was signed on October 10, 1466, ending the war. This occurred about two years after his papacy began in 1464.
+
+What famous conflict, immortalized in tapestry, took place 400 years earlier than the end of the Thirteen Years' War between the Polish Crown and the Teutonic Order?:
+The Thirteen Years' War between the Polish Crown and the Teutonic Order ended in 1466. 
+
+400 years earlier than that would be 1266. 
+
+The famous conflict immortalized in tapestry that took place around that time is the Battle of Hastings, which occurred in 1066, but another famous conflict is the Battle of Lewes, which took place in 1264, and is immortalized in the Lewes Tapestry, or the Battle of Evesham, but no tapestry is particularly famous for this battle. However, it's possible you are thinking of the Bayeux Tapestry, which depicts the events leading up to the Battle of Hastings.
+
+
+        
+
+
+Generated answer: The Pope born Pietro Barbo is Pope Paul II. He ended the Thirteen Years' War between the Polish Crown and the Teutonic Order two years after his papacy began. 
+
+The Thirteen Years' War ended in 1466. If we go back 400 years from that, we get to around 1266. 
+
+A famous conflict immortalized in tapestry that took place around that time is not exactly 400 years earlier, but the Battle of Hastings, which occurred in 1066, is depicted in the famous Bayeux Tapestry. However, a conflict closer to the 1266 timeline is the Battle of Lewes, which took place in 1264 and is immortalized in the Lewes Tapestry.
+
+Check result: N

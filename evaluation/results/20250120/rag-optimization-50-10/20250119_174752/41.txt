@@ -1,0 +1,10 @@
+Question: What Formula One car was driven in 1994 by the nephew of a racing driver from Italy who drove a Ferrari 312T and shares a last name with a common cocktail drink?
+Ground truth: Minardi M194
+log:
+
+Generated answer: The answer is likely Alessandro Nannini's nephew, but more likely the question refers to  Gilles Villeneuve's nephew: Jacques Villeneuve. 
+However, the question seems to refer to a driver with an Italian last name and a relative who drove for Ferrari, so I think you are referring to  Didier Pironi or Gilles Villeneuve's teammate at Ferrari: Jody Scheckter's teammate -  the Italian driver with a common cocktail last name - Martini. 
+
+So the answer is that in 1994 Pierluigi Martini drove a Minardi M193B and then later in the season a Minardi M194 for Minardi.
+
+Check result: Y

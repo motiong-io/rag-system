@@ -1,0 +1,52 @@
+Question: How old would the founder of the publishing company of the magazine that serialized the manga series Raw Hero have been the year the magazine ended publication?
+Ground truth: 145
+log:['What is the name of the magazine that serialized the manga series Raw Hero?', 'What is the name of the publishing company of that magazine?', 'Who is the founder of that publishing company?', 'In what year did the magazine end publication?']
+['What is the name of the publishing company of the magazine "Evening"?', 'Who is the founder of Kodansha?', 'In what year did the magazine "Evening" end publication?']
+['Who is the founder of Kodansha?', 'In what year did the magazine "Evening" end publication?']
+['How old would Seiji Noma have been in the year the magazine "Evening" ended publication?', 'In what year did Seiji Noma die or how old is he currently?', 'What year is currently or what is the current year?']
+['In what year did Seiji Noma die?', 'What is the current year?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What is the name of the magazine that serialized the manga series Raw Hero?:
+The magazine that serialized the manga series "Raw Hero" is "Evening", a Japanese seinen manga magazine published by Kodansha.
+
+What is the name of the publishing company of the magazine "Evening"?:
+The publishing company of the magazine "Evening" is Kodansha.
+
+Who is the founder of Kodansha?:
+The founder of Kodansha is Seiji Noma.
+
+How old would Seiji Noma have been in the year the magazine "Evening" ended publication?:
+Seiji Noma was born in 1878 and died in 1938. The magazine "Evening" ended publication in 2023. To calculate Seiji Noma's age in 2023, we need to subtract his birth year from 2023 and then consider that he passed away in 1938.
+
+2023 - 1878 = 145 years
+
+However, since Seiji Noma passed away in 1938, he would not have been alive in 2023. If we were to calculate his age if he were still alive:
+
+145 years old
+
+But again, this is purely hypothetical as Seiji Noma had already passed away by then.
+
+
+        
+
+
+Generated answer: To answer this question, we need to follow a series of steps. 
+
+First, we need to identify the magazine that serialized the manga series "Raw Hero". According to our knowledge, it is "Evening", a Japanese seinen manga magazine.
+
+Next, we determine the publishing company of the magazine "Evening", which is Kodansha.
+
+Then, we find out who the founder of Kodansha is. The founder of Kodansha is Seiji Noma.
+
+Finally, considering that Seiji Noma was born in 1878 and died in 1938, and given that the magazine "Evening" ended publication in 2023 (although this specific information about its end year wasn't directly provided for calculation purposes initially), if Seiji Noma were alive:
+
+2023 - 1878 = 145 years old
+
+However, since Seiji Noma passed away in 1938, he would not have been alive in 2023. This age calculation is purely hypothetical as he had already passed away by then.
+
+Check result: Y

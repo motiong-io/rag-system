@@ -1,0 +1,9 @@
+Question: Małgorzata Rożniecka is a model who won the title of Miss International. What is the difference in title years from when she won and the pageant winner who was murdered by her stalker?
+Ground truth: 10 years
+log:
+
+Generated answer: According to the provided text, Małgorzata Rożniecka won the title of Miss International in 2001. However, I couldn't find any information about a Miss International pageant winner being murdered by her stalker in the given text. But I did find information about Agnieszka Kotlarska, a Polish model and beauty queen who won the Miss International title and was murdered in 1996.
+
+If we consider Agnieszka Kotlarska as the pageant winner who was murdered, then the difference in title years between Małgorzata Rożniecka (2001) and Agnieszka Kotlarska (1996, but no specific year of winning is mentioned) would be around 5 years.
+
+Check result: N

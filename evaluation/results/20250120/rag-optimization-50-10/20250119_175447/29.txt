@@ -1,0 +1,34 @@
+Question: If Princess Diana had been born three years earlier, who would have been Prime Minister when she was ten? 
+Ground truth: Harold Wilson
+log:['When was Princess Diana born?', 'If Princess Diana had been born three years earlier, what would be her new birth year?', 'Who was the Prime Minister of the United Kingdom in the year that would have been her 10th birthday?']
+['If Princess Diana had been born three years earlier, what would be her new birth year?', 'Who was the Prime Minister of the United Kingdom in 1971?']
+['Who was the Prime Minister of the United Kingdom in 1968?']
+['Who would have been Prime Minister of the United Kingdom in 1968?', 'If Princess Diana had been born three years earlier, what would be her age in 1968?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        When was Princess Diana born?:
+Princess Diana was born on 1 July 1961.
+
+If Princess Diana had been born three years earlier, what would be her new birth year?:
+If Princess Diana had been born three years earlier, her new birth year would be 1958, since she was born in 1961.
+
+Who was the Prime Minister of the United Kingdom in 1968?:
+According to the context provided, in 1968, the Prime Minister of the United Kingdom was likely Harold Wilson, but it is not explicitly stated in the given text. However, another part of the context does mention that one of the prime ministers (likely Harold Wilson, but not explicitly stated) was First Lord of the Treasury and Minister for the Civil Service from 1968-1970.
+
+
+        
+
+
+Generated answer: If Princess Diana had been born three years earlier, her birth year would be 1958. 
+
+When she was 10 years old, the year would be 1968. 
+
+According to the context, in 1968, the Prime Minister of the United Kingdom was likely Harold Wilson. 
+
+So, when Princess Diana would have been 10 years old (in 1968), Harold Wilson would have been the Prime Minister.
+
+Check result: Y

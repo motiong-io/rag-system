@@ -1,0 +1,9 @@
+Question: The Pope born Pietro Barbo ended a long-running war two years after his papacy began, which famous conflict, immortalized in tapestry took place 400 years earlier?
+Ground truth: The Battle of Hastings.
+log:
+
+Generated answer: The Pope born Pietro Barbo, also known as Pope Paul II, ended the War of the Roses' ally, the Thirteen Years' War (1454-1466) two years after his papacy began. However, I believe you are referring to a famous conflict immortalized in tapestry that took place 400 years earlier.
+
+In that case, I think you might be referring to the Battle of Hastings (1066), which was immortalized in the Bayeux Tapestry. This famous conflict took place approximately 400 years before Pope Paul II's papacy (1464-1471). The Bayeux Tapestry is an 70-meter-long embroidered cloth that depicts the events leading up to the Norman Conquest of England, including the Battle of Hastings.
+
+Check result: Y

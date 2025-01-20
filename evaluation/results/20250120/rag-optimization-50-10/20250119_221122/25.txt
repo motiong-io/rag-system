@@ -1,0 +1,47 @@
+Question: What was the age difference between Mike Tyson and Tyson Fury on the respective days on which they lost their first ever fights? Represent the figure in years only.
+Ground truth: 12 years.
+log:["What was the date of Mike Tyson's first professional loss?", "What was Mike Tyson's birthdate?", "What was the date of Tyson Fury's first professional loss?", "What was Tyson Fury's birthdate?", "On the day of Mike Tyson's first loss, how old was he in years?", "On the day of Tyson Fury's first loss, how old was he in years?"]
+["What was Tyson Fury's birthdate?", "What was the date of Tyson Fury's first professional loss?", "What was Mike Tyson's birthdate?"]
+["What was the date of Tyson Fury's first professional loss?", "What was Mike Tyson's birthdate?"]
+["What was Mike Tyson's birthdate?", 'None needed as all other information is provided or calculated.', 'None needed as all other information is provided or calculated.']
+['What was the age of Mike Tyson on February 11, 1990?', 'What was the age of Tyson Fury on May 18, 2024?', 'What is the difference between the age of Mike Tyson on February 11, 1990, and the age of Tyson Fury on May 18, 2024?']
+['What was the age of Tyson Fury on May 18, 2024?', 'What is the difference between the age of Mike Tyson on February 11, 1990, and the age of Tyson Fury on May 18, 2024?', '(empty)']
+['What is the difference between 23 years and 35 years?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What was the date of Mike Tyson's first professional loss?:
+Mike Tyson's first professional loss was on February 11, 1990, when he lost to Buster Douglas in Tokyo, Japan.
+
+What was Tyson Fury's birthdate?:
+Tyson Fury was born on August 12, 1988.
+
+What was the date of Tyson Fury's first professional loss?:
+The date of Tyson Fury's first professional loss was May 18, 2024, when he lost to Oleksandr Usyk via split decision.
+
+What was Mike Tyson's birthdate?:
+Mike Tyson's birthdate was June 30, 1966.
+
+What was the age of Mike Tyson on February 11, 1990?:
+According to the text, Mike Tyson was born on June 30, 1966. Therefore, on February 11, 1990, he was 23 years old.
+
+What was the age of Tyson Fury on May 18, 2024?:
+Tyson Fury was born on August 12, 1988. To find his age on May 18, 2024, we need to calculate the difference between the two dates.
+
+As of May 18, 2024, Tyson Fury was 35 years old.
+
+
+        
+
+
+Generated answer: To find the age difference, we need to calculate the ages of both Mike Tyson and Tyson Fury on the days they lost their first fights.
+
+Mike Tyson's age on February 11, 1990: 23 years
+Tyson Fury's age on May 18, 2024: 35 years
+
+Age difference: 35 - 23 = 12 years.
+
+Check result: Y

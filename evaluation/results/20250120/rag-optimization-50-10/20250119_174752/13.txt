@@ -1,0 +1,9 @@
+Question: One of Barbara Kingsolver's best known novels is about an American missionary family which moves to Africa. At the time, the country they move to was a Belgian colony. Which year did it become independent?
+Ground truth: 1960
+log:
+
+Generated answer: The country you are referring to is the Democratic Republic of the Congo, which was formerly known as the Belgian Congo. It gained independence from Belgium on June 30, 1960. 
+
+In Barbara Kingsolver's novel "The Poisonwood Bible", the missionary family moves to the Belgian Congo in 1959, just a year before it gained independence.
+
+Check result: Y

@@ -1,0 +1,7 @@
+Question: As of August 1, 2024, who is the president of the team that inspired the original name of the Washington Commanders?
+Ground truth: Derek Schiller
+log:
+
+Generated answer: The president of the Washington Commanders, a team previously known as the Washington Redskins (inspired by the Boston Braves/Redskins which became the Washington Redskins), is Jason Wright.
+
+Check result: N

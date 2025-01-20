@@ -1,0 +1,32 @@
+Question: I am thinking of a Ancient Roman City.  The city was destroyed by volcanic eruption.  The eruption occurred in the year 79 AD.  The volcano was a stratovolcano.    Where was the session held where it was decided that the city would be named a UNESCO world heritage site?
+Ground truth: Naples
+log:['What Ancient Roman City was destroyed by a volcanic eruption in 79 AD?', 'What type of volcano destroyed the city in sub-query 1?', 'Where was the session held where it was decided that the city from sub-query 1 would be named a UNESCO world heritage site?']
+['What Ancient Roman City was destroyed by a volcanic eruption in 79 AD?', 'What type of volcano destroyed the city of Pompeii?', 'Where was the session held where it was decided that Pompeii would be named a UNESCO world heritage site?']
+['What type of volcano destroyed the city of Pompeii?', 'Where was the session held where it was decided that Pompeii would be named a UNESCO world heritage site?']
+['What Ancient Roman City was destroyed by a volcanic eruption in 79 AD?', 'What type of volcano destroyed the city of Pompeii?', 'Where was the session held where it was decided that the city would be named a UNESCO world heritage site?']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What Ancient Roman City was destroyed by a volcanic eruption in 79 AD?:
+The Ancient Roman cities of Pompeii and Herculaneum were destroyed by the eruption of Mount Vesuvius in 79 AD.
+
+What Ancient Roman City was destroyed by a volcanic eruption in 79 AD?:
+The Ancient Roman cities of Pompeii and Herculaneum were destroyed by the eruption of Mount Vesuvius in 79 AD.
+
+What type of volcano destroyed the city of Pompeii?:
+The type of volcano that destroyed the city of Pompeii is a stratovolcano, specifically Mount Vesuvius. It is characterized as having a Plinian eruption, which is a type of volcanic eruption that produces a large amount of ash, pumice, and other pyroclastic material.
+
+
+        
+
+
+Generated answer: Based on the information you provided, I believe the Ancient Roman City you are thinking of is Pompeii. 
+
+Pompeii was destroyed by the eruption of Mount Vesuvius, a stratovolcano, in 79 AD. 
+
+As for your question, Pompeii was designated as a UNESCO World Heritage site in 1980. The session where this decision was made was held in Sydney, Australia, but more specifically, it was at the 4th session of the World Heritage Committee, which took place from September 22 to October 1, 1980, but I couldn't find any information that says it was held in a specific building or location within Sydney.
+
+Check result: N

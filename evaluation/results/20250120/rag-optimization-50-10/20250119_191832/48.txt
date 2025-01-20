@@ -1,0 +1,36 @@
+Question: The state, whose motto was adopted March 26, 1928, has 0.94% of the population in 2024 speaking a language that is native to which country?
+Ground truth: Philippines
+log:["Which state's motto was adopted on March 26, 1928?", 'What percentage of the population in that state speaks a language that is not native to the United States in 2024?', 'Which country is native to the language spoken by 0.94% of the population in that state?']
+['What percentage of the population in New Jersey speaks a language that is not native to the United States in 2024?', 'Which country is native to the language spoken by 0.94% of the population in New Jersey?']
+['Which country is native to the language spoken by 0.94% of the population in New Jersey?']
+['Which country is native to the language spoken by 0.94% of the population in New Jersey?', 'What percentage of the population in the state whose motto was adopted on March 26, 1928, speaks a language that is not native to the United States in 2024?', '']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        Which state's motto was adopted on March 26, 1928?:
+New Jersey's motto, "Liberty and prosperity", was adopted on March 26, 1928.
+
+What percentage of the population in New Jersey speaks a language that is not native to the United States in 2024?:
+According to the provided text, as of 2024, 30.6% of the population in New Jersey speaks a language other than English at home. This can be inferred from the statement that "English (only) 69.4%" are spoken, implying that the remaining 30.6% speak a non-native language.
+
+Which country is native to the language spoken by 0.94% of the population in New Jersey?:
+The language spoken by 0.94% of the population in New Jersey is Tagalog. Tagalog is a language native to the Philippines.
+
+
+        
+
+
+Generated answer: To answer this question, we need to follow a series of connections. 
+
+First, we know that the state whose motto was adopted on March 26, 1928, is New Jersey. This is because New Jersey's motto, "Liberty and prosperity", was adopted on that specific date.
+
+Next, we are told that 0.94% of the population in New Jersey speaks a language that is native to a particular country. We also know that the language spoken by 0.94% of the population in New Jersey is Tagalog.
+
+Lastly, Tagalog is a language native to the Philippines. 
+
+Therefore, the country whose native language is spoken by 0.94% of the population in New Jersey (the state whose motto was adopted on March 26, 1928) is the Philippines.
+
+Check result: Y

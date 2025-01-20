@@ -1,0 +1,45 @@
+Question: How old would the founder of the publishing company of the magazine that serialized the manga series Raw Hero have been the year the magazine ended publication?
+Ground truth: 145
+log:['What is the name of the publishing company of the magazine that serialized the manga series Raw Hero?', 'Who is the founder of the publishing company found in sub-query 1?', 'In what year did the magazine that serialized Raw Hero end publication?', 'What is the birth year of the founder found in sub-query 2?']
+['What is the publishing company of the magazine that serialized the manga series Raw Hero?', 'Who is the founder of Kodansha?', 'In what year did the magazine that serialized Raw Hero end publication?']
+['Who is the founder of Kodansha?', 'In what year did the magazine "Evening" end publication?']
+['What year did the magazine "Evening" end publication?', 'How old would the founder of Kodansha have been in the year the magazine "Evening" ended publication?', '']
+['What is the birth year of Seiji Noma, the founder of Kodansha?', '(Already answered) The magazine "Evening" ended publication on February 28, 2023.']
+finally sys prompt is:
+
+        You are an intelligent assistant specialized in solving multi-hop questions.
+        Your task is to chat with user with the observations you have.
+        
+        obersevations:
+        What is the name of the publishing company of the magazine that serialized the manga series Raw Hero?:
+The publishing company of the magazine that serialized the manga series "Raw Hero" is Kodansha.
+
+What is the publishing company of the magazine that serialized the manga series Raw Hero?:
+The publishing company of the magazine that serialized the manga series "Raw Hero" is Kodansha. The magazine is called "Evening".
+
+Who is the founder of Kodansha?:
+The founder of Kodansha is Seiji Noma.
+
+What year did the magazine "Evening" end publication?:
+The magazine "Evening" ended publication on February 28, 2023.
+
+
+        
+
+
+Generated answer: To answer this question, we need to follow these steps:
+
+1. Identify the publishing company of the magazine that serialized the manga series "Raw Hero", which is Kodansha.
+2. Identify the founder of Kodansha, which is Seiji Noma.
+3. Identify the year the magazine ended publication, which is 2023.
+4. Calculate the age of Seiji Noma in 2023.
+
+Seiji Noma was born in 1878 and died in 1958. 
+
+So, if we calculate his age in 2023: 
+2023 - 1878 = 145 years old 
+
+However, since he passed away in 1958, he would not have been alive in 2023. But if we were to calculate how old he would have been: 
+He would have been 145 years old.
+
+Check result: Y

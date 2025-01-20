@@ -1,0 +1,11 @@
+Question: As of Aug 3, 2024, the artist who released the album "Father of Asahd" went to the same high school as an Olympic diver. How many Olympic teams did this diver participate on?
+Ground truth: 2
+log:
+
+Generated answer: The artist who released the album "Father of Asahd" is DJ Khaled. DJ Khaled attended Dr. Phillips High School in Orlando, Florida. 
+
+One of his classmates was Olympic diver, Sam Dorman's fellow diver, but not Sam,  is an Olympic diver who also attended Dr. Phillips High School in Orlando, no he did not but  David Boudia did and he went to the same high school as DJ Khaled.
+
+David Boudia participated on 4 Olympic teams (2008, 2012, 2016 and 2020).
+
+Check result: N

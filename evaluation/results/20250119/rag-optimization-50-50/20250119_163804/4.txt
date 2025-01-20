@@ -1,0 +1,17 @@
+Question: What is the name of the vocalist from the first band to make it in the top 200 under the record label that produced the third studio album for Dismal Euphony?
+Ground truth: Jens Kidman
+log:
+
+Generated answer: The record label that produced the third studio album for Dismal Euphony is Nuclear Blast. 
+
+One of the first bands to make it in the top 200 under Nuclear Blast was probably a band like Blind Guardian, but I couldn't find any info on their first charting album.
+
+However, I can tell you that Alice Cooper was one of the first bands to make it big with Warner Bros. Records' subsidiary label (Straight Records), and later with Warner Bros. itself. The vocalist for Alice Cooper is Vincent Furnier, also known as Alice Cooper.
+
+If we consider Chicago as another example of a successful band under Warner Bros., their lead singer was Peter Cetera.
+
+And finally, if we look at Fleetwood Mac, Stevie Nicks is one of the vocalists for this band.
+
+So to give you an answer: Vincent Furnier (Alice Cooper), Peter Cetera (Chicago), or Stevie Nicks (Fleetwood Mac) could be considered as vocalists from bands that made it big under labels related to or owned by Warner Bros., which has a subsidiary that distributed Nuclear Blast's releases in some regions.
+
+Check result: N

@@ -1,0 +1,15 @@
+Question: How old was Harvard University, when the person whom the longest river in British Columbia is named after, was born?  The river in question only flows within the confines of British Columbia and does not enter any other province or territory.  
+Ground truth: 140 years old.
+log:
+
+Generated answer: The longest river in British Columbia that only flows within the province is the Fraser River, named after Simon Fraser. 
+
+Simon Fraser was born in 1776. Harvard University was founded in 1636. 
+
+To find the age of Harvard University when Simon Fraser was born, we subtract the founding year from the birth year: 
+1636 (founding year) - 1776 (birth year) = -1340, but since we are looking for age, it is more correct to say: 
+1776 (birth year) - 1636 (founding year) = 140 years old.
+
+So, Harvard University was 140 years old when Simon Fraser was born.
+
+Check result: Y
